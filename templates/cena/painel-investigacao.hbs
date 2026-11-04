@@ -1,0 +1,67 @@
+{{!-- Duas colunas (achado em uso real: "a navegação está bem ruim"). À esquerda, o que
+      muda a cada rodada: qual investigação, os botões de rodada e a ordem de quem age.
+      À direita, a cena em abas — Preparação (montagem: participantes, roteiro,
+      sobrecarga), Pontos de interesse e Desafios. A ordem fica parada enquanto o
+      mestre percorre trinta pontos. A ficha da investigação é esta mesma tela
+      (`partials/investigacao-*`), com nome e imagem no lugar do seletor. --}}
+<div class="op2-painel-corpo{{#if temInvestigacao}} op2-painel-corpo--jogo{{/if}}">
+  <aside class="op2-painel-lateral">
+    <section class="op2-painel-secao op2-painel-investigacao-seletor">
+      {{#if ehGM}}
+        <label class="op2-campo op2-campo--inline">
+          <span>{{localize "OP2.Investigacao.Visualizando"}}</span>
+          <select data-seletor-investigacao>
+            <option value=""></option>
+            {{#each investigacoes}}
+              <option value="{{uuid}}" {{#if (op2Eq uuid @root.investigacaoAtivaUuid)}}selected{{/if}}>{{nome}}</option>
+            {{/each}}
+          </select>
+        </label>
+        <div class="op2-painel-lateral__botoes">
+          <button type="button" class="op2-botao op2-botao--pequeno" data-action="criarInvestigacao">
+            <i class="fa-solid fa-plus" aria-hidden="true"></i> {{localize "OP2.Investigacao.Nova"}}
+          </button>
+          {{#if temInvestigacao}}
+            <button type="button" class="op2-botao op2-botao--pequeno" data-action="abrirInvestigacao"
+              aria-label="{{localize 'OP2.Investigacao.AbrirFicha'}}" data-tooltip="{{localize 'OP2.Investigacao.AbrirFicha'}}">
+              <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
+            </button>
+          {{/if}}
+        </div>
+      {{else}}
+        {{#if investigacoes.length}}
+          <label class="op2-campo op2-campo--inline">
+            <span>{{localize "OP2.Investigacao.Visualizando"}}</span>
+            <select data-seletor-investigacao>
+              {{#each investigacoes}}
+                <option value="{{uuid}}" {{#if (op2Eq uuid @root.investigacaoAtivaUuid)}}selected{{/if}}>{{nome}}</option>
+              {{/each}}
+            </select>
+          </label>
+        {{else}}
+          <span class="op2-tag op2-tag--pequena">{{localize "OP2.Painel.SemInvestigacao"}}</span>
+        {{/if}}
+      {{/if}}
+    </section>
+
+    {{#unless temInvestigacao}}
+      {{#if ehGM}}
+        <p class="op2-ajuda">{{localize "OP2.Painel.SemInvestigacaoAjudaGM"}}</p>
+      {{else if temPersonagem}}
+        <p class="op2-ajuda">{{localize "OP2.Painel.SemInvestigacaoAjudaJogador"}}</p>
+      {{else}}
+        <p class="op2-ajuda">{{localize "OP2.Painel.SemPersonagem"}}</p>
+      {{/if}}
+    {{/unless}}
+
+    {{#if temInvestigacao}}
+      {{> (op2Caminho "cena/partials/investigacao-lateral")}}
+    {{/if}}
+  </aside>
+
+  {{#if temInvestigacao}}
+    <div class="op2-painel-principal">
+      {{> (op2Caminho "cena/partials/investigacao-abas")}}
+    </div>
+  {{/if}}
+</div>

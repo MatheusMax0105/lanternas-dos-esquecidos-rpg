@@ -1,0 +1,28 @@
+{
+  "_id": "a100000000000005",
+  "_key": "!items!a100000000000005",
+  "name": "Herbário de Cinzas",
+  "type": "habilidade",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/tecnica-medicinal.svg",
+  "system": {
+    "origem": "ocupacao",
+    "perfil": "",
+    "custo": "",
+    "custoPD": 0,
+    "descricao": "<p>Você identifica folhas, raízes e sementes que sobreviveram a queimadas ou foram misturadas aos restos de um preparo. A mesa pode usar seu conhecimento para reconhecer a origem de amostras e escolher uma abordagem segura; um teste de <strong>Medicina Tradicional</strong> ajuda quando os vestígios estão degradados.</p>",
+    "efeito": {
+      "tipo": "nenhum",
+      "passos": 1,
+      "dado": "d4",
+      "chaves": [],
+      "permitirD20": false,
+      "pdAoDescobrir": 0
+    },
+    "usoEmInvestigacao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

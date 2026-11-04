@@ -1,0 +1,17 @@
+{
+  "_id": "b100000000000024",
+  "_key": "!items!b100000000000024",
+  "name": "Oficial Local",
+  "type": "ocupacao",
+  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "system": {
+    "descricao": "<p>Você administra registros e demandas de uma comunidade em nome das autoridades. Sabe como uma pessoa pode deixar de existir nos papéis antes de desaparecer das ruas.</p>",
+    "habilidade": "Livro dos Vivos",
+    "habilidadeUuid": "Compendium.ordem-paranormal-2e.habilidades.Item.a100000000000024"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

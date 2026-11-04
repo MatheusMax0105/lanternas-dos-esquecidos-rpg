@@ -1,0 +1,28 @@
+{
+  "_id": "a100000000000024",
+  "_key": "!items!a100000000000024",
+  "name": "Livro dos Vivos",
+  "type": "habilidade",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/conhecimento-tecnico.svg",
+  "system": {
+    "origem": "ocupacao",
+    "perfil": "",
+    "custo": "",
+    "custoPD": 0,
+    "descricao": "<p>Você conhece a lógica dos registros locais e consegue comparar nomes, parentescos e obrigações entre documentos. Quando surge uma divergência, a mesa pode indicar quais relações constam nos livros oficiais; um teste de <strong>Administração Imperial</strong> ajuda a avaliar o que a discrepância significa.</p>",
+    "efeito": {
+      "tipo": "nenhum",
+      "passos": 1,
+      "dado": "d4",
+      "chaves": [],
+      "permitirD20": false,
+      "pdAoDescobrir": 0
+    },
+    "usoEmInvestigacao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "a100000000000019",
+  "_key": "!items!a100000000000019",
+  "name": "Encaixe do Passado",
+  "type": "habilidade",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/conhecimento-tecnico.svg",
+  "system": {
+    "origem": "ocupacao",
+    "perfil": "",
+    "custo": "",
+    "custoPD": 0,
+    "descricao": "<p>Você reconhece encaixes, reparos e marcas de ferramenta numa peça de madeira. Isso ajuda a mesa a estabelecer como uma estrutura foi montada, que parte foi substituída e se alguém a alterou depois; um teste de <strong>Ofícios Tradicionais</strong> pode esclarecer detalhes difíceis de ver.</p>",
+    "efeito": {
+      "tipo": "nenhum",
+      "passos": 1,
+      "dado": "d6",
+      "chaves": [],
+      "permitirD20": false,
+      "pdAoDescobrir": 0
+    },
+    "usoEmInvestigacao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "a100000000000006",
+  "_key": "!items!a100000000000006",
+  "name": "Pulso da Vigília",
+  "type": "habilidade",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/tecnica-medicinal.svg",
+  "system": {
+    "origem": "ocupacao",
+    "perfil": "",
+    "custo": "",
+    "custoPD": 0,
+    "descricao": "<p>Você avalia respiração, temperatura e resposta a estímulos para distinguir um desmaio de um quadro mais grave. A mesa pode usar esse exame para descrever o estado visível de uma pessoa; ao interpretar sinais confusos com <strong>Medicina Tradicional</strong>, acrescente manualmente um dado extra <strong>d4</strong>.</p>",
+    "efeito": {
+      "tipo": "nenhum",
+      "passos": 1,
+      "dado": "d4",
+      "chaves": [],
+      "permitirD20": false,
+      "pdAoDescobrir": 0
+    },
+    "usoEmInvestigacao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

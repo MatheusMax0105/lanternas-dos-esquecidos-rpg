@@ -1,0 +1,155 @@
+// O ícone de dado é a assinatura do sistema: a forma diz o tamanho antes de você ler o
+// número. As silhuetas vêm de clip-path — ver o comentário em module/ui/dice-icons.mjs
+// para o porquê de não ser SVG.
+@layer system {
+
+.op2-dado {
+  display: inline-grid;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex: 0 0 auto;
+  background: var(--op2-vermelho);
+  color: #fff !important; // sobre vermelho é sempre branco; o tema claro do core pinta button/select de escuro
+  font-family: var(--op2-fonte-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1;
+  place-items: center;
+  vertical-align: middle;
+
+  &__texto { display: block; }
+
+  &--d4 {
+    clip-path: polygon(50% 2%, 98% 94%, 2% 94%);
+    // O centro visual de um triângulo não é o centro da caixa.
+    align-items: end;
+    padding-bottom: 0.1rem;
+    font-size: 0.72rem;
+  }
+
+  &--d6 { clip-path: polygon(4% 4%, 96% 4%, 96% 96%, 4% 96%); }
+
+  &--d8 { clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); font-size: 0.74rem; }
+
+  &--d10 {
+    clip-path: polygon(50% 0%, 98% 36%, 80% 98%, 20% 98%, 2% 36%);
+    font-size: 0.74rem;
+  }
+
+  &--d12 {
+    clip-path: polygon(30% 2%, 70% 2%, 98% 30%, 98% 70%, 70% 98%, 30% 98%, 2% 70%, 2% 30%);
+    font-size: 0.7rem;
+  }
+
+  &--d20 { border-radius: 50%; font-size: 0.7rem; }
+
+  // Dado maior no chat e na escolha pós-rolagem.
+  &--resultado {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+
+    &.op2-dado--d4 { font-size: 0.88rem; }
+  }
+
+  &--descartado {
+    background: var(--op2-texto-fraco);
+    opacity: 0.55;
+  }
+}
+
+.op2-controle-dado {
+  position: relative;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+
+  &__botao {
+    display: grid;
+    width: auto;
+    padding: 0.1rem;
+    border: 1px solid transparent;
+    border-radius: var(--op2-raio);
+    background: transparent;
+    cursor: pointer;
+    place-items: center;
+
+    &:hover:not([disabled]) {
+      border-color: var(--op2-linha-forte);
+      .op2-dado { background: var(--op2-vermelho-claro); }
+    }
+  }
+
+  // Marca de redução temporária: um sinal no controle, não um segundo dado ocupando
+  // a linha. O dado base fica no tooltip.
+  &--reduzido &__botao::after {
+    position: absolute;
+    right: -2px;
+    bottom: -2px;
+    color: var(--op2-vermelho-claro);
+    content: "▼";
+    font-size: 0.5rem;
+    line-height: 1;
+  }
+
+  // O select real fica fora da vista, mas continua no form e alcançável por teclado.
+  &__nativo {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    margin: -1px;
+    clip-path: inset(50%);
+    overflow: hidden;
+    white-space: nowrap;
+
+    &:focus-visible {
+      position: static;
+      width: auto;
+      height: auto;
+      margin: 0;
+      clip-path: none;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    z-index: 20;
+    top: 100%;
+    left: 50%;
+    display: none;
+    padding: 0.2rem;
+    border: 1px solid var(--op2-linha-forte);
+    border-radius: var(--op2-raio);
+    margin-top: 2px;
+    background: var(--op2-superficie-alta);
+    box-shadow: 0 6px 18px rgb(0 0 0 / 45%);
+    gap: 0.15rem;
+    transform: translateX(-50%);
+  }
+
+  &.aberto &__menu { display: flex; }
+
+  &__opcao {
+    display: grid;
+    width: auto;
+    padding: 0.15rem;
+    border: 1px solid transparent;
+    border-radius: var(--op2-raio);
+    background: transparent;
+    cursor: pointer;
+    place-items: center;
+
+    &:hover { border-color: var(--op2-linha-forte); }
+
+    &.ativo {
+      border-color: var(--op2-vermelho);
+      background: color-mix(in srgb, var(--op2-vermelho) 18%, transparent);
+    }
+  }
+
+  &.desabilitado &__botao { cursor: default; }
+}
+
+}

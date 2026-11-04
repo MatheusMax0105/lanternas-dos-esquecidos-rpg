@@ -1,0 +1,17 @@
+{
+  "_id": "b100000000000006",
+  "_key": "!items!b100000000000006",
+  "name": "Curandeiro Ambulante",
+  "type": "ocupacao",
+  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "system": {
+    "descricao": "<p>Você percorre povoados atendendo feridos com recursos limitados. Em estradas marcadas por desaparecimentos, aprendeu a não confiar apenas no que os olhos mostram.</p>",
+    "habilidade": "Pulso da Vigília",
+    "habilidadeUuid": "Compendium.ordem-paranormal-2e.habilidades.Item.a100000000000006"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

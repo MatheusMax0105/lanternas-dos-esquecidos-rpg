@@ -1,0 +1,28 @@
+{
+  "_id": "a100000000000015",
+  "_key": "!items!a100000000000015",
+  "name": "Palavra ao Destino",
+  "type": "habilidade",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/mentoria.svg",
+  "system": {
+    "origem": "ocupacao",
+    "perfil": "",
+    "custo": "",
+    "custoPD": 0,
+    "descricao": "<p>Você transmite recados sem perder nomes, condições ou o tom pretendido, mesmo diante de ouvintes desconfiados. Na conversa, pode deixar claro o que foi dito e o que não foi prometido; um teste de <strong>Diplomacia</strong> pode sustentar uma negociação delicada.</p>",
+    "efeito": {
+      "tipo": "nenhum",
+      "passos": 1,
+      "dado": "d4",
+      "chaves": [],
+      "permitirD20": false,
+      "pdAoDescobrir": 0
+    },
+    "usoEmInvestigacao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "a100000000000018",
+  "_key": "!items!a100000000000018",
+  "name": "Veios da Linhagem",
+  "type": "habilidade",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/conhecimento-tecnico.svg",
+  "system": {
+    "origem": "ocupacao",
+    "perfil": "",
+    "custo": "",
+    "custoPD": 0,
+    "descricao": "<p>Você observa veios, acabamento e marcas de ferramenta para reconhecer técnicas de oficina e possíveis procedências. A mesa pode usar esses detalhes para relacionar uma peça a uma tradição artesanal; um teste de <strong>Caligrafia e Artes</strong> ajuda a comparar exemplares incompletos.</p>",
+    "efeito": {
+      "tipo": "nenhum",
+      "passos": 1,
+      "dado": "d6",
+      "chaves": [],
+      "permitirD20": false,
+      "pdAoDescobrir": 0
+    },
+    "usoEmInvestigacao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

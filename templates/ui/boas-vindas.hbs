@@ -1,0 +1,60 @@
+<div class="op2-boas-vindas__corpo">
+  <main class="op2-boas-vindas__abertura">
+    <div class="op2-boas-vindas__pagina">
+      <p class="op2-boas-vindas__subtitulo">{{localize "OP2.BoasVindas.Subtitulo"}}</p>
+      <h1 class="op2-boas-vindas__titulo">{{localize "OP2.BoasVindas.Titulo"}}</h1>
+      <div class="op2-boas-vindas__texto">
+        <p>{{localize "OP2.BoasVindas.Texto.1"}}</p>
+        <p>{{localize "OP2.BoasVindas.Texto.2"}}</p>
+        <p>{{localize "OP2.BoasVindas.Texto.3"}}</p>
+        <p>{{localize "OP2.BoasVindas.Texto.4"}}</p>
+        <p>{{localize "OP2.BoasVindas.Texto.5"}}</p>
+        <p>{{localize "OP2.BoasVindas.Texto.6"}}</p>
+        <p>{{localize "OP2.BoasVindas.Texto.7"}}</p>
+      </div>
+      <footer class="op2-boas-vindas__campanha">{{localize "OP2.BoasVindas.RodapeCampanha"}}</footer>
+    </div>
+  </main>
+
+  <div class="op2-boas-vindas__controles">
+    {{#if mestre}}
+      <button type="button" class="op2-botao op2-botao--fantasma" data-action="abrirAventuras">
+        <i class="fa-solid fa-book-open" aria-hidden="true"></i> {{localize "OP2.BoasVindas.AbrirAventuras"}}
+      </button>
+      <label class="op2-boas-vindas__mostrar">
+        <input type="checkbox" data-mostrar-ao-entrar {{#if mostrarAoEntrar}}checked{{/if}}>
+        {{localize "OP2.BoasVindas.MostrarAoEntrar"}}
+      </label>
+    {{/if}}
+    <details class="op2-boas-vindas__sobre">
+      <summary>{{localize "OP2.BoasVindas.SobreSistema"}}</summary>
+      <div class="op2-boas-vindas__sobre-conteudo">
+        <section class="op2-boas-vindas__creditos" aria-labelledby="op2-creditos-titulo">
+          <h2 id="op2-creditos-titulo">{{localize "OP2.BoasVindas.CreditosTitulo"}}</h2>
+          <p><strong>{{localize "OP2.BoasVindas.CreditosProjetoLabel"}}:</strong> <a href="{{links.projetoOriginal}}" target="_blank" rel="noopener">{{localize "OP2.BoasVindas.CreditosProjetoOriginal"}}</a> · <a href="{{links.projetoOriginal}}" target="_blank" rel="noopener">{{localize "OP2.BoasVindas.CreditosRepositorioOriginal"}}</a></p>
+          <p>{{localize "OP2.BoasVindas.CreditosAutorOriginal"}} · <a href="{{links.autorOriginal}}" target="_blank" rel="noopener">{{localize "OP2.BoasVindas.CreditosGithubOriginal"}}</a></p>
+          <p>{{localize "OP2.BoasVindas.CreditosAdaptadoPor"}} · <a href="{{links.adaptador}}" target="_blank" rel="noopener">{{localize "OP2.BoasVindas.CreditosGithubAdaptador"}}</a></p>
+          <p>{{localize "OP2.BoasVindas.CreditosRepositorioAdaptacao"}}: <a href="{{repositorio}}" target="_blank" rel="noopener">{{repositorio}}</a></p>
+          <p>{{localize "OP2.BoasVindas.CreditosTexto1"}}</p>
+          <p>{{localize "OP2.BoasVindas.CreditosTexto2"}}</p>
+        </section>
+        <header class="op2-boas-vindas__cabecalho">
+          <img class="op2-boas-vindas__selo op2-selo--escuro" src="{{selo.escuro}}" alt="{{localize "OP2.BoasVindas.SeloAlt"}}"><img class="op2-boas-vindas__selo op2-selo--claro" src="{{selo.claro}}" alt="{{localize "OP2.BoasVindas.SeloAlt"}}">
+          <div>
+            <p class="op2-boas-vindas__versao">{{localize "OP2.BoasVindas.Versao" versao=versao}}</p>
+            <p class="op2-boas-vindas__aviso">{{localize aviso}}</p>
+          </div>
+        </header>
+        <ul class="op2-boas-vindas__links">
+          <li><a href="{{links.loja}}" target="_blank" rel="noopener"><i class="fa-solid fa-heart" aria-hidden="true"></i> {{localize "OP2.BoasVindas.Apoiar"}}</a></li>
+          <li><a href="{{links.site}}" target="_blank" rel="noopener"><i class="fa-solid fa-globe" aria-hidden="true"></i> {{localize "OP2.BoasVindas.Site"}}</a></li>
+          <li><a href="{{links.licenca}}" target="_blank" rel="noopener"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> {{localize "OP2.Licenca.Link"}}</a></li>
+          <li><a href="{{changelog}}" target="_blank" rel="noopener"><i class="fa-solid fa-list-check" aria-hidden="true"></i> {{localize "OP2.BoasVindas.Changelog"}}</a></li>
+          <li><a href="{{repositorio}}" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> {{localize "OP2.BoasVindas.Repositorio"}}</a></li>
+          <li><a href="{{links.apoio}}" target="_blank" rel="noopener"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i> {{localize "OP2.BoasVindas.KoFi"}}</a></li>
+        </ul>
+      </div>
+    </details>
+    <button type="button" class="op2-botao op2-boas-vindas__fechar" data-action="fechar">{{localize "OP2.BoasVindas.Fechar"}}</button>
+  </div>
+</div>

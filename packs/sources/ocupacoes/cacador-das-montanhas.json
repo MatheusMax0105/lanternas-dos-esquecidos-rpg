@@ -1,0 +1,17 @@
+{
+  "_id": "b100000000000011",
+  "_key": "!items!b100000000000011",
+  "name": "Caçador das Montanhas",
+  "type": "ocupacao",
+  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "system": {
+    "descricao": "<p>Você conhece trilhas altas, mudanças de clima e sinais deixados por animais e viajantes. Nas montanhas, um rastro que termina de repente costuma ser mais perigoso que uma tempestade.</p>",
+    "habilidade": "Rastro sem Dono",
+    "habilidadeUuid": "Compendium.ordem-paranormal-2e.habilidades.Item.a100000000000011"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

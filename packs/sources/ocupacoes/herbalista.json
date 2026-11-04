@@ -1,0 +1,17 @@
+{
+  "_id": "b100000000000005",
+  "_key": "!items!b100000000000005",
+  "name": "Herbalista",
+  "type": "ocupacao",
+  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "system": {
+    "descricao": "<p>Você coleta e prepara plantas medicinais, aprendendo a reconhecer tanto os ciclos naturais quanto sinais inquietantes de contaminação e abandono.</p>",
+    "habilidade": "Herbário de Cinzas",
+    "habilidadeUuid": "Compendium.ordem-paranormal-2e.habilidades.Item.a100000000000005"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

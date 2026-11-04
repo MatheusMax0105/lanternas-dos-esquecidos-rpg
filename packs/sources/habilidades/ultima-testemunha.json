@@ -1,0 +1,28 @@
+{
+  "_id": "a100000000000030",
+  "_key": "!items!a100000000000030",
+  "name": "Última Testemunha",
+  "type": "habilidade",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/foco-emocional.svg",
+  "system": {
+    "origem": "ocupacao",
+    "perfil": "",
+    "custo": "",
+    "custoPD": 0,
+    "descricao": "<p>Você escuta relatos de luto sem apressar quem fala e nota hesitações, divergências e costumes da família. A mesa pode usar essa abordagem para contextualizar um testemunho; um teste de <strong>Intuição</strong> ajuda a avaliar uma reação ambígua, sem tornar infalível sua interpretação.</p>",
+    "efeito": {
+      "tipo": "nenhum",
+      "passos": 1,
+      "dado": "d4",
+      "chaves": [],
+      "permitirD20": false,
+      "pdAoDescobrir": 0
+    },
+    "usoEmInvestigacao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

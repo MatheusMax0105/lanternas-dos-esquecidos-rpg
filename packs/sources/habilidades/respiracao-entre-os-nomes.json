@@ -1,0 +1,28 @@
+{
+  "_id": "a100000000000001",
+  "_key": "!items!a100000000000001",
+  "name": "Respiração entre os Nomes",
+  "type": "habilidade",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/foco-mental.svg",
+  "system": {
+    "origem": "ocupacao",
+    "perfil": "",
+    "custo": "",
+    "custoPD": 0,
+    "descricao": "<p>Você usa silêncio e respiração ritmada para separar suas lembranças das imagens e relatos que acabou de ouvir. A mesa pode tratar esse exercício como uma forma de organizar o que foi percebido antes de agir; um teste de <strong>Disciplina</strong> pode ajudar a manter o foco diante de relatos perturbadores.</p>",
+    "efeito": {
+      "tipo": "nenhum",
+      "passos": 1,
+      "dado": "d4",
+      "chaves": [],
+      "permitirD20": false,
+      "pdAoDescobrir": 0
+    },
+    "usoEmInvestigacao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

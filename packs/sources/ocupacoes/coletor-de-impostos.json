@@ -1,0 +1,17 @@
+{
+  "_id": "b100000000000025",
+  "_key": "!items!b100000000000025",
+  "name": "Coletor de Impostos",
+  "type": "ocupacao",
+  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "system": {
+    "descricao": "<p>Você percorre povoados conferindo bens, obrigações e registros devidos ao Império. As discrepâncias nas contas às vezes revelam quem foi esquecido — ou deliberadamente escondido.</p>",
+    "habilidade": "Conta que não Fecha",
+    "habilidadeUuid": "Compendium.ordem-paranormal-2e.habilidades.Item.a100000000000025"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

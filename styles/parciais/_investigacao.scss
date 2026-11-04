@@ -1,0 +1,1657 @@
+@layer system {
+
+// Cards de investigação: revelação sussurrada, custo de Examinar, ações de cena.
+.op2-card--investigacao { border-left-color: var(--op2-vermelho); }
+
+.op2-card__texto { margin: var(--op2-e2) 0 0; font-size: 0.85rem; }
+
+.op2-card__infos {
+  margin: var(--op2-e2) 0 0;
+  padding-left: 1.2rem;
+  font-size: 0.85rem;
+
+  li + li { margin-top: var(--op2-e1); }
+}
+
+.op2-card__info-pericia {
+  font-family: var(--op2-fonte-mono);
+  color: var(--op2-texto-fraco);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+// Marca as linhas que caíram pelo tamanho do dado, sem passar pelo teste.
+.op2-card__info-marca {
+  margin-left: 0.35rem;
+  font-family: var(--op2-fonte-mono);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--op2-texto-fraco);
+  white-space: nowrap;
+}
+
+// Stepper de +/- inline: ajuste fino de um número sem abrir teclado (pontuação
+// e tentativas do desafio de acesso, no painel e na ficha do item). Mesmo visual
+// do controle de cargas do inventário — botões-ícone colados no valor.
+.op2-stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+
+  &__valor {
+    min-width: 2.6rem;
+    color: var(--op2-texto-fraco);
+    font-family: var(--op2-fonte-mono);
+    font-size: 0.72rem;
+    text-align: center;
+  }
+
+  input[type="number"] { width: 3.5rem; text-align: center; }
+}
+
+// Ficha do Ponto de Interesse.
+.op2-poi {
+  textarea { width: 100%; }
+
+  &__infos {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li + li { margin-top: var(--op2-e2); }
+  }
+
+  &__info textarea { width: 100%; margin-top: var(--op2-e1); }
+
+  &__info-linha {
+    display: flex;
+    align-items: center;
+    gap: var(--op2-e2);
+
+    select { flex: 1; }
+  }
+
+  &__dt {
+    display: flex;
+    align-items: center;
+    gap: var(--op2-e1);
+
+    span {
+      font-family: var(--op2-fonte-display);
+      font-size: 0.75rem;
+      color: var(--op2-texto-fraco);
+    }
+
+    input { width: 3.5rem; }
+  }
+
+  // Ferramentas: só as que reagem aparecem; as demais ficam no seletor (spec §9.3).
+  &__ferramenta {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--op2-e1);
+
+    .op2-campo { flex: 1 1 auto; margin: 0; }
+  }
+
+  &__ferramenta + &__ferramenta { margin-top: var(--op2-e2); }
+
+  &__seletor-ferramenta { margin-top: var(--op2-e2); }
+
+  prose-mirror { min-height: 5rem; }
+}
+
+// Painel de investigação da cena. `position: { height: "auto" }` cresce sem teto —
+// o core só clampa/rola sozinho quando a altura pedida é um número. Com uma cena
+// cheia (vários POIs, desafios, sobrecarga com várias linhas), a janela crescia
+// além da tela e o conteúdo de baixo ficava cortado, sem barra de rolagem — e por
+// consequência inalcançável para arrastar um item ali (achado em uso real).
+// `max-height` fixo em px não acompanha o redimensionamento: encolher a janela
+// deixava a barra de rolagem com a conta errada (achado em uso real). O core já
+// dá ao `.window-content` a altura restante do frame via flex — só falta avisar
+// que ele pode rolar, sem impor um teto próprio que brigue com o resize.
+.op2-painel-investigacao .window-content {
+  overflow-y: auto;
+  // As colunas empilham pela largura da janela, não da tela (container query).
+  container-type: inline-size;
+  // Opaco: o core deixa a janela translúcida e o mapa atravessava o painel, o
+  // que embaralhava a leitura das listas (achado em uso real).
+  background: var(--op2-fundo);
+}
+
+.op2-painel-investigacao .window-header { background: var(--op2-superficie-alta); }
+
+.op2-painel-corpo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--op2-e3);
+  font-family: var(--op2-fonte-corpo);
+}
+
+.op2-painel-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--op2-e2);
+
+  &__info { display: flex; align-items: baseline; gap: var(--op2-e2); }
+
+  &__acoes { display: flex; gap: var(--op2-e1); }
+}
+
+.op2-painel-rodada {
+  font-family: var(--op2-fonte-mono);
+  color: var(--op2-texto-fraco);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.op2-painel-titulo {
+  margin: 0 0 var(--op2-e2);
+  font-family: var(--op2-fonte-display);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+// Participantes repete a mesma lista de "Ordem das Rodadas" logo abaixo — deixar
+// recolhível evita rolar a janela duas vezes pelo mesmo roster (achado em uso real).
+// Toda seção do painel é um <details>: nasce recolhida e o que o usuário abre fica
+// guardado no navegador (achado em uso real: a janela virava uma rolagem só).
+summary.op2-painel-titulo {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: var(--op2-e2);
+
+  &::-webkit-details-marker { display: none; }
+  &::before {
+    content: "";
+    width: 0.45rem;
+    height: 0.45rem;
+    border-right: 2px solid var(--op2-vermelho-claro);
+    border-bottom: 2px solid var(--op2-vermelho-claro);
+    transform: rotate(-45deg);
+    transition: transform 0.15s ease;
+  }
+}
+details[open] > summary.op2-painel-titulo::before { transform: rotate(45deg); }
+
+.op2-painel-acoes-grupo { display: flex; flex-wrap: wrap; gap: var(--op2-e2); }
+
+// Qual investigação o painel mostra agora — uma mesa pode ter mais de uma salva
+// (spec §5.1: uma investigação pode atravessar várias Scenes, e o mestre pode
+// arquivar sessões antigas em vez de perdê-las).
+.op2-painel-investigacao-seletor {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--op2-e2);
+
+  .op2-campo--inline { gap: var(--op2-e1); }
+  select { min-width: 10rem; }
+}
+
+.op2-painel-trava { color: var(--op2-texto-fraco); }
+
+// Travas de 1×-por-investigação como estado, não botão — quem usa Recapitular /
+// Compartilhar é um personagem, pela ficha dele.
+.op2-painel-travas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--op2-e2);
+  font-size: 0.8rem;
+}
+
+.op2-painel-pois,
+.op2-painel-eventos__lista {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--op2-e2);
+}
+
+.op2-poi-card {
+  padding: var(--op2-e2);
+  border: 1px solid var(--op2-linha);
+  border-left: 3px solid var(--op2-vermelho);
+  border-radius: var(--op2-raio);
+  background: var(--op2-superficie);
+
+  &__topo {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--op2-e2);
+
+    // Retrato de personagem é foto em pé: cortar pelo meio decapita. O corte sobe.
+    img {
+      width: 2rem; height: 2rem;
+      object-fit: cover; object-position: center top;
+      border-radius: var(--op2-raio);
+    }
+
+    strong { flex: 1; font-family: var(--op2-fonte-display); letter-spacing: 0.03em; }
+  }
+
+  // Nome e, no desafio, o ponto a que ele pertence: uma coluna só, para o nome não
+  // disputar largura com as tags e os botões.
+  &__identidade {
+    flex: 1 1 11rem;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+
+    strong { flex: none; }
+  }
+
+  // "De que ponto é este desafio": navegação, em voz baixa. Sem fundo, sem o recorte
+  // da tag (que comia as letras das pontas), com reticências quando o nome é longo —
+  // o nome inteiro fica na dica.
+  &__ponto {
+    align-self: flex-start;
+    max-width: 100%;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    color: var(--op2-texto-fraco);
+    font-family: var(--op2-fonte-display);
+    font-size: 0.68rem;
+    letter-spacing: 0.09em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    // A cor vai no conteúdo, não no <button>: o reset `.op2 button { color: inherit }`
+    // tem especificidade maior e ganharia de uma cor declarada aqui.
+    i { flex: 0 0 auto; font-size: 0.85em; color: var(--op2-texto-fraco); }
+    span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color: var(--op2-texto-fraco); }
+
+    &:hover,
+    &:focus-visible {
+      i, span { color: var(--op2-vermelho-claro); }
+      span { text-decoration: underline; }
+    }
+  }
+
+  // Os botões do mestre ficam sempre colados na borda direita, venha o que vier antes.
+  &__acoes-gm { display: flex; gap: var(--op2-e1); margin-left: auto; }
+
+  // Oculto = preparado com antecedência, ainda não revelado (só o mestre vê isto,
+  // já filtrado do lado do jogador na própria leitura de contexto).
+  // Oculto dos jogadores: só o mestre vê este card, e precisa ler nele — apagar o
+  // card inteiro deixava o texto ilegível (achado em uso real). A marca é a borda
+  // tracejada e a tag "oculto"; o texto fica no contraste normal.
+  &--oculto {
+    border-left-style: dashed;
+    border-left-color: var(--op2-texto-fraco);
+    img { filter: grayscale(1); opacity: 0.7; }
+  }
+
+  // Estado, não abordagem: a mesma borda tracejada do card oculto, sem o vermelho —
+  // que fica reservado ao que se pode FAZER no desafio (Arrombar, Destrancar, Hackear).
+  &__oculto-tag {
+    background: transparent;
+    border: 1px dashed var(--op2-linha-forte);
+    // `!important` porque a tag base força branco (sinal sobre vermelho); esta não
+    // tem vermelho — no claro ficava branco sobre creme (achado em uso real).
+    color: var(--op2-texto-fraco) !important;
+    clip-path: none;
+    font-size: 0.6rem;
+  }
+
+  &__basica { margin: var(--op2-e2) 0; font-size: 0.85rem; }
+
+  &__quadro {
+    margin: 0 0 var(--op2-e2);
+    padding: 0;
+    list-style: none;
+  }
+
+  &__pericia + &__pericia { margin-top: var(--op2-e2); }
+
+  &__pericia-linha {
+    display: flex;
+    align-items: center;
+    gap: var(--op2-e2);
+  }
+
+  &__rotulo {
+    font-family: var(--op2-fonte-mono);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+  }
+
+  &__dado .op2-dado { width: 1.6rem; height: 1.6rem; }
+
+  &__botoes { margin-left: auto; display: flex; gap: var(--op2-e1); }
+
+  &__infos {
+    margin: var(--op2-e1) 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.85rem;
+  }
+
+  // Uma linha do quadro é UMA linha: ícone de estado, DT, texto, quem descobriu —
+  // antes cada pedaço caía numa linha própria e o card virava uma torre (achado
+  // em uso real).
+  &__info {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--op2-e2);
+    padding: 0.15rem 0;
+    border-top: 1px dashed color-mix(in srgb, var(--op2-linha) 60%, transparent);
+
+    .op2-botao-icone { flex: 0 0 auto; }
+  }
+
+  // Visão do jogador: cada pista é um item com marcador, sob o título da perícia.
+  &__infos--jogador {
+    padding-left: 1.1rem;
+    list-style: disc;
+
+    .op2-poi-card__info { display: list-item; border-top: 0; padding: 0.1rem 0; }
+    .op2-poi-card__texto { display: inline; }
+    .op2-poi-card__texto p { display: inline; }
+    .op2-poi-card__revelado-por { margin-left: var(--op2-e2); }
+  }
+
+  &__texto {
+    flex: 1;
+    min-width: 0;
+    p { margin: 0; }
+    p + p { margin-top: var(--op2-e1); }
+  }
+
+  &__dt {
+    flex: 0 0 auto;
+    padding: 0.05rem 0.35rem;
+    border: 1px solid var(--op2-linha);
+    border-radius: var(--op2-raio);
+    font-family: var(--op2-fonte-mono);
+    color: var(--op2-texto-fraco);
+    font-size: 0.7rem;
+    white-space: nowrap;
+  }
+
+  &__revelado-por {
+    flex: 0 0 auto;
+    max-width: 9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--op2-sucesso);
+    font-size: 0.75rem;
+  }
+
+  // Recolhido: só o cabeçalho, com o resumo "linhas à vista / total".
+  &__recolher i { transition: transform 0.15s ease; }
+  &--recolhido &__recolher i { transform: rotate(-90deg); }
+  &--recolhido &__corpo { display: none; }
+  // Card achado pela busca aparece aberto mesmo recolhido: quem busca quer ler.
+  &--recolhido#{&}--achado &__corpo { display: flex; }
+  &--recolhido#{&}--achado &__recolher i { transform: none; }
+
+  &__resumo {
+    padding: 0.05rem 0.4rem;
+    border-radius: var(--op2-raio);
+    background: var(--op2-superficie-alta);
+    font-family: var(--op2-fonte-mono);
+    font-size: 0.72rem;
+    color: var(--op2-texto-fraco);
+    white-space: nowrap;
+  }
+
+  // Notas só do mestre, no card, quando ele pede (botão de agente secreto).
+  &__contextual {
+    display: none;
+    margin: var(--op2-e2) 0;
+    padding: var(--op2-e2);
+    border-left: 2px dashed var(--op2-vermelho);
+    background: var(--op2-superficie-alta);
+    font-size: 0.82rem;
+    p { margin: 0 0 var(--op2-e1); }
+    img { max-width: 100%; height: auto; }
+  }
+  &--notas &__contextual { display: block; }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--op2-e1);
+  }
+
+  .op2-botao--pequeno.ativo { border-color: var(--op2-vermelho); }
+
+  // Rascunho do mestre: nunca é revelável enquanto oculta (`resolverInvestigacao`/
+  // `resolverExaminar` já filtram), só marcada visualmente aqui pra quem já vê tudo.
+  &__info--oculta { opacity: 0.55; }
+
+  // Linha que ESTE personagem descobriu examinando — o resto do quadro que o
+  // jogador vê é o que o mestre abriu.
+  &__info--descoberta { border-left: 2px solid var(--op2-sucesso); padding-left: var(--op2-e2); }
+
+  // O ícone diz o estado; a cor reforça sem depender de ler o tooltip.
+  &__visibilidade {
+    &--rascunho { color: var(--op2-texto-fraco); }
+    &--descobrivel { color: var(--op2-vermelho-claro); }
+    &--aberta { color: var(--op2-sucesso); }
+  }
+
+  &__ferramentas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--op2-e1);
+    margin-top: var(--op2-e2);
+  }
+}
+
+.op2-painel-ordem {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__linha {
+    display: flex;
+    align-items: center;
+    gap: var(--op2-e2);
+    padding: var(--op2-e1) var(--op2-e2);
+    border-bottom: 1px dashed var(--op2-linha);
+
+    &[draggable="true"] { cursor: grab; }
+
+    img {
+      width: 1.6rem; height: 1.6rem;
+      object-fit: cover; object-position: center top;
+      border-radius: var(--op2-raio);
+    }
+
+    &--npc { color: var(--op2-texto-fraco); }
+
+    // Controle manual de turno (spec §5.2 não automatiza quem já agiu): risca o
+    // nome, sem escondê-lo — ainda precisa aparecer pra reordenar/desmarcar.
+    &--agiu span { color: var(--op2-texto-fraco); text-decoration: line-through; }
+
+    // Oculto: mesmo tratamento visual dos cards de POI/desafio — só o mestre vê a
+    // linha, os jogadores nunca recebem esses dados (filtrado na leitura de contexto).
+    // O nome fica legível; a marca é o retrato apagado e o nome em texto fraco.
+    &--oculto {
+      img { filter: grayscale(1); opacity: 0.7; }
+      > span:not(.op2-tag) { color: var(--op2-texto-fraco); }
+    }
+
+    // Um grupo de botões (editar + desvincular) fica sempre na ponta direita. O
+    // `margin-left: auto` precisa estar só no primeiro — com dois irmãos com auto
+    // margin, o espaço livre se divide entre os dois e eles saem afastados um do
+    // outro em vez de colados na borda (achado em uso real). Seletor de filho
+    // direto: sem isso, `:first-of-type` também casa com a primeira seta dentro
+    // de `&__setas`, puxando-a pra longe da segunda e quebrando a pilha vertical.
+    > .op2-botao-icone:first-of-type { margin-left: auto; }
+  }
+
+  // Alternativa ao drag-and-drop (spec: nem todo mestre acerta o alvo do drop numa
+  // lista curta) — duas setinhas pequenas, uma em cima da outra. Encostadas na
+  // borda direita em toda linha: quando o `margin-left: auto` morava na tag "NPC",
+  // as setas do NPC apareciam num lugar diferente das do personagem (achado em
+  // uso real: "o botão de mover está completamente diferente").
+  &__setas {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    margin-left: auto;
+
+    button {
+      padding: 0;
+      width: 1.2rem;
+      height: 0.9rem;
+      font-size: 0.65rem;
+    }
+  }
+
+  // Marcador ao lado do nome, não empurrado pra ponta — quem manda na ponta
+  // direita são as setinhas, iguais em toda linha.
+  &__npc-tag {
+    flex: 0 0 auto;
+    font-size: 0.6rem;
+  }
+}
+
+.op2-painel-tabela {
+  width: 100%;
+  margin: var(--op2-e2) 0;
+  border-collapse: collapse;
+
+  th {
+    font-family: var(--op2-fonte-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--op2-texto-fraco);
+    text-align: left;
+  }
+
+  td { padding: var(--op2-e1) var(--op2-e1) var(--op2-e1) 0; }
+
+  input[type="number"] { width: 4rem; }
+  input[type="text"] { width: 100%; }
+}
+
+// Destrancar (spec §7.1): Mastermind numérico. O palpite é uma fileira de
+// contadores, um por posição da senha — sem grade de cores, porque a resposta
+// já é posicional (exato/alto/baixo), não teria o que colorir por valor.
+.op2-destrancar-corpo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--op2-e2);
+  padding: var(--op2-e3);
+}
+
+.op2-destrancar {
+  &__topo {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--op2-e2);
+    font-family: var(--op2-fonte-display);
+  }
+
+  &__mestre {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--op2-e1);
+    padding: var(--op2-e2);
+    border: 1px dashed var(--op2-linha);
+    border-radius: var(--op2-raio);
+  }
+
+  &__historico {
+    width: 100%;
+    border-collapse: collapse;
+
+    td { padding: var(--op2-e1) var(--op2-e2) var(--op2-e1) 0; }
+  }
+
+  &__numero {
+    width: 1.5rem;
+    font-family: var(--op2-fonte-mono);
+    color: var(--op2-texto-fraco);
+  }
+
+  // Um palpite: cada posição é o número testado com a resposta embaixo
+  // (✓ exato, ↓ alto, ↑ baixo). Serve ao histórico do app e ao card de chat.
+  &__linha {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--op2-e1);
+  }
+
+  &__pos {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 2rem;
+    padding: 0.15rem 0.3rem;
+    border: 1px solid var(--op2-linha-forte);
+    border-radius: var(--op2-raio);
+    font-family: var(--op2-fonte-mono);
+    line-height: 1.1;
+
+    i { font-size: 0.7rem; color: var(--op2-texto-fraco); }
+    &--exato { border-color: var(--op2-sucesso); i { color: var(--op2-sucesso); } }
+    &--alto, &--baixo { i { color: var(--op2-critico); } }
+  }
+
+  &__num { font-size: 1.05rem; }
+
+  &__palpite {
+    display: flex;
+    gap: var(--op2-e2);
+    justify-content: center;
+  }
+
+  &__posicao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+  }
+
+  &__valor {
+    min-width: 1.6rem;
+    font-family: var(--op2-fonte-mono);
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
+
+// Laboratório Portátil (spec §9.1): a escada aparece como uma fileira de dados
+// já rolados, na ordem da rolagem — quem quebrou o crescimento salta aos olhos
+// pelo mesmo estilo "descartado" que os dados extras do teste comum usam.
+.op2-laboratorio-corpo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--op2-e2);
+  padding: var(--op2-e3);
+}
+
+.op2-laboratorio {
+  &__sequencia {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--op2-e2);
+  }
+
+  &__posicao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+  }
+}
+
+// Rádio Modificado (spec §9.2): as palavras de cada conjunto viram uma fileira de
+// fichas embaralhadas; reordenar é a mesma ideia das setinhas de subir/descer da
+// Ordem das Rodadas, só que na horizontal — daí o mesmo par de botões-ícone, com
+// setas pra esquerda/direita em vez de cima/baixo.
+.op2-radio-corpo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--op2-e2);
+  padding: var(--op2-e3);
+}
+
+.op2-radio {
+  // Um monte só: as peças verdadeiras e as falsas que o teste não removeu,
+  // misturadas — é o jogador quem descarta (spec §9.2).
+  &__pecas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--op2-e2);
+    padding: var(--op2-e2);
+    border: 1px dashed var(--op2-linha);
+    border-radius: var(--op2-raio);
+
+    &--resolvido { border-color: var(--op2-sucesso); border-style: solid; }
+    &--errado { border-color: var(--op2-vermelho); }
+  }
+
+  &__peca {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid var(--op2-linha);
+    border-radius: var(--op2-raio);
+    background: var(--op2-superficie-alta);
+
+    &--descartada {
+      opacity: 0.45;
+      border-style: dashed;
+
+      .op2-radio__peca-texto { text-decoration: line-through; }
+    }
+  }
+
+  &__peca-texto {
+    font-family: var(--op2-fonte-mono);
+    font-size: 0.85rem;
+  }
+
+  &__setas {
+    display: flex;
+    gap: 1px;
+
+    button {
+      padding: 0;
+      width: 0.9rem;
+      height: 1.2rem;
+      font-size: 0.65rem;
+    }
+  }
+}
+
+// Editor do Rádio na ficha do POI: um conjunto por linha, checkbox de verdadeiro +
+// a frase certa — bem mais simples que a lista de perguntas do quadro, porque não
+// tem DT nem perícia envolvida (spec §9.2).
+.op2-poi__radio-conjunto {
+  display: flex;
+  align-items: center;
+  gap: var(--op2-e2);
+
+  & + & { margin-top: var(--op2-e1); }
+
+  .op2-campo--inline { flex: 0 0 auto; }
+  input[type="text"] { flex: 1; }
+}
+
+// Botão flutuante do painel — não é controle de cena de propósito (veja o
+// comentário em criarBotaoFlutuante()). Fica acima da coluna de controles do
+// core, sempre clicável, independente de qual camada/tool está ativa.
+// Ações de investigação do personagem (abre pela ficha, `acoes-app.mjs`). Este
+// modal centraliza TODAS as ações do personagem — as de investigação e as que
+// vierem depois — então nasce largo e opaco.
+.op2-acoes .window-content {
+  overflow-y: auto;
+  background: var(--op2-fundo);
+}
+
+.op2-acoes .window-header { background: var(--op2-superficie-alta); }
+
+.op2-acoes-corpo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--op2-e3);
+  padding: var(--op2-e3);
+  font-family: var(--op2-fonte-corpo);
+}
+
+.op2-acoes {
+  &__topo { display: flex; align-items: center; gap: var(--op2-e2); }
+
+  // Grade em vez de fileira solta: os botões tinham larguras diferentes e a
+  // linha quebrava em qualquer lugar, virando um amontoado (achado em uso real).
+  &__grupo {
+    display: grid;
+    gap: var(--op2-e1);
+    grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+
+    .op2-botao {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: center;
+      gap: 0.45em;
+      padding: 0.4em 0.6em;
+      white-space: nowrap;
+      overflow: hidden;
+
+      // O ícone nunca some; é o rótulo que encolhe se faltar largura.
+      > i { flex: 0 0 auto; }
+    }
+  }
+
+  &__rotulo {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__alvo {
+    padding: var(--op2-e2);
+    border: 1px solid var(--op2-linha);
+    border-left: 3px solid var(--op2-vermelho);
+    border-radius: var(--op2-raio);
+    background: var(--op2-superficie);
+
+    & + & { margin-top: var(--op2-e2); }
+  }
+
+  &__alvo-topo {
+    display: flex;
+    align-items: center;
+    gap: var(--op2-e2);
+    margin-bottom: var(--op2-e2);
+
+    img {
+      width: 1.8rem; height: 1.8rem;
+      object-fit: cover; object-position: center top;
+      border-radius: var(--op2-raio);
+    }
+    strong { font-family: var(--op2-fonte-display); letter-spacing: 0.03em; }
+  }
+
+}
+
+// Botão que abre as ações, no cabeçalho da ficha logo abaixo de Nível/NEX. A
+// coluna de identidade é estreita: rótulo curto e `nowrap`, senão "AÇÕES DE
+// INVESTIGAÇÃO" quebra em duas linhas e vaza da caixa (achado em uso real).
+.op2-acoes-investigacao {
+  width: 100%;
+  margin-top: var(--op2-e2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--op2-e1);
+  padding: 0.3em 0.7em;
+  border: 0;
+  background: linear-gradient(160deg, var(--op2-vermelho) 0%, var(--op2-vermelho-escuro) 100%);
+  color: #fff !important; // sobre vermelho é sempre branco; o tema claro do core pinta button/select de escuro
+  font-family: var(--op2-fonte-display);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  // Tag rasgada, como todo rótulo do livro (docs/ESTILO-VISUAL.md).
+  clip-path: polygon(0 8%, 100% 0, 99% 90%, 1% 100%);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &:hover {
+    background: linear-gradient(160deg, var(--op2-vermelho-claro) 0%, var(--op2-vermelho) 100%);
+  }
+}
+
+.op2-acoes__subtitulo {
+  font-family: var(--op2-fonte-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--op2-texto-fraco);
+}
+
+.op2-acoes__ferramentas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--op2-e1);
+  margin-top: var(--op2-e2);
+  padding-top: var(--op2-e2);
+  border-top: 1px dashed var(--op2-linha);
+}
+
+
+// Botão flutuante do painel — nada de círculo: a gramática do livro é tag rasgada
+// (docs/ESTILO-VISUAL.md, "se você se pegar arredondando cantos, parou de seguir o
+// livro"). Mesma família de `.op2-tag`, em tamanho de alvo de clique.
+.op2-botao-flutuante {
+  position: fixed;
+  top: 12px;
+  // `right` é calculado em JS contra a largura de verdade da sidebar (achado em
+  // uso real: um valor fixo em CSS ou fica embaixo da sidebar aberta, ou sobra
+  // vazio com ela recolhida) — ver reposicionarBotaoFlutuante().
+  right: 12px;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 0;
+  background: linear-gradient(160deg, var(--op2-vermelho) 0%, var(--op2-vermelho-escuro) 100%);
+  color: #fff !important; // sobre vermelho é sempre branco; o tema claro do core pinta button/select de escuro
+  font-size: 1rem;
+  cursor: pointer;
+  clip-path: polygon(0 7%, 100% 0, 96% 93%, 4% 100%);
+  filter: drop-shadow(0 2px 4px rgb(0 0 0 / 55%));
+  transition: right 0.2s ease, filter 0.15s ease, transform 0.15s ease;
+
+  // A lupa fica um tico deslocada dentro do recorte torto — centralizar no
+  // retângulo deixa ela visualmente alta demais dentro do polígono.
+  i { transform: translateY(1px); }
+
+  &:hover {
+    background: linear-gradient(160deg, var(--op2-vermelho-claro) 0%, var(--op2-vermelho) 100%);
+    filter: drop-shadow(0 3px 7px rgb(200 50 30 / 55%));
+    transform: translateY(-1px);
+  }
+
+  &:active { transform: translateY(0); }
+
+  &:focus-visible {
+    outline: 2px solid var(--op2-texto);
+    outline-offset: 2px;
+  }
+}
+
+}
+
+// Roteiro da cena no painel: o que vem em cada rodada marcada, com o próximo aceso.
+
+// Cabeçalho de seção do painel com ferramentas (filtro, recolher/expandir).
+.op2-painel-secao__topo {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--op2-e2);
+
+  .op2-painel-titulo { flex: 1; margin: 0; }
+}
+
+.op2-painel-ferramentas {
+  display: flex;
+  align-items: center;
+  gap: var(--op2-e1);
+}
+
+.op2-painel-filtro {
+  width: 11rem;
+  font-size: 0.8rem;
+}
+
+// A barra de filtros do mestre, na linha de baixo das ferramentas: chips por
+// dimensão (um ligado por grupo, clicar de novo desliga), os seletores e a contagem.
+.op2-painel-filtros {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--op2-e1) var(--op2-e2);
+
+  &__seletor {
+    height: auto;
+    max-width: 11rem;
+    padding: 0.15em 0.4em;
+    font-size: 0.75rem;
+  }
+
+  &__contagem {
+    margin-left: auto;
+    font-family: var(--op2-fonte-mono);
+    font-size: 0.72rem;
+    color: var(--op2-texto-fraco);
+  }
+}
+
+.op2-chip-grupo {
+  display: inline-flex;
+}
+
+.op2-chip {
+  padding: 0.2em 0.6em;
+  border: 1px solid var(--op2-linha-forte);
+  border-radius: 0;
+  background: transparent;
+  color: var(--op2-texto-fraco);
+  font-family: var(--op2-fonte-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  & + & { margin-left: -1px; }
+
+  &:hover,
+  &.ativo {
+    position: relative;
+    z-index: 1;
+    border-color: var(--op2-vermelho);
+    color: var(--op2-texto);
+  }
+
+  &.ativo { background: color-mix(in srgb, var(--op2-vermelho) 22%, transparent); }
+}
+
+.op2-painel-contagem {
+  margin-left: 0.3rem;
+  font-family: var(--op2-fonte-mono);
+  font-size: 0.72rem;
+  color: var(--op2-texto-fraco);
+}
+
+// Duas colunas (achado em uso real: "a navegação está bem ruim"). À esquerda o que
+// muda a cada rodada — qual investigação, os botões de rodada, a ordem de quem age;
+// à direita a cena em abas. Cada coluna rola por conta própria: a ordem fica parada
+// enquanto o mestre percorre trinta pontos. Abaixo de ~42rem de largura as colunas
+// empilham de novo.
+.op2-painel-corpo--jogo {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  gap: 0 var(--op2-e3);
+}
+
+.op2-painel-lateral {
+  display: flex;
+  flex-direction: column;
+  gap: var(--op2-e3);
+  min-height: 0;
+
+  .op2-painel-corpo--jogo > & {
+    overflow-y: auto;
+    padding-right: var(--op2-e2);
+    border-right: 1px solid var(--op2-linha);
+  }
+
+  // Numa coluna de 15rem o seletor ocupa a linha inteira e os botões vêm abaixo.
+  .op2-painel-investigacao-seletor {
+    .op2-campo--inline { flex: 1 1 100%; }
+    select { flex: 1; min-width: 0; }
+  }
+
+  &__botoes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--op2-e2);
+  }
+
+  .op2-painel-topo {
+    flex-direction: column;
+    align-items: stretch;
+
+    &__acoes { flex-direction: column; }
+    .op2-botao { justify-content: center; }
+  }
+
+  .op2-painel-rodada { font-size: 0.85rem; }
+  .op2-painel-proximo { margin: 0; }
+  .op2-painel-ordem__linha { padding-inline: 0; }
+
+  // Título de seção como <h3>, não <summary>: o core dá ao h3 o tamanho de
+  // cabeçalho de janela — aqui é um rótulo de lista.
+  h3.op2-painel-titulo { font-size: 1rem; margin: 0 0 var(--op2-e1); }
+}
+
+.op2-painel-principal {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow-y: auto;
+
+  // As abas ficam no topo enquanto a lista rola.
+  .op2-abas {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--op2-fundo);
+  }
+
+  // Cada aba do tamanho do próprio rótulo, numa linha: "Pontos de interesse"
+  // dividido em três partes iguais quebrava em duas linhas e vazava do botão.
+  .op2-aba {
+    flex: 1 1 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--op2-e1);
+    white-space: nowrap;
+  }
+}
+
+.op2-painel-aba {
+  display: none;
+  padding-top: var(--op2-e3);
+
+  &.active {
+    display: flex;
+    flex-direction: column;
+    gap: var(--op2-e3);
+  }
+}
+
+// Janela estreita: uma coluna só, e quem rola é o corpo inteiro. As colunas
+// precisam de `flex: none` e `min-height: auto` — como itens de flex com
+// `min-height: 0` elas encolhiam para caber na altura e o conteúdo vazava uma
+// por cima da outra (achado no print).
+@container (max-width: 42rem) {
+  .op2-painel-corpo--jogo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--op2-e3);
+    overflow-y: auto;
+  }
+
+  .op2-painel-corpo--jogo > .op2-painel-lateral,
+  .op2-painel-corpo--jogo > .op2-painel-principal {
+    flex: none;
+    min-height: auto;
+    overflow: visible;
+  }
+
+  .op2-painel-corpo--jogo > .op2-painel-lateral {
+    padding-right: 0;
+    padding-bottom: var(--op2-e3);
+    border-right: 0;
+    border-bottom: 1px solid var(--op2-linha);
+  }
+}
+
+.op2-tag--ok { border-color: var(--op2-sucesso); color: var(--op2-sucesso); }
+
+// Uma rodada do roteiro, na ficha do evento: recolhida mostra o número e o começo da
+// narração; aberta, os campos. Com seis rodadas de duas caixas de texto cada, tudo
+// aberto era uma parede de textarea sem hierarquia (achado em uso real).
+.op2-evento-editor {
+  // Sem os `min-width: 0` a linha do cabeçalho (número + rodada da cena + resumo, tudo
+  // sem quebra) virava a largura mínima do bloco, e a ficha inteira passava a rolar de
+  // lado (medido: conteúdo de 881px numa janela de 550px).
+  min-width: 0;
+  border: 1px solid var(--op2-linha);
+  border-radius: var(--op2-raio);
+  background: var(--op2-superficie);
+  & + & { margin-top: var(--op2-e2); }
+
+  &__topo {
+    display: flex;
+    overflow: hidden;
+    min-width: 0;
+    align-items: center;
+    padding: var(--op2-e2);
+    gap: var(--op2-e2);
+    cursor: pointer;
+    list-style: none;
+
+    &::-webkit-details-marker { display: none; }
+    &:hover { background: var(--op2-superficie-alta); }
+  }
+
+  // O número da rodada é a âncora da leitura: sempre na mesma coluna, em display.
+  &__marca {
+    flex: 0 0 auto;
+    padding: 0.05rem 0.4rem;
+    border: 1px solid var(--op2-linha-forte);
+    border-radius: var(--op2-raio);
+    color: var(--op2-texto-fraco);
+    font-family: var(--op2-fonte-display);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  &__resumo {
+    overflow: hidden;
+    min-width: 0;
+    flex: 1 1 auto;
+    color: var(--op2-texto-fraco);
+    font-size: 0.85rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  // Em que rodada da cena a linha cai. Como etiqueta vermelha cheia ela gritava mais
+  // que a narração e ainda quebrava em duas linhas (achado na revisão visual).
+  &__cena {
+    flex: 0 0 auto;
+    padding: 0.1rem 0.45rem;
+    border: 1px solid var(--op2-linha-forte);
+    border-radius: var(--op2-raio);
+    color: var(--op2-texto-fraco);
+    font-family: var(--op2-fonte-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  &__corpo {
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--op2-e2) var(--op2-e2);
+    border-top: 1px solid var(--op2-linha);
+    gap: var(--op2-e2);
+    padding-top: var(--op2-e2);
+  }
+
+  &__campos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--op2-e2);
+    input[type="number"] { width: 4.5rem; }
+  }
+
+  textarea { width: 100%; }
+
+  // O que já passou apaga; a rodada que cai agora fica em destaque.
+  &--passado { opacity: 0.6; }
+
+  &--proximo {
+    border-color: var(--op2-vermelho);
+
+    .op2-evento-editor__marca {
+      border-color: var(--op2-vermelho);
+      color: var(--op2-vermelho-claro);
+    }
+  }
+
+  &[open] .op2-evento-editor__resumo { display: none; }
+}
+
+// Ficha do evento: rola como toda janela do sistema (regra global em `_base.scss`).
+// Tinha um mecanismo próprio (conteúdo fixo, lista interna rolando) — a exceção que
+// ficava para trás; uma regra só para todas as janelas.
+.op2-ficha--evento {
+  // Gatilho e descrição são uma ou duas frases: a caixa de 6rem da ficha de item
+  // empurrava o roteiro inteiro para fora da janela. Em edição a regra base devolve
+  // a altura de digitar.
+  .op2-item-ficha prose-mirror.inactive { min-height: 3.5rem; }
+}
+
+.op2-evento-roteiro__topo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--op2-e2);
+
+  .op2-ajuda { margin: 0; }
+}
+
+.op2-evento-roteiro__ferramentas {
+  display: flex;
+  flex: 0 0 auto;
+  gap: var(--op2-e1);
+}
+
+// O card do evento no painel: o roteiro à vista, com o mesmo corpo dos pontos.
+.op2-evento-card {
+  &__gatilho,
+  &__descricao {
+    padding: var(--op2-e2);
+    border-left: 2px solid var(--op2-linha-forte);
+    background: var(--op2-superficie);
+
+    p { margin: 0.15rem 0 0; }
+  }
+
+  &__gatilho { border-left-color: var(--op2-vermelho); }
+
+  // O estado ocupa a linha inteira, abaixo do título.
+  &__estado {
+    display: flex;
+    align-items: center;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    gap: var(--op2-e2);
+  }
+
+  // Estado é informação de bastidor, não alarme: fica em contorno, e a etiqueta
+  // vermelha cheia sobra para o que exige ação nesta rodada.
+  &__chip {
+    padding: 0.1rem 0.45rem;
+    border: 1px solid var(--op2-linha-forte);
+    border-radius: var(--op2-raio);
+    color: var(--op2-texto-fraco);
+    font-family: var(--op2-fonte-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    &--disparado {
+      border-color: var(--op2-vermelho);
+      color: var(--op2-vermelho-claro);
+    }
+  }
+
+  &__roteiro {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: var(--op2-e1);
+  }
+
+  // Número à esquerda, texto à direita: a coluna fixa deixa correr o olho pelas
+  // rodadas sem ler o texto todo.
+  &__linha {
+    display: grid;
+    align-items: start;
+    padding: var(--op2-e2);
+    border-radius: var(--op2-raio);
+    column-gap: var(--op2-e2);
+    grid-template-columns: 1.6rem minmax(0, 1fr);
+
+    & + & { border-top: 1px solid var(--op2-linha); }
+
+    &--passou { opacity: 0.55; }
+
+    &--agora {
+      background: var(--op2-superficie-alta);
+      box-shadow: inset 2px 0 0 var(--op2-vermelho);
+    }
+  }
+
+  &__rodada {
+    display: flex;
+    width: 1.6rem;
+    height: 1.6rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--op2-linha-forte);
+    border-radius: 50%;
+    color: var(--op2-texto-fraco);
+    font-family: var(--op2-fonte-display);
+    font-size: 0.8rem;
+  }
+
+  &__linha--agora &__rodada {
+    border-color: var(--op2-vermelho);
+    color: var(--op2-vermelho-claro);
+  }
+
+  &__texto {
+    min-width: 0;
+    font-size: 0.88rem;
+
+    p { margin: 0 0 0.25rem; }
+    p:last-child { margin-bottom: 0; }
+  }
+
+  &__na-cena {
+    display: block;
+    margin-bottom: var(--op2-e1);
+    color: var(--op2-texto-fraco);
+    font-family: var(--op2-fonte-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  &__efeito {
+    margin-top: var(--op2-e1);
+    padding: var(--op2-e1) var(--op2-e2);
+    border: 1px dashed var(--op2-linha);
+    border-radius: var(--op2-raio);
+  }
+}
+
+// A senha do Destrancar no cadastro do desafio: valor em mono, botões ao lado.
+.op2-desafio-senha {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--op2-e2);
+  margin: var(--op2-e2) 0;
+
+  &__valor {
+    font-family: var(--op2-fonte-mono);
+    font-size: 1.2rem;
+    letter-spacing: 0.15em;
+  }
+}
+
+// O problema do hack técnico na tela de todo mundo: conta grande, contador enorme.
+.op2-timer-hack .window-content { background: var(--op2-fundo); }
+
+.op2-timer-hack__corpo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--op2-e2);
+  padding: var(--op2-e3);
+  text-align: center;
+
+  &--acertou .op2-timer-hack__contador { color: var(--op2-sucesso); }
+  &--errou .op2-timer-hack__contador { color: var(--op2-vermelho-claro); }
+}
+
+.op2-timer-hack__topo {
+  display: flex;
+  align-items: center;
+  gap: var(--op2-e2);
+  font-family: var(--op2-fonte-display);
+  letter-spacing: 0.03em;
+}
+
+.op2-timer-hack__pergunta {
+  margin: var(--op2-e2) 0 0;
+  font-family: var(--op2-fonte-mono);
+  font-size: 2.6rem;
+  line-height: 1.1;
+
+  &--oral {
+    font-family: var(--op2-fonte-corpo);
+    font-size: 1.1rem;
+    color: var(--op2-texto-fraco);
+  }
+}
+
+.op2-timer-hack__contador {
+  font-family: var(--op2-fonte-display);
+  font-size: 7.5rem;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.op2-timer-hack--esgotado .op2-timer-hack__contador { color: var(--op2-vermelho-claro); }
+
+.op2-timer-hack__rotulo {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--op2-texto-fraco);
+}
+
+.op2-timer-hack__esgotado {
+  margin: 0;
+  font-family: var(--op2-fonte-display);
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: var(--op2-vermelho-claro);
+}
+
+.op2-timer-hack__verdito {
+  margin: 0;
+  font-family: var(--op2-fonte-display);
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.op2-timer-hack__mestre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--op2-e2);
+  margin-top: var(--op2-e2);
+}
+
+.op2-timer-hack__botoes { display: flex; gap: var(--op2-e2); }
+
+.op2-card__pergunta { font-family: var(--op2-fonte-mono); font-size: 1.3rem; }
+
+// Os desafios de um ponto, no card do painel: fichas clicáveis (o mestre abre a ficha).
+.op2-poi-card__desafios {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--op2-e1);
+  margin: var(--op2-e2) 0;
+}
+
+.op2-poi-card__desafio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--op2-e1);
+  padding: 0.2rem 0.5rem 0.2rem 0.3rem;
+  border: 1px solid var(--op2-linha-forte);
+  border-radius: var(--op2-raio);
+  background: var(--op2-superficie);
+  color: var(--op2-texto);
+  font-family: var(--op2-fonte-corpo);
+  font-size: 0.85rem;
+  cursor: pointer;
+
+  img { width: 1.3rem; height: 1.3rem; object-fit: cover; border-radius: var(--op2-raio); }
+  &--resolvido { border-color: var(--op2-sucesso); }
+  &:disabled { cursor: default; }
+}
+
+// Na janela de ações: o desafio dentro do ponto, separado das ferramentas.
+.op2-acoes__desafio-do-ponto {
+  margin-top: var(--op2-e2);
+  padding-top: var(--op2-e2);
+  border-top: 1px dashed var(--op2-linha);
+}
+
+.op2-acoes__alvo-topo--desafio strong { font-size: 0.95rem; }
+
+// Na ficha do ponto: a lista dos desafios dele, alvo do arrastar-e-soltar.
+.op2-poi__desafios .op2-painel-ordem__linha > .op2-botao-icone:first-of-type { margin-left: auto; }
+
+// Chegar a um card vindo de outro (ponto → desafio, desafio → ponto): pisca a borda.
+.op2-poi-card--foco,
+.op2-acoes__linha--foco {
+  animation: op2-foco-card 2.5s ease-out;
+}
+
+@keyframes op2-foco-card {
+  0%, 60% { box-shadow: 0 0 0 2px var(--op2-vermelho-claro); }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .op2-poi-card--foco,
+  .op2-acoes__linha--foco { animation: none; box-shadow: 0 0 0 2px var(--op2-vermelho-claro); }
+}
+
+// Janela de ações em abas: uma lista por aba, com filtro. Tudo numa página só virava
+// rolagem sem fim conforme a mesa revela pontos (achado em uso real).
+.op2-acoes__aba {
+  display: none;
+  flex-direction: column;
+  gap: var(--op2-e2);
+  min-height: 0;
+  padding-top: var(--op2-e2);
+
+  &.active { display: flex; }
+}
+
+.op2-acoes .op2-abas { position: sticky; top: 0; z-index: 1; background: var(--op2-fundo); }
+
+// Cada aba do tamanho do próprio rótulo, numa linha só (o mesmo do painel).
+.op2-acoes .op2-aba {
+  flex: 1 1 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--op2-e1);
+  white-space: nowrap;
+}
+
+.op2-acoes__lista {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--op2-e2);
+}
+
+// Uma linha por alvo: identidade em cima, botões embaixo — mais denso que o card
+// antigo, e o nome não disputa espaço com os botões.
+.op2-acoes__linha {
+  padding: var(--op2-e2);
+  border: 1px solid var(--op2-linha);
+  border-left: 3px solid var(--op2-vermelho);
+  border-radius: var(--op2-raio);
+  background: var(--op2-superficie);
+  display: flex;
+  flex-direction: column;
+  gap: var(--op2-e2);
+}
+
+.op2-acoes__linha-topo {
+  display: flex;
+  align-items: center;
+  gap: var(--op2-e2);
+
+  img {
+    width: 1.8rem; height: 1.8rem;
+    flex: 0 0 auto;
+    object-fit: cover; object-position: center top;
+    border-radius: var(--op2-raio);
+  }
+
+  strong { font-family: var(--op2-fonte-display); letter-spacing: 0.03em; }
+}
+
+.op2-acoes__identidade {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+// O ponto a que o desafio pertence, em voz baixa (a mesma leitura do painel).
+.op2-acoes__ponto {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--op2-texto-fraco);
+  font-family: var(--op2-fonte-display);
+  font-size: 0.66rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+// Do ponto para os desafios dele: troca de aba e filtra por ele.
+.op2-acoes__atalho {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  padding: 0.15rem 0.45rem;
+  border: 1px solid var(--op2-linha-forte);
+  border-radius: var(--op2-raio);
+  background: var(--op2-superficie-alta);
+  font-family: var(--op2-fonte-mono);
+  font-size: 0.72rem;
+  cursor: pointer;
+
+  i { color: var(--op2-texto-fraco); }
+  &:hover { border-color: var(--op2-vermelho); }
+}
+
+.op2-acoes .op2-painel-filtro { width: 100%; }
+.op2-acoes .op2-painel-secao__topo { margin-bottom: var(--op2-e2); }
+
+// Um evento com roteiro próprio, na Preparação: estado em cima (disparado na rodada
+// tal, em que rodada DELE a cena está), nome embaixo, botões na ponta.
+.op2-evento-linha {
+  &--disparado { border-left: 2px solid var(--op2-vermelho); padding-left: var(--op2-e2); }
+
+  .op2-acoes__identidade { flex: 1 1 auto; }
+  > .op2-botao { flex: 0 0 auto; }
+}
+
+// O efeito do evento é prosa de mestre, não título: `op2-card__efeito` já era o nome
+// do título em caixa alta da falha crítica, e o texto saía todo em maiúsculas na fonte
+// de display (achado na revisão visual).
+.op2-card__evento-efeito {
+  margin-top: var(--op2-e1);
+
+  strong {
+    font-family: var(--op2-fonte-display);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  p { margin: 0.15rem 0 0; }
+}
+
+// No card da rodada, qual evento falou e em que rodada dele.
+.op2-card__evento-nome {
+  display: block;
+  margin-bottom: var(--op2-e1);
+  font-family: var(--op2-fonte-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--op2-texto-fraco);
+}
+
+// Ficha do evento: o estado do gatilho no topo.
+.op2-evento-estado {
+  margin: 0;
+  padding: var(--op2-e2);
+  border: 1px dashed var(--op2-linha-forte);
+  border-radius: var(--op2-raio);
+  font-family: var(--op2-fonte-display);
+  letter-spacing: 0.03em;
+}
+
+.op2-evento-roteiro {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: var(--op2-e2);
+}

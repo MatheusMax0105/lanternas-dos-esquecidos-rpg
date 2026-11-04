@@ -1,0 +1,192 @@
+@layer system {
+
+// O core pinta TODA mensagem de chat com uma textura de pergaminho fixa
+// (`--chat-message-background: url(parchment.jpg)`) e texto escuro pensado para
+// aquele fundo claro — nosso card escuro ficava embutido dentro de um envelope
+// claro e "padrão" (achado em uso real). `.op2` chega no `<li>` via
+// `teatralizarEnvelope()` em `module/ui/chat.mjs`, só quando a mensagem carrega
+// um `.op2-card` — mensagens de outros sistemas ou do próprio core não mudam.
+//
+// O log de chat do próprio Foundry carrega `.theme-light` de forma fixa
+// (`<ol class="chat-log ... theme-light">`), não importa o tema geral da UI — é
+// assim mesmo com a interface em modo escuro. Sem redeclarar os tokens aqui, nosso
+// card herdaria o claro só por estar dentro do log, ficando diferente da ficha.
+// Redeclarar na frente do valor herdado é o que faz o chat seguir sempre o visual
+// escuro da ficha, do jeito que a mesa pediu.
+// Os valores aparecem duas vezes de propósito. `.op2-card`, lá dentro, TAMBÉM
+// carrega a classe `.op2` — e por isso ele TAMBÉM casa direto com a regra ambiente
+// `.theme-light .op2` de `_tokens.scss`. Um match direto sempre vence herança do
+// pai, não importa a ordem: herdar do `.chat-message.op2` (declarado abaixo) não
+// seria suficiente para o card em si, só para quem não tem `.op2` próprio. Redeclarar
+// aqui, com um seletor mais específico (`.op2` a mais no encadeamento), é o que
+// garante que o card também fique escuro.
+@mixin op2-tokens-escuros {
+  --op2-fundo: var(--op2-preto);
+  --op2-superficie: var(--op2-painel);
+  --op2-superficie-alta: var(--op2-painel-alto);
+  --op2-texto: var(--op2-tinta);
+  --op2-texto-fraco: var(--op2-tinta-fraca);
+  --op2-linha: #{rgba(#f2ede6, 0.12)};
+  --op2-linha-forte: #{rgba(#f2ede6, 0.22)};
+}
+
+.chat-message.op2 {
+  @include op2-tokens-escuros;
+
+  background: var(--op2-superficie);
+  border-color: var(--op2-linha-forte);
+  color: var(--op2-texto);
+
+  .message-header,
+  .message-sender,
+  .message-metadata,
+  .flavor-text {
+    color: var(--op2-texto-fraco);
+  }
+
+  .op2-card {
+    @include op2-tokens-escuros;
+  }
+}
+
+.op2-card {
+  padding: var(--op2-e2);
+  border: 1px solid var(--op2-linha);
+  border-left: 3px solid var(--op2-linha-forte);
+  border-radius: var(--op2-raio);
+  background: var(--op2-superficie);
+  color: var(--op2-texto);
+  font-family: var(--op2-fonte-corpo);
+
+  &--critico { border-left-color: var(--op2-critico); }
+  &--sucesso { border-left-color: var(--op2-sucesso); }
+  &--falha,
+  &--falha-critica { border-left-color: var(--op2-vermelho); }
+
+  &__topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--op2-e2);
+    gap: var(--op2-e2);
+  }
+
+  &__dt {
+    color: var(--op2-texto-fraco);
+    font-family: var(--op2-fonte-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  &__dados {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--op2-e2);
+  }
+
+  &__dado .op2-dado { width: 2.1rem; height: 2.1rem; }
+
+  &__igual { color: var(--op2-texto-fraco); font-family: var(--op2-fonte-display); }
+
+  &__total {
+    font-family: var(--op2-fonte-display);
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__desfecho {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: var(--op2-e2) 0 0;
+    font-family: var(--op2-fonte-display);
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    &--critico { color: var(--op2-critico); }
+    &--sucesso { color: var(--op2-sucesso); }
+    &--falha { color: var(--op2-texto-fraco); }
+    // Nem sucesso nem falha: o dado entregou, a rolagem não somou nada.
+    &--parcial { color: var(--op2-critico); }
+    &--falha-critica { color: var(--op2-vermelho-claro); }
+  }
+
+  // RA e RB são lidos direto por várias mecânicas, então ficam sempre visíveis.
+  &__leituras {
+    display: flex;
+    margin: var(--op2-e2) 0 0;
+    gap: var(--op2-e3);
+
+    div { display: flex; align-items: baseline; gap: 0.3rem; }
+
+    dt {
+      color: var(--op2-texto-fraco);
+      font-family: var(--op2-fonte-display);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+    }
+
+    // O core tem `dl dd { color: var(--color-text-primary) }`, pensado para o
+    // fundo claro do log de chat — sem redeclarar aqui, o texto saía quase preto
+    // sobre o fundo quase preto do nosso tema (achado em uso real).
+    dd { margin: 0; color: var(--op2-texto); font-family: var(--op2-fonte-mono); font-size: 0.9rem; }
+  }
+
+  &__acoes {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: var(--op2-e2);
+    gap: var(--op2-e1);
+  }
+
+  &__efeito {
+    margin: var(--op2-e2) 0 0;
+    font-family: var(--op2-fonte-display);
+    font-size: 1.05rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  &__descricao { margin: 0.2rem 0 0; font-size: 0.85rem; }
+}
+
+}
+
+// Roteiro da cena no card de rodada: a narração é para ler em voz alta.
+.op2-card__evento {
+  margin-top: var(--op2-e2);
+  padding-left: var(--op2-e2);
+  border-left: 2px solid var(--op2-vermelho);
+}
+
+.op2-card__narracao {
+  margin: 0 0 var(--op2-e1);
+  font-style: italic;
+}
+
+// O roteiro da cena no card da rodada: a narração é HTML do mestre (parágrafos), lida
+// em voz alta; o efeito só ele vê.
+.op2-card__narracao p { margin: 0 0 var(--op2-e1); }
+.op2-card__narracao { font-style: italic; }
+
+// Card só do mestre (Interagir): a descrição contextual é bastidor. A faixa diz
+// que ninguém mais vê — senão o mestre achava que a mesa inteira leu (achado em
+// uso real).
+.op2-card--mestre { border-left-style: dashed; }
+
+.op2-card__so-mestre {
+  margin: var(--op2-e1) 0;
+  font-family: var(--op2-fonte-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--op2-critico);
+}
+
+.op2-card__contextual {
+  padding-left: var(--op2-e2);
+  border-left: 2px dashed var(--op2-critico);
+}

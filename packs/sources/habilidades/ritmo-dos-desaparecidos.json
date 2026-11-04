@@ -1,0 +1,28 @@
+{
+  "_id": "a100000000000028",
+  "_key": "!items!a100000000000028",
+  "name": "Ritmo dos Desaparecidos",
+  "type": "habilidade",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/foco-emocional.svg",
+  "system": {
+    "origem": "ocupacao",
+    "perfil": "",
+    "custo": "",
+    "custoPD": 0,
+    "descricao": "<p>Você identifica repetições, pausas e trechos omitidos em cantos ou batidas cerimoniais. Ao ouvir uma execução, pode indicar à mesa o padrão que não se encaixa; um teste de <strong>Caligrafia e Artes</strong> ajuda a registrar ou comparar ritmos fragmentados.</p>",
+    "efeito": {
+      "tipo": "nenhum",
+      "passos": 1,
+      "dado": "d4",
+      "chaves": [],
+      "permitirD20": false,
+      "pdAoDescobrir": 0
+    },
+    "usoEmInvestigacao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

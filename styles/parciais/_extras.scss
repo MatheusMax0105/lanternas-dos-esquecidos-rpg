@@ -1,0 +1,406 @@
+// Importador de extras: o zip da editora vira a pasta do mundo.
+@layer system {
+  .op2-extras {
+    .op2-extras__corpo {
+      display: flex;
+      flex-direction: column;
+      gap: var(--op2-e2);
+      padding: var(--op2-e1) 0;
+    }
+
+    .op2-extras__intro {
+      margin: 0;
+    }
+
+    .op2-extras__arquivo input[type="file"] {
+      display: block;
+      width: 100%;
+      // O core fixa a altura de `input` (--input-height) e o botão nativo do
+      // "Escolher arquivo" é mais alto que isso: saía cortado em cima (achado em uso real).
+      height: auto;
+      min-height: 2.75rem;
+      line-height: normal;
+      overflow: visible;
+      box-sizing: border-box;
+      padding: 0.6rem 0.5rem;
+      border: 1px dashed var(--op2-linha);
+      background: var(--op2-superficie);
+      color: inherit;
+    }
+
+    progress {
+      width: 100%;
+      height: 0.75rem;
+      accent-color: var(--op2-vermelho);
+    }
+
+    .op2-extras__erro {
+      margin: 0;
+      color: var(--op2-vermelho);
+    }
+
+    .op2-extras__ok {
+      margin: 0;
+      color: var(--op2-sucesso);
+    }
+
+    .op2-extras__lista {
+      margin: 0;
+      padding-left: 1.25rem;
+      max-height: 12rem;
+      overflow: auto;
+    }
+
+    .op2-extras__botoes {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.5rem;
+    }
+
+    .op2-extras__aventuras {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .op2-extras__aventura {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid var(--op2-linha);
+      border-radius: var(--op2-raio);
+
+      .op2-extras__texto {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+        min-width: 0;
+      }
+    }
+  }
+}
+
+// A janela de aventuras: o mestre escolhe o PDF dele e o ato entra no mundo.
+@layer system {
+  .op2-aventuras {
+    .op2-aventuras__corpo {
+      display: flex;
+      flex-direction: column;
+      gap: var(--op2-e3);
+      padding: var(--op2-e1) 0;
+    }
+
+    .op2-aventuras__escolha {
+      display: flex;
+      align-items: center;
+      gap: var(--op2-e2);
+    }
+
+    .op2-aventuras__progresso {
+      color: var(--op2-texto-fraco);
+      font-family: var(--op2-fonte-mono);
+      font-size: 0.8rem;
+    }
+
+    .op2-aventuras__atos {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      gap: var(--op2-e2);
+    }
+
+    // Um ato por linha: nome e estado à esquerda, o que dá para fazer à direita.
+    .op2-aventuras__ato {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: var(--op2-e2);
+      border: 1px solid var(--op2-linha);
+      border-radius: var(--op2-raio);
+      background: var(--op2-superficie);
+      gap: var(--op2-e2);
+
+      &--pronto { border-color: var(--op2-vermelho); }
+    }
+
+    // Os botões numa linha só, sem quebrar o texto; se não couberem ao lado do
+    // nome, descem inteiros para a linha de baixo.
+    .op2-aventuras__acoes {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: auto;
+      gap: var(--op2-e1);
+
+      .op2-botao { white-space: nowrap; flex: 0 0 auto; }
+    }
+
+    .op2-aventuras__artes {
+      margin-top: var(--op2-e1);
+      color: var(--op2-texto-fraco);
+      font-size: 0.85rem;
+
+      &--faltam { color: var(--op2-vermelho-claro); }
+    }
+
+    .op2-aventuras__erro-detalhe {
+      display: block;
+      margin-top: var(--op2-e1);
+      font-size: 0.75rem;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .op2-aventuras__identidade {
+      display: flex;
+      min-width: 0;
+      flex: 1 1 auto;
+      flex-direction: column;
+    }
+
+    .op2-aventuras__estado {
+      color: var(--op2-texto-fraco);
+      font-family: var(--op2-fonte-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .op2-aventuras__erro {
+      margin-top: var(--op2-e1);
+      color: var(--op2-vermelho-claro);
+      font-size: 0.85rem;
+    }
+
+    .op2-aventuras__resumo {
+      margin-top: var(--op2-e1);
+      color: var(--op2-texto-fraco);
+      font-size: 0.85rem;
+    }
+
+    // Os avisos da conferência do Ato II, fechados por padrão: são para conferir no
+    // livro, não para assustar.
+    .op2-aventuras__problemas {
+      margin-top: var(--op2-e1);
+      font-size: 0.8rem;
+
+      summary { cursor: pointer; color: var(--op2-vermelho-claro); }
+      ul { margin: var(--op2-e1) 0 0; padding-left: 1.2em; }
+    }
+
+    // O aviso que a Licença da Comunidade exige, em pé de página, com o selo.
+    .op2-aventuras__selo {
+      flex: 0 0 auto;
+      width: 56px;
+      height: 56px;
+    }
+
+    .op2-aventuras__licenca {
+      display: flex;
+      align-items: center;
+      padding-top: var(--op2-e2);
+      border-top: 1px solid var(--op2-linha);
+      color: var(--op2-texto-fraco);
+      font-size: 0.8rem;
+      gap: var(--op2-e2);
+
+      a { color: var(--op2-vermelho-claro); }
+    }
+  }
+}
+
+// A tela de boas-vindas / "Sobre e licença".
+@layer system {
+  .op2-boas-vindas {
+    .op2-boas-vindas__corpo {
+      display: flex;
+      flex-direction: column;
+      gap: var(--op2-e2);
+      padding: 0.25rem 0;
+    }
+
+    .op2-boas-vindas__abertura {
+      position: relative;
+      isolation: isolate;
+      display: grid;
+      align-items: center;
+      min-height: 620px;
+      padding: clamp(1.25rem, 4vw, 3rem);
+      overflow: hidden;
+      border: 1px solid rgba(217, 180, 111, 0.55);
+      background:
+        linear-gradient(rgba(12, 9, 8, 0.34), rgba(12, 9, 8, 0.48)),
+        url("../assets/campanha/lanternas-dos-esquecidos.png") center 52% / cover no-repeat;
+
+      &::before {
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        content: "";
+        background: radial-gradient(ellipse at center, transparent 20%, rgba(7, 6, 6, 0.32) 100%);
+        pointer-events: none;
+      }
+    }
+
+    .op2-boas-vindas__pagina {
+      width: min(100%, 680px);
+      margin: 0 auto;
+      padding: clamp(1.25rem, 4vw, 2.75rem);
+      border: 1px solid rgba(217, 180, 111, 0.72);
+      background: rgba(14, 11, 10, 0.64);
+      box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.28);
+      color: #f1e8d8;
+      text-align: center;
+    }
+
+    .op2-boas-vindas__subtitulo {
+      margin: 0 0 0.75rem;
+      color: #d7bc83;
+      font-family: var(--op2-fonte-mono);
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .op2-boas-vindas__titulo {
+      margin: 0;
+      color: #f5ead6;
+      font-family: var(--op2-fonte-display);
+      font-size: clamp(2rem, 4.5vw, 3.45rem);
+      font-weight: 700;
+      letter-spacing: 0.055em;
+      line-height: 1.02;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
+    }
+
+    .op2-boas-vindas__texto {
+      max-width: 35rem;
+      margin: clamp(1.5rem, 4vh, 2.25rem) auto 0;
+      font-family: var(--op2-fonte-corpo);
+      font-size: clamp(0.98rem, 1.35vw, 1.12rem);
+      line-height: 1.75;
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+
+      p { margin: 0 0 0.8rem; }
+      p:last-child { margin-bottom: 0; }
+    }
+
+    .op2-boas-vindas__campanha {
+      margin-top: clamp(1.5rem, 4vh, 2.25rem);
+      padding-top: 1rem;
+      border-top: 1px solid rgba(217, 180, 111, 0.48);
+      color: #d7bc83;
+      font-family: var(--op2-fonte-mono);
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+    }
+
+    .op2-boas-vindas__controles {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--op2-e2) var(--op2-e3);
+      padding: 0.35rem 0.1rem 0;
+    }
+
+    .op2-boas-vindas__mostrar {
+      display: flex;
+      align-items: center;
+      gap: var(--op2-e1);
+      color: var(--op2-texto-fraco);
+      font-size: 0.8rem;
+    }
+
+    .op2-boas-vindas__sobre {
+      position: relative;
+      color: var(--op2-texto-fraco);
+      font-size: 0.8rem;
+
+      summary {
+        cursor: pointer;
+        color: #b69a62;
+      }
+    }
+
+    .op2-boas-vindas__sobre-conteudo {
+      position: absolute;
+      z-index: 2;
+      right: 0;
+      bottom: calc(100% + 0.6rem);
+      width: min(32rem, 80vw);
+      padding: var(--op2-e3);
+      border: 1px solid var(--op2-linha-forte);
+      background: var(--op2-superficie);
+      box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.45);
+    }
+
+    .op2-boas-vindas__creditos {
+      margin-bottom: var(--op2-e3);
+      padding-bottom: var(--op2-e2);
+      border-bottom: 1px solid var(--op2-linha);
+      color: var(--op2-texto);
+      line-height: 1.5;
+
+      h2 {
+        margin: 0 0 var(--op2-e2);
+        color: #d7bc83;
+        font-family: var(--op2-fonte-display);
+        font-size: 1.1rem;
+      }
+
+      p { margin: 0 0 var(--op2-e1); }
+      p:last-child { margin-bottom: 0; }
+      a { color: var(--op2-vermelho-claro); }
+    }
+
+    .op2-boas-vindas__cabecalho {
+      display: flex;
+      align-items: center;
+      gap: var(--op2-e3);
+      margin-bottom: var(--op2-e2);
+    }
+
+    .op2-boas-vindas__selo {
+      flex: 0 0 auto;
+      width: 64px;
+      height: auto;
+    }
+
+    .op2-boas-vindas__versao,
+    .op2-boas-vindas__aviso { margin: 0; }
+
+    .op2-boas-vindas__aviso {
+      margin-top: var(--op2-e1);
+      color: var(--op2-texto-fraco);
+      font-size: 0.75rem;
+    }
+
+    .op2-boas-vindas__links {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      gap: var(--op2-e1) var(--op2-e3);
+
+      a { color: var(--op2-vermelho-claro); }
+    }
+
+    .op2-boas-vindas__fechar {
+      margin-left: auto;
+    }
+
+    @media (max-width: 700px) {
+      .op2-boas-vindas__abertura { min-height: 540px; }
+      .op2-boas-vindas__pagina { padding: 1.25rem; }
+      .op2-boas-vindas__controles { align-items: flex-start; }
+      .op2-boas-vindas__fechar { margin-left: 0; }
+    }
+  }
+}

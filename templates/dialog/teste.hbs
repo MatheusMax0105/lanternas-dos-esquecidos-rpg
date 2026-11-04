@@ -1,0 +1,94 @@
+<div class="op2-teste">
+  {{!-- Ajuda do aliado (spec §4.7): o passo já vem marcado no dado, mas quem rola
+        precisa saber de onde ele veio — e pode desfazer no ±. --}}
+  {{#if estado.ajuda}}
+    <p class="op2-teste__ajuda">
+      <i class="fa-solid fa-hands-holding" aria-hidden="true"></i>
+      {{localize "OP2.Ajuda.NoDialogo" de=estado.ajuda.de pericia=estado.ajuda.pericia passos=estado.ajuda.passos}}
+    </p>
+  {{/if}}
+
+  {{#if estado.impetoDisponivel}}
+    <label class="op2-campo op2-campo--inline">
+      <input type="checkbox" data-action="alternarImpeto" {{#if estado.gastarImpeto}}checked{{/if}}>
+      <span>{{localize "OP2.Impeto.Gastar"}} ({{estado.impetoDisponivel}})</span>
+    </label>
+  {{/if}}
+
+  <ol class="op2-teste__componentes">
+    {{#each componentes}}
+      <li class="op2-teste__componente op2-teste__componente--{{tipo}}">
+        <span class="op2-teste__rotulo">{{rotulo}}</span>
+        <span class="op2-teste__dado">{{{icone}}}</span>
+        {{#unless (op2Eq tipo "extra")}}
+          <div class="op2-passo" role="group" aria-label="{{localize 'OP2.Dialog.Teste.Passos'}}">
+            <button type="button" data-action="passo" data-alvo="{{tipo}}" data-delta="-1"
+              aria-label="{{localize 'OP2.StepDown'}}">−</button>
+            <button type="button" data-action="passo" data-alvo="{{tipo}}" data-delta="1"
+              aria-label="{{localize 'OP2.StepUp'}}">+</button>
+          </div>
+        {{/unless}}
+      </li>
+    {{/each}}
+  </ol>
+
+  {{#unless estado.somenteAtributo}}
+    <label class="op2-campo">
+      <span>{{localize "OP2.Dialog.Teste.Atributo"}}</span>
+      <select name="chaveAtributo">
+        {{#each atributos}}
+          <option value="{{chave}}" {{#if selecionado}}selected{{/if}}>{{rotulo}} — {{dado}}</option>
+        {{/each}}
+      </select>
+      <p class="op2-ajuda">{{localize "OP2.Dialog.Teste.AtributoAjuda"}}</p>
+    </label>
+  {{/unless}}
+
+  {{#if temExtras}}
+    <fieldset class="op2-extras">
+      <legend>{{localize "OP2.Dialog.Teste.Extras"}}</legend>
+      {{#each extras}}
+        <button type="button" class="op2-extra{{#if ativo}} ativo{{/if}}{{#if semPD}} op2-extra--sem-pd{{/if}}"
+          data-action="alternarExtra" data-item-id="{{id}}" aria-pressed="{{ativo}}"
+          {{#if custoPD}}data-tooltip="{{localize 'OP2.Dialog.Teste.CustoPD' custo=custoPD}}"{{/if}}>
+          <img src="{{img}}" alt="">
+          <span class="op2-extra__nome">{{nome}}</span>
+          <span class="op2-extra__efeito">
+            {{#if (op2Eq tipo "passo")}}{{#if (op2Eq passos 1)}}+1{{else}}{{passos}}{{/if}} {{localize "OP2.Passo"}}{{/if}}
+            {{#if (op2Eq tipo "dado-extra")}}+{{dado}}{{/if}}
+          </span>
+          {{!-- O custo fica no próprio botão: marcar já é aceitar pagar. --}}
+          {{#if custoPD}}<span class="op2-extra__custo">−{{custoPD}} PD</span>{{/if}}
+        </button>
+      {{/each}}
+    </fieldset>
+  {{/if}}
+
+  {{#unless estado.semDT}}
+    <div class="op2-teste__dificuldade">
+      <label class="op2-campo">
+        <span>{{localize "OP2.DT"}}</span>
+        {{!-- `min="0"`, não 1: um desafio de acesso pode ter DT 0 (objeto que só
+              exige a ação, sem dificuldade), e o DT do ambiente em Alcançar também.
+              Com `min="1"` o navegador bloqueava o submit por validação e o botão
+              Rolar não fazia absolutamente nada, sem mensagem nenhuma — achado em
+              uso real, invisível pros testes porque eles usam `rapido: true`. --}}
+        <input type="number" name="dt" value="{{estado.dt}}" min="0" step="1" inputmode="numeric" autofocus>
+      </label>
+      <label class="op2-campo op2-campo--inline">
+        <input type="checkbox" name="oposto" {{#if estado.oposto}}checked{{/if}}>
+        <span>{{localize "OP2.Dialog.Teste.Oposto"}}</span>
+      </label>
+    </div>
+  {{/unless}}
+
+  {{#if excedeContagem}}
+    <p class="op2-aviso">
+      <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+      {{localize "OP2.Dialog.Teste.AvisoSelecao"}}
+    </p>
+  {{/if}}
+  {{#if noTeto}}
+    <p class="op2-ajuda">{{localize "OP2.Dialog.Teste.NoTeto"}}</p>
+  {{/if}}
+</div>

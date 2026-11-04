@@ -1,0 +1,31 @@
+{
+  "_id": "6a8df4108132510a",
+  "name": "Foco Mental",
+  "type": "habilidade",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/foco-mental.svg",
+  "system": {
+    "origem": "ocupacao",
+    "perfil": "",
+    "custo": "2 PD",
+    "descricao": "<p>Quando faz um <strong>teste mental</strong>, você pode gastar <strong>2 PD</strong> para receber <strong>+d4</strong> no teste.</p>",
+    "efeito": {
+      "tipo": "dado-extra",
+      "passos": 1,
+      "dado": "d4",
+      "chaves": [
+        "mente"
+      ],
+      "permitirD20": false
+    },
+    "usoEmInvestigacao": "",
+    "custoPD": 2
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_key": "!items!6a8df4108132510a"
+}

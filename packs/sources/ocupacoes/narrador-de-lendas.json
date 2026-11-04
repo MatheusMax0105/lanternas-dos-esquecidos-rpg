@@ -1,0 +1,17 @@
+{
+  "_id": "b100000000000027",
+  "_key": "!items!b100000000000027",
+  "name": "Narrador de Lendas",
+  "type": "ocupacao",
+  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "system": {
+    "descricao": "<p>Você guarda histórias que atravessam gerações e conhece as variações contadas por cada povoado. Algumas lendas parecem mudar para esconder um fato que ninguém quer recordar.</p>",
+    "habilidade": "Voz dos Ancestrais",
+    "habilidadeUuid": "Compendium.ordem-paranormal-2e.habilidades.Item.a100000000000027"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

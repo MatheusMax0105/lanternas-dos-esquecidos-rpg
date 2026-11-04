@@ -1,0 +1,17 @@
+{
+  "_id": "b100000000000001",
+  "_key": "!items!b100000000000001",
+  "name": "Monge Taoísta",
+  "type": "ocupacao",
+  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "system": {
+    "descricao": "<p>Você aprendeu a buscar equilíbrio em meio a presságios, perdas e relatos que não se encaixam. A disciplina da respiração ajuda a preservar a própria identidade diante do inexplicável.</p>",
+    "habilidade": "Respiração entre os Nomes",
+    "habilidadeUuid": "Compendium.ordem-paranormal-2e.habilidades.Item.a100000000000001"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

@@ -1,0 +1,28 @@
+{
+  "_id": "a100000000000002",
+  "_key": "!items!a100000000000002",
+  "name": "Sino da Recordação",
+  "type": "habilidade",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/foco-emocional.svg",
+  "system": {
+    "origem": "ocupacao",
+    "perfil": "",
+    "custo": "",
+    "custoPD": 0,
+    "descricao": "<p>Você conhece os usos de sinos e outros chamados em cerimônias de sua tradição. Quando encontra um toque ou objeto ritual, pode explicar à mesa que tipo de ocasião ele costuma marcar; um teste de <strong>Filosofia e Tradições</strong> ajuda a comparar costumes pouco familiares.</p>",
+    "efeito": {
+      "tipo": "nenhum",
+      "passos": 1,
+      "dado": "d4",
+      "chaves": [],
+      "permitirD20": false,
+      "pdAoDescobrir": 0
+    },
+    "usoEmInvestigacao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

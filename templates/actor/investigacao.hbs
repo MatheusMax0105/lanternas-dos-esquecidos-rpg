@@ -1,0 +1,18 @@
+{{!-- A ficha da investigação é a mesma tela do painel (achado em uso real: "não rola
+      colocar essa mesma tela no cadastro?"): coluna da esquerda com nome, imagem,
+      rodada e ordem; a cena em abas à direita. A diferença é que aqui a investigação
+      é o próprio documento, e nome, imagem e notas se editam. --}}
+<div class="op2-painel-corpo op2-painel-corpo--jogo">
+  <aside class="op2-painel-lateral">
+    <header class="op2-item-ficha__topo">
+      <img src="{{actor.img}}" alt="" data-action="editImage" data-edit="img">
+      <input type="text" class="op2-nome" name="name" value="{{actor.name}}" {{#unless editavel}}disabled{{/unless}}>
+    </header>
+
+    {{> (op2Caminho "cena/partials/investigacao-lateral")}}
+  </aside>
+
+  <div class="op2-painel-principal">
+    {{> (op2Caminho "cena/partials/investigacao-abas")}}
+  </div>
+</div>

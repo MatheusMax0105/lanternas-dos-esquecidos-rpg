@@ -1,0 +1,17 @@
+{
+  "_id": "b100000000000003",
+  "_key": "!items!b100000000000003",
+  "name": "Escriba Imperial",
+  "type": "ocupacao",
+  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "system": {
+    "descricao": "<p>Você registra decretos, depoimentos e nomes em documentos que precisam sobreviver a viagens e mudanças de poder. Já viu como um erro de escrita pode apagar alguém dos registros.</p>",
+    "habilidade": "Traço que Permanece",
+    "habilidadeUuid": "Compendium.ordem-paranormal-2e.habilidades.Item.a100000000000003"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

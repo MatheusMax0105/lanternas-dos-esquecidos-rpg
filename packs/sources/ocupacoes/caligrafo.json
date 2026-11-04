@@ -1,0 +1,17 @@
+{
+  "_id": "b100000000000029",
+  "_key": "!items!b100000000000029",
+  "name": "Calígrafo",
+  "type": "ocupacao",
+  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "system": {
+    "descricao": "<p>Você produz cópias cuidadosas de cartas, registros e nomes. Em uma época de medo, uma escrita preservada pode ser a única prova de que alguém viveu.</p>",
+    "habilidade": "Selo contra o Esquecimento",
+    "habilidadeUuid": "Compendium.ordem-paranormal-2e.habilidades.Item.a100000000000029"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

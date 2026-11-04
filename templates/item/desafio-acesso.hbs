@@ -1,0 +1,330 @@
+{{!-- A ficha segue as abordagens: cada bloco de configuração só aparece se o
+      mestre marcou aquela abordagem. Antes a ficha despejava Progresso, Hackear
+      técnico e Hackear social de uma vez, mesmo num objeto que só se arromba
+      (achado em uso real). --}}
+<div class="op2-item-ficha">
+  <header class="op2-item-ficha__topo">
+    <img src="{{item.img}}" alt="" data-action="editImage" data-edit="img">
+    <input type="text" class="op2-nome" name="name" value="{{item.name}}" {{#unless editavel}}disabled{{/unless}}>
+  </header>
+
+  <fieldset class="op2-desafio-abordagens">
+    <legend>{{localize "OP2.Desafio.Abordagens"}}</legend>
+    <p class="op2-ajuda">{{localize "OP2.Desafio.AbordagensAjuda"}}</p>
+    <div class="op2-desafio-abordagens__lista">
+      <label class="op2-campo op2-campo--inline">
+        <input type="checkbox" name="system.abordagens.arrombar" {{#if sistema.abordagens.arrombar}}checked{{/if}}
+          {{#unless editavel}}disabled{{/unless}}>
+        <span>{{localize "OP2.Desafio.Arrombar"}}</span>
+      </label>
+      <label class="op2-campo op2-campo--inline">
+        <input type="checkbox" name="system.abordagens.destrancar" {{#if sistema.abordagens.destrancar}}checked{{/if}}
+          {{#unless editavel}}disabled{{/unless}}>
+        <span>{{localize "OP2.Desafio.Destrancar"}}</span>
+      </label>
+      <label class="op2-campo op2-campo--inline">
+        <input type="checkbox" name="system.abordagens.hackTecnico" {{#if sistema.abordagens.hackTecnico}}checked{{/if}}
+          {{#unless editavel}}disabled{{/unless}}>
+        <span>{{localize "OP2.Desafio.HackTecnico"}}</span>
+      </label>
+      <label class="op2-campo op2-campo--inline">
+        <input type="checkbox" name="system.abordagens.hackSocial" {{#if sistema.abordagens.hackSocial}}checked{{/if}}
+          {{#unless editavel}}disabled{{/unless}}>
+        <span>{{localize "OP2.Desafio.HackSocial"}}</span>
+      </label>
+      <label class="op2-campo op2-campo--inline">
+        <input type="checkbox" name="system.abordagens.sustentar" {{#if sistema.abordagens.sustentar}}checked{{/if}}
+          {{#unless editavel}}disabled{{/unless}}>
+        <span>{{localize "OP2.Desafio.Sustentar"}}</span>
+      </label>
+      <label class="op2-campo op2-campo--inline">
+        <input type="checkbox" name="system.abordagens.generico" {{#if sistema.abordagens.generico}}checked{{/if}}
+          {{#unless editavel}}disabled{{/unless}}>
+        <span>{{localize "OP2.Desafio.Generico"}}</span>
+      </label>
+    </div>
+  </fieldset>
+
+  {{#unless temAlgumaAbordagem}}
+    <p class="op2-ajuda">{{localize "OP2.Desafio.SemAbordagem"}}</p>
+  {{/unless}}
+
+  {{#if temAlgumaAbordagem}}
+    {{!-- A DT do objeto vale para toda abordagem: é a dificuldade do obstáculo. --}}
+    <label class="op2-campo">
+      <span>{{localize "OP2.Desafio.DtObjeto"}}</span>
+      <input type="number" name="system.dtObjeto" value="{{sistema.dtObjeto}}" min="0"
+        {{#unless editavel}}disabled{{/unless}}>
+    </label>
+  {{/if}}
+
+  {{#if sistema.abordagens.arrombar}}
+    <fieldset class="op2-desafio-progresso">
+      <legend>{{localize "OP2.Desafio.Arrombar"}}</legend>
+
+      <div class="op2-grade-campos">
+        <label class="op2-campo">
+          <span>{{localize "OP2.Desafio.PontuacaoAlvo"}}</span>
+          <input type="number" name="system.pontuacaoAlvo" value="{{sistema.pontuacaoAlvo}}" min="1"
+            {{#unless editavel}}disabled{{/unless}}>
+        </label>
+        <label class="op2-campo">
+          <span>{{localize "OP2.Desafio.MaxTentativas"}}</span>
+          <input type="number" name="system.maxTentativas" value="{{sistema.maxTentativas}}" min="0"
+            {{#unless editavel}}disabled{{/unless}}>
+        </label>
+      </div>
+      <p class="op2-ajuda">{{localize "OP2.Desafio.MaxTentativasAjuda"}}</p>
+
+      <div class="op2-grade-campos">
+        <label class="op2-campo">
+          <span>{{localize "OP2.Desafio.PontuacaoAtual"}}</span>
+          <span class="op2-stepper">
+            <button type="button" class="op2-botao-icone" data-action="ajustarPontuacao" data-delta="-1"
+              aria-label="{{localize 'OP2.Desafio.DiminuirPontuacao'}}" {{#unless editavel}}disabled{{/unless}}>
+              <i class="fa-solid fa-minus" aria-hidden="true"></i>
+            </button>
+            <input type="number" name="system.pontuacaoAtual" value="{{sistema.pontuacaoAtual}}" min="0"
+              {{#unless editavel}}disabled{{/unless}}>
+            <button type="button" class="op2-botao-icone" data-action="ajustarPontuacao" data-delta="1"
+              aria-label="{{localize 'OP2.Desafio.AumentarPontuacao'}}" {{#unless editavel}}disabled{{/unless}}>
+              <i class="fa-solid fa-plus" aria-hidden="true"></i>
+            </button>
+          </span>
+        </label>
+        <label class="op2-campo">
+          <span>{{localize "OP2.Desafio.TentativasUsadas"}}</span>
+          <span class="op2-stepper">
+            <button type="button" class="op2-botao-icone" data-action="ajustarTentativas" data-delta="-1"
+              aria-label="{{localize 'OP2.Desafio.DiminuirTentativas'}}" {{#unless editavel}}disabled{{/unless}}>
+              <i class="fa-solid fa-minus" aria-hidden="true"></i>
+            </button>
+            <input type="number" name="system.tentativasUsadas" value="{{sistema.tentativasUsadas}}" min="0"
+              {{#unless editavel}}disabled{{/unless}}>
+            <button type="button" class="op2-botao-icone" data-action="ajustarTentativas" data-delta="1"
+              aria-label="{{localize 'OP2.Desafio.AumentarTentativas'}}" {{#unless editavel}}disabled{{/unless}}>
+              <i class="fa-solid fa-plus" aria-hidden="true"></i>
+            </button>
+          </span>
+        </label>
+      </div>
+
+      <div class="op2-progresso" role="progressbar"
+        aria-valuenow="{{sistema.pontuacaoAtual}}" aria-valuemin="0" aria-valuemax="{{sistema.pontuacaoAlvo}}">
+        <div class="op2-progresso__preenchido" style="width: {{percentualProgresso}}%"></div>
+      </div>
+    </fieldset>
+  {{/if}}
+
+  {{#if sistema.abordagens.destrancar}}
+    <fieldset class="op2-desafio-progresso">
+      <legend>{{localize "OP2.Desafio.Destrancar"}}</legend>
+      <div class="op2-grade-campos">
+        <label class="op2-campo">
+          <span>{{localize "OP2.Desafio.TamanhoSenha"}}</span>
+          <input type="number" name="system.tamanhoSenha" value="{{sistema.tamanhoSenha}}" min="1" max="8"
+            {{#unless editavel}}disabled{{/unless}}>
+        </label>
+        <label class="op2-campo">
+          <span>{{localize "OP2.Desafio.FacesSenha"}}</span>
+          <input type="number" name="system.facesSenha" value="{{sistema.facesSenha}}" min="2" max="12"
+            {{#unless editavel}}disabled{{/unless}}>
+        </label>
+      </div>
+      {{!-- A senha e o histórico moram no cadastro do desafio — é do mestre. A tela de
+            ações do jogador só tem o palpite (achado em uso real). --}}
+      <div class="op2-desafio-senha">
+        <span class="op2-acoes__subtitulo">{{localize "OP2.Desafio.SenhaMestre"}}</span>
+        {{#if temSenha}}
+          <strong class="op2-desafio-senha__valor">{{#each senha}}{{this}} {{/each}}</strong>
+        {{else}}
+          <span class="op2-ajuda">{{localize "OP2.Desafio.SenhaNenhuma"}}</span>
+        {{/if}}
+        {{#if editavel}}
+          <button type="button" class="op2-botao op2-botao--pequeno" data-action="gerarSenha"
+            data-tooltip="{{localize 'OP2.Desafio.DestrancarSenhaAuto' tamanho=sistema.tamanhoSenha faces=sistema.facesSenha}}">
+            <i class="fa-solid fa-dice" aria-hidden="true"></i> {{localize "OP2.Desafio.GerarSenha"}}
+          </button>
+          {{#if temSenha}}
+            <button type="button" class="op2-botao op2-botao--pequeno op2-botao--perigo" data-action="limparSenha">
+              <i class="fa-solid fa-eraser" aria-hidden="true"></i> {{localize "OP2.Desafio.LimparSenha"}}
+            </button>
+          {{/if}}
+        {{/if}}
+      </div>
+      <p class="op2-ajuda">{{localize "OP2.Desafio.SenhaAjuda"}}</p>
+      {{#if historicoDestrancar.length}}
+        <span class="op2-acoes__subtitulo">{{localize "OP2.Desafio.HistoricoDestrancar"}}</span>
+        <table class="op2-destrancar__historico">
+          <tbody>
+            {{#each historicoDestrancar}}
+              <tr>
+                <td class="op2-destrancar__numero">{{numero}}</td>
+                <td>
+                  <div class="op2-destrancar__linha">
+                    {{#each posicoes}}
+                      <span class="op2-destrancar__pos op2-destrancar__pos--{{valor}}" data-tooltip="{{rotulo}}">
+                        <span class="op2-destrancar__num">{{palpite}}</span>
+                        <i class="fa-solid {{icone}}" aria-hidden="true"></i>
+                      </span>
+                    {{/each}}
+                  </div>
+                </td>
+                <td class="op2-ajuda">{{quem}}</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        <p class="op2-ajuda">{{localize "OP2.Desafio.DestrancarLegenda"}}</p>
+      {{/if}}
+      <label class="op2-campo op2-campo--inline">
+        <input type="checkbox" name="system.destrancado" {{#if sistema.destrancado}}checked{{/if}}
+          {{#unless editavel}}disabled{{/unless}}>
+        <span>{{localize "OP2.Desafio.Destrancou"}}</span>
+      </label>
+    </fieldset>
+  {{/if}}
+
+  {{#if sistema.abordagens.hackTecnico}}
+    <fieldset class="op2-desafio-hack">
+      <legend>{{localize "OP2.Desafio.HackTecnico"}}</legend>
+      <label class="op2-campo op2-campo--inline">
+        <input type="checkbox" name="system.hackTecnico.resolvido" {{#if sistema.hackTecnico.resolvido}}checked{{/if}}
+          {{#unless editavel}}disabled{{/unless}}>
+        <span>{{localize "OP2.Desafio.HackSucesso"}}</span>
+      </label>
+      {{!-- Painel que devolve um problema em vez de abrir: cada faixa de rolagem tem
+            o seu (spec §7.3 não modela o problema; o livro imprime). --}}
+      <div class="op2-desafio-hack__tabela">
+        {{#each sistema.hackTecnico.tabela}}
+          <div class="op2-campo op2-campo--inline">
+            <input type="text" name="system.hackTecnico.tabela.{{@index}}.rolagem" value="{{rolagem}}"
+              aria-label="{{localize 'OP2.Desafio.HackTabelaFaixa'}}" size="5"
+              {{#unless @root.editavel}}disabled{{/unless}}>
+            <input type="text" name="system.hackTecnico.tabela.{{@index}}.desafio" value="{{desafio}}"
+              aria-label="{{localize 'OP2.Desafio.HackTabelaProblema'}}"
+              {{#unless @root.editavel}}disabled{{/unless}}>
+            <input type="number" name="system.hackTecnico.tabela.{{@index}}.segundos" value="{{segundos}}"
+              min="0" step="1" size="3" aria-label="{{localize 'OP2.Desafio.HackTabelaSegundos'}}"
+              {{#unless @root.editavel}}disabled{{/unless}}>
+            {{#if @root.editavel}}
+              <button type="button" class="op2-botao-icone" data-action="iniciarHackFaixa" data-indice="{{@index}}"
+                aria-label="{{localize 'OP2.Desafio.HackIniciar'}}" data-tooltip="{{localize 'OP2.Desafio.HackIniciar'}}">
+                <i class="fa-solid fa-play" aria-hidden="true"></i>
+              </button>
+            {{/if}}
+          </div>
+        {{/each}}
+        {{#if editavel}}
+          <button type="button" class="op2-botao op2-botao--pequeno" data-action="adicionarLinhaHack">
+            <i class="fa-solid fa-plus"></i> {{localize "OP2.Desafio.HackTabelaAdicionar"}}
+          </button>
+          <p class="op2-ajuda">{{localize "OP2.Desafio.HackTabelaAjuda"}}</p>
+        {{/if}}
+      </div>
+
+      {{#if editavel}}
+        <div class="op2-desafio-hack__timer">
+          <input type="number" class="op2-desafio-hack__segundos" data-timer-segundos
+            value="10" min="1" step="1" aria-label="{{localize 'OP2.Desafio.HackTabelaSegundos'}}">
+          <button type="button" class="op2-botao op2-botao--pequeno" data-action="iniciarHackFaixa" data-indice="-1">
+            <i class="fa-solid fa-play" aria-hidden="true"></i> {{localize "OP2.Desafio.HackTimerIniciar"}}
+          </button>
+        </div>
+        <p class="op2-ajuda">{{localize "OP2.Desafio.HackTimerAjuda"}}</p>
+      {{/if}}
+    </fieldset>
+  {{/if}}
+
+  {{#if sistema.abordagens.hackSocial}}
+    <fieldset class="op2-desafio-hack">
+      <legend>{{localize "OP2.Desafio.HackSocial"}}</legend>
+      <label class="op2-campo op2-campo--inline">
+        <input type="checkbox" name="system.hackSocial.resolvido" {{#if sistema.hackSocial.resolvido}}checked{{/if}}
+          {{#unless editavel}}disabled{{/unless}}>
+        <span>{{localize "OP2.Desafio.HackSucesso"}}</span>
+      </label>
+      <label class="op2-campo">
+        <span>{{localize "OP2.Desafio.HackRespostasNecessarias"}}</span>
+        <input type="number" name="system.hackSocial.respostasNecessarias"
+          value="{{sistema.hackSocial.respostasNecessarias}}" min="1" {{#unless editavel}}disabled{{/unless}}>
+      </label>
+
+      <div class="op2-desafio-hack__perguntas">
+        <span class="op2-ajuda">{{localize "OP2.Desafio.HackPerguntas"}}</span>
+        {{#each perguntasHack}}
+          <div class="op2-desafio-hack__pergunta">
+            <input type="text" name="system.hackSocial.perguntas.{{indice}}.pergunta" value="{{pergunta}}"
+              placeholder="{{localize 'OP2.Desafio.HackPergunta'}}" {{#unless @root.editavel}}disabled{{/unless}}>
+            <input type="text" name="system.hackSocial.perguntas.{{indice}}.resposta" value="{{resposta}}"
+              placeholder="{{localize 'OP2.Desafio.HackResposta'}}" {{#unless @root.editavel}}disabled{{/unless}}>
+            {{#if @root.editavel}}
+              <button type="button" class="op2-botao-icone" data-action="removerPerguntaHack" data-indice="{{indice}}"
+                aria-label="{{localize 'OP2.Desafio.HackRemoverPergunta'}}">
+                <i class="fa-solid fa-trash" aria-hidden="true"></i>
+              </button>
+            {{/if}}
+          </div>
+        {{/each}}
+        {{#if editavel}}
+          <button type="button" class="op2-botao op2-botao--pequeno" data-action="adicionarPerguntaHack">
+            <i class="fa-solid fa-plus" aria-hidden="true"></i> {{localize "OP2.Desafio.HackAdicionarPergunta"}}
+          </button>
+        {{/if}}
+      </div>
+    </fieldset>
+  {{/if}}
+
+  {{#if sistema.abordagens.sustentar}}
+    <fieldset class="op2-desafio-hack">
+      <legend>{{localize "OP2.Desafio.Sustentar"}}</legend>
+      <label class="op2-campo">
+        <span>{{localize "OP2.Desafio.DtObjeto"}}</span>
+        <input type="number" name="system.sustentar.dt" value="{{sistema.sustentar.dt}}" min="0" step="1"
+          {{#unless editavel}}disabled{{/unless}}>
+      </label>
+      <label class="op2-campo">
+        <span>{{localize "OP2.Desafio.SustentarAoFalhar"}}</span>
+        <input type="text" name="system.sustentar.aoFalhar" value="{{sistema.sustentar.aoFalhar}}"
+          {{#unless editavel}}disabled{{/unless}}>
+      </label>
+    </fieldset>
+  {{/if}}
+
+  {{#if sistema.abordagens.generico}}
+    <fieldset class="op2-desafio-hack">
+      <legend>{{localize "OP2.Desafio.Generico"}}</legend>
+      <p class="op2-ajuda">{{localize "OP2.Desafio.GenericoAjuda"}}</p>
+      <div class="op2-grade-campos">
+        <label class="op2-campo">
+          <span>{{localize "OP2.Desafio.GenericoRotulo"}}</span>
+          <input type="text" name="system.generico.rotulo" value="{{sistema.generico.rotulo}}"
+            placeholder="{{localize 'OP2.Desafio.GenericoRotuloExemplo'}}" {{#unless editavel}}disabled{{/unless}}>
+        </label>
+        <label class="op2-campo">
+          <span>{{localize "OP2.Desafio.GenericoPericia"}}</span>
+          <select name="system.generico.pericia" {{#unless editavel}}disabled{{/unless}}>
+            {{#each opcoesPericia}}
+              <option value="{{chave}}" {{#if (op2Eq chave @root.sistema.generico.pericia)}}selected{{/if}}>{{rotulo}}</option>
+            {{/each}}
+          </select>
+        </label>
+      </div>
+      <label class="op2-campo op2-campo--inline">
+        <input type="checkbox" name="system.generico.resolvido" {{#if sistema.generico.resolvido}}checked{{/if}}
+          {{#unless editavel}}disabled{{/unless}}>
+        <span>{{localize "OP2.Desafio.HackSucesso"}}</span>
+      </label>
+    </fieldset>
+  {{/if}}
+
+  {{#if temAlgumaAbordagem}}
+    {{!-- "Quebrado" é o fim de linha comum a Arrombar e Destrancar: excedeu as
+          tentativas, só resta achar a chave. --}}
+    <label class="op2-campo op2-campo--inline">
+      <input type="checkbox" name="system.quebrado" {{#if sistema.quebrado}}checked{{/if}}
+        {{#unless editavel}}disabled{{/unless}}>
+      <span>{{localize "OP2.Desafio.Quebrado"}}</span>
+    </label>
+  {{/if}}
+</div>

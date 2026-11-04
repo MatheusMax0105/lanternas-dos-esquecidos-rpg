@@ -1,0 +1,183 @@
+// A coluna de perícias reproduz a leitura da ficha oficial:
+//   NOME DA PERÍCIA        [dado]  +  [dado]  ATRIBUTO
+// O par que será rolado fica visível sem abrir nada.
+@layer system {
+.op2-dock-pericias {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  padding: var(--op2-e2);
+  gap: var(--op2-e2);
+  grid-area: pericias;
+  overflow: hidden;
+
+  &__topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: var(--op2-e2);
+    border-bottom: 2px solid var(--op2-vermelho);
+    gap: var(--op2-e2);
+  }
+}
+
+.op2-busca {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--op2-texto-fraco);
+  font-size: 0.75rem;
+
+  &__campo {
+    width: 6.5rem;
+    height: 1.6rem;
+    padding: 0 0.4rem;
+    font-family: var(--op2-fonte-mono);
+    font-size: 0.75rem;
+  }
+}
+
+.op2-lista-pericias {
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+// Colunas de largura fixa, nunca "auto": cada `.op2-pericia` é um grid próprio, e com
+// "auto" a largura de cada coluna variava por linha conforme o texto ("FÍSICO" x
+// "EMOÇÃO"), desalinhando os ícones entre as linhas de cima a baixo (achado em uso
+// real). Largura fixa garante a mesma posição em toda linha — desta lista, da lista
+// de Aptidão e da ficha de NPC, que reaproveita este mesmo parcial.
+.op2-pericia {
+  display: grid;
+  align-items: center;
+  min-height: 1.9rem;
+  padding: 0.1rem 0.25rem;
+  border-radius: var(--op2-raio);
+  column-gap: 0.3rem;
+  grid-template-columns: minmax(0, 1fr) 1.6rem 0.7rem 1.6rem 3.4rem 1.4rem;
+
+  &:hover,
+  &:focus-within { background: var(--op2-superficie-alta); }
+
+  // Escondida pela busca da coluna.
+  &[hidden] { display: none; }
+
+  &__nome {
+    justify-content: flex-end;
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--op2-texto);
+    cursor: pointer;
+    font-family: var(--op2-fonte-mono);
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+    text-align: right;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    &:hover { color: var(--op2-vermelho-claro); }
+  }
+
+  &__mais {
+    justify-self: center;
+    color: var(--op2-texto-fraco);
+    font-family: var(--op2-fonte-display);
+    font-size: 0.85rem;
+  }
+
+  &__atributo-icone {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__atributo-nome {
+    overflow: hidden;
+    color: var(--op2-vermelho-claro);
+    font-family: var(--op2-fonte-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.02em;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+}
+
+
+// Cartão próprio: sem isso a Aptidão se confunde com a lista plana de perícias logo
+// abaixo, e o botão "novo campo" parece solto no meio da coluna (achado em uso real).
+.op2-aptidao {
+  margin-bottom: var(--op2-e2);
+  border: 1px solid var(--op2-linha);
+  border-radius: var(--op2-raio);
+  background: color-mix(in srgb, var(--op2-vermelho) 5%, transparent);
+
+  // A busca esconde a árvore inteira quando nenhum subcampo casa.
+  &[hidden] { display: none; }
+
+  &__resumo {
+    display: flex;
+    align-items: center;
+    padding: 0.4rem 0.5rem;
+    cursor: pointer;
+    font-family: var(--op2-fonte-mono);
+    font-size: 0.82rem;
+    gap: 0.4rem;
+    text-transform: uppercase;
+
+    // O navegador já não desenha o marcador nativo aqui; a seta é toda nossa.
+    &::-webkit-details-marker { display: none; }
+    &::marker { content: ""; }
+
+    &:hover { background: var(--op2-superficie-alta); }
+  }
+
+  &__seta {
+    flex: 0 0 auto;
+    color: var(--op2-vermelho-claro);
+    font-size: 0.7rem;
+    transition: transform 120ms ease;
+  }
+
+  &[open] &__seta { transform: rotate(90deg); }
+
+  &__nome { flex: 1 1 auto; }
+
+  &__atributo {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  &__atributo-nome {
+    color: var(--op2-vermelho-claro);
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
+  }
+
+  // Sem padding lateral: a lista principal também não tem, e as colunas de largura
+  // fixa da linha de perícia só alinham entre as duas se a largura disponível for
+  // idêntica nos dois contêineres (achado em uso real — 8px de diferença bastavam
+  // para os ícones saírem do lugar entre a lista plana e este bloco).
+  &__campos {
+    padding: 0.15rem 0 0.4rem;
+    border-top: 1px solid var(--op2-linha);
+  }
+
+  &__campo {
+    display: grid;
+    align-items: center;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  &__adicionar {
+    width: 100%;
+    margin-top: var(--op2-e1);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+  }
+}
+}

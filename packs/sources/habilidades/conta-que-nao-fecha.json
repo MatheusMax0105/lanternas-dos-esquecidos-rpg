@@ -1,0 +1,28 @@
+{
+  "_id": "a100000000000025",
+  "_key": "!items!a100000000000025",
+  "name": "Conta que não Fecha",
+  "type": "habilidade",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/avaliacao.svg",
+  "system": {
+    "origem": "ocupacao",
+    "perfil": "",
+    "custo": "",
+    "custoPD": 0,
+    "descricao": "<p>Ao comparar livros de impostos, recibos e declarações, você aponta onde os valores deixam de fechar. A mesa pode usar essa leitura para indicar uma cobrança suspeita ou uma lacuna que mereça ser examinada; um teste de <strong>Administração Imperial</strong> pode ajudar a confirmar a inconsistência.</p>",
+    "efeito": {
+      "tipo": "nenhum",
+      "passos": 1,
+      "dado": "d4",
+      "chaves": [],
+      "permitirD20": false,
+      "pdAoDescobrir": 0
+    },
+    "usoEmInvestigacao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

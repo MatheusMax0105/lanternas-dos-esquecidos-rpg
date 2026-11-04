@@ -1,0 +1,28 @@
+{
+  "_id": "a100000000000010",
+  "_key": "!items!a100000000000010",
+  "name": "Terra sob as Unhas",
+  "type": "habilidade",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/esforco-e-suor.svg",
+  "system": {
+    "origem": "ocupacao",
+    "perfil": "",
+    "custo": "",
+    "custoPD": 0,
+    "descricao": "<p>Você distingue terra recém-revolvida de solo assentado e reconhece marcas deixadas por ferramentas de escavação. Ao examinar um local de enterro, pode dizer à mesa se houve intervenção e que sinais a sustentam; um teste de <strong>Sobrevivência</strong> ajuda em terreno alterado.</p>",
+    "efeito": {
+      "tipo": "nenhum",
+      "passos": 1,
+      "dado": "d4",
+      "chaves": [],
+      "permitirD20": false,
+      "pdAoDescobrir": 0
+    },
+    "usoEmInvestigacao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

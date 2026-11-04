@@ -1,0 +1,101 @@
+<div class="op2 op2-card op2-card--investigacao">
+  <header class="op2-card__topo">
+    <span class="op2-tag op2-tag--pequena">{{titulo}}</span>
+    <span class="op2-card__dt">{{poiNome}}</span>
+  </header>
+
+  {{#if primeiraVez}}
+    <div class="op2-card__texto">{{{descricaoBasica}}}</div>
+  {{/if}}
+
+  {{#if pdRecuperado.pd}}
+    <p class="op2-card__desfecho op2-card__desfecho--sucesso">
+      <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> {{pdRecuperado.texto}}
+    </p>
+  {{/if}}
+
+  {{!-- Os dados vivem no card da própria ação: Examinar rola sem DT, então o card
+        genérico de teste não tinha desfecho para mostrar. --}}
+  {{#if componentes}}
+    <div class="op2-card__dados">
+      {{#each componentes}}
+        <span class="op2-card__dado{{#unless contado}} descartado{{/unless}}"
+          data-tooltip="{{componente.rotulo}}">{{op2DadoResultado this}}</span>
+      {{/each}}
+      <span class="op2-card__igual" aria-hidden="true">=</span>
+      <span class="op2-card__total">{{total}}</span>
+    </div>
+  {{/if}}
+
+  {{#if desfechoTeste}}
+    {{#if falhaCritica}}
+      {{> (op2Caminho "partials/falha-critica") atorId=atorId}}
+    {{else if critico}}
+      <p class="op2-card__desfecho op2-card__desfecho--critico">
+        <i class="fa-solid fa-star" aria-hidden="true"></i>
+        {{localize "OP2.Critico"}} — {{localize "OP2.Investigacao.CriticoExaminar"}}
+      </p>
+    {{else}}
+      {{!-- Achou algo: é SUCESSO, venha a linha do teste ou do tamanho do dado. O
+            detalhe de onde veio fica embaixo; a rolagem que não alcançou o resto é
+            nota, não desfecho (achado em uso real: "pelo dado" lia como falha). --}}
+      <p class="op2-card__desfecho op2-card__desfecho--sucesso">
+        <i class="fa-solid fa-check" aria-hidden="true"></i>
+        {{localize "OP2.Sucesso"}} —
+        {{!-- "1 linha(s)" fica feio no card: singular e plural têm chave própria. --}}
+        {{#if quantidadeTeste}}
+          {{#if (op2Eq quantidadeTeste 1)}}
+            {{localize "OP2.Investigacao.ExaminarAchouUma"}}
+          {{else}}
+            {{localize "OP2.Investigacao.ExaminarAchou" quantidade=quantidadeTeste}}
+          {{/if}}
+        {{else if (op2Eq quantidadeGratis 1)}}
+          {{localize "OP2.Investigacao.ExaminarSoGratisUma"}}
+        {{else}}
+          {{localize "OP2.Investigacao.ExaminarSoGratis" quantidade=quantidadeGratis}}
+        {{/if}}
+      </p>
+      {{#if quantidadeTeste}}{{#if quantidadeGratis}}
+        <p class="op2-ajuda">
+          {{#if (op2Eq quantidadeGratis 1)}}
+            {{localize "OP2.Investigacao.ExaminarGratisTambemUma"}}
+          {{else}}
+            {{localize "OP2.Investigacao.ExaminarGratisTambem" quantidade=quantidadeGratis}}
+          {{/if}}
+        </p>
+      {{/if}}{{/if}}
+      {{#unless quantidadeTeste}}
+        <p class="op2-ajuda">
+          {{#if restantes}}{{localize "OP2.Investigacao.ExaminarRestante" total=total}}{{else}}{{localize "OP2.Investigacao.ExaminarNadaMais"}}{{/if}}
+        </p>
+      {{/unless}}
+    {{/if}}
+  {{/if}}
+
+  {{#if temInfos}}
+    <ol class="op2-card__infos">
+      {{#each infos}}
+        {{!-- "sem rolar" = veio pelo tamanho do dado (spec §6.3); o resto veio
+              do teste. Marcar a diferença explica por que algumas linhas caem sem
+              o dado ter passado pela DT. --}}
+        <li>
+          <span class="op2-card__info-pericia">{{rotuloPericia}}:</span> {{{texto}}}
+          {{#if semRolar}}<span class="op2-card__info-marca">{{localize "OP2.Investigacao.SemRolar"}}</span>{{/if}}
+          {{!-- A pista é de quem achou; contar ao grupo é decisão dele, aqui mesmo. --}}
+          <button type="button" class="op2-botao op2-botao--pequeno" data-op2-acao="contar-ao-grupo"
+            data-ator-id="{{../atorId}}" data-poi-uuid="{{../poiUuid}}" data-info-id="{{id}}">
+            <i class="fa-solid fa-bullhorn" aria-hidden="true"></i> {{localize "OP2.Investigacao.ContarAoGrupo"}}
+          </button>
+        </li>
+      {{/each}}
+    </ol>
+  {{else}}
+    {{!-- Dizer o porquê: sem isso o jogador não sabe se insiste com outro dado,
+          troca de perícia ou desiste do ponto (achado em uso real). --}}
+    <p class="op2-ajuda">{{#if motivo}}{{motivo}}{{else}}{{localize "OP2.Investigacao.NadaNovo"}}{{/if}}</p>
+    {{#if dtMinima}}
+      <p class="op2-ajuda" data-op2-gm>{{localize "OP2.Investigacao.DtQueFaltava" dt=dtMinima}}</p>
+    {{/if}}
+  {{/if}}
+
+</div>

@@ -1,0 +1,104 @@
+/**
+ * A tela de boas-vindas — e de "Sobre e licença", que é a mesma janela pelo menu de
+ * configurações.
+ *
+ * Abre para o mestre ao entrar no mundo, enquanto ele não desmarcar "mostrar ao
+ * entrar" (setting de mundo, também no menu de configurações). Diz o que o sistema
+ * traz, de onde vêm as aventuras (do PDF do próprio mestre — nada do livro vem no
+ * pacote), como o Ato II chega (PDF completo e zip da editora, para assinantes), e leva
+ * os links que a Licença da Comunidade pede: o aviso de conteúdo não oficial, a
+ * licença, o site e a loja da editora.
+ */
+import { SYSTEM_ID } from "../config.mjs";
+import { lerConfig } from "../settings/register.mjs";
+import { LICENCA, LINKS, SELO } from "./licenca.mjs";
+import { abrirAventurasApp } from "../aventura/aventuras-app.mjs";
+import { ATOS, aventuraNoMundo } from "../aventura/mundo.mjs";
+
+const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
+
+export class BoasVindasApp extends HandlebarsApplicationMixin(ApplicationV2) {
+  static DEFAULT_OPTIONS = {
+    id: "op2-boas-vindas",
+    classes: ["op2", "op2-boas-vindas"],
+    window: { title: "OP2.BoasVindas.Titulo", icon: "fa-solid fa-eye", resizable: true },
+    position: { width: 980, height: 820 },
+    actions: {
+      abrirAventuras: BoasVindasApp.#abrirAventuras,
+      fechar: BoasVindasApp.#fechar,
+    },
+  };
+
+  static PARTS = {
+    corpo: { template: `systems/${SYSTEM_ID}/templates/ui/boas-vindas.hbs`, scrollable: [""] },
+  };
+
+  async _prepareContext(opcoes) {
+    const contexto = await super._prepareContext(opcoes);
+    const sistema = game.system;
+    return {
+      ...contexto,
+      versao: sistema.version,
+      changelog: sistema.changelog ?? sistema.url,
+      repositorio: sistema.url,
+      links: LINKS,
+      selo: SELO,
+      aviso: LICENCA.aviso,
+      mestre: game.user.isGM,
+      mostrarAoEntrar: lerConfig("boasVindas"),
+      atos: ATOS.map((ato) => ({
+        rotulo: game.i18n.localize(ato.rotulo),
+        noMundo: Boolean(aventuraNoMundo(ato.aventura)),
+      })),
+      // Só os de regras: os packs de aventura existem só no desenvolvimento (o release os tira).
+      compendios: game.packs.filter((p) => p.metadata.packageName === SYSTEM_ID && p.metadata.type !== "Adventure").length,
+    };
+  }
+
+  _onRender(contexto, opcoes) {
+    super._onRender(contexto, opcoes);
+    const caixa = this.element.querySelector("[data-mostrar-ao-entrar]");
+    caixa?.addEventListener("change", () => game.settings.set(SYSTEM_ID, "boasVindas", caixa.checked));
+  }
+
+  static #abrirAventuras() {
+    abrirAventurasApp();
+  }
+
+  static #fechar() {
+    return this.close();
+  }
+}
+
+let instancia = null;
+
+export function abrirBoasVindas() {
+  instancia ??= new BoasVindasApp();
+  instancia.render({ force: true });
+  return instancia;
+}
+
+/** No `ready`: só para o mestre, e só enquanto ele quiser. */
+export function abrirBoasVindasSeConfigurado() {
+  if (!game.user.isGM || !lerConfig("boasVindas")) return null;
+  return abrirBoasVindas();
+}
+
+/** O menu de configurações: "Sobre e licença" abre a mesma janela, para qualquer um. */
+export function registrarBoasVindas() {
+  // A janela de aventuras montou ou importou um ato: toda tela de boas-vindas aberta
+  // (a de entrada ou a do menu) se refaz, em vez de mostrar o estado de quando abriu.
+  Hooks.on("op2.aventurasMudaram", () => {
+    for (const app of foundry.applications.instances.values()) {
+      if (app instanceof BoasVindasApp && app.rendered) app.render();
+    }
+  });
+  game.settings.registerMenu(SYSTEM_ID, "sobre", {
+    name: "OP2.BoasVindas.MenuNome",
+    label: "OP2.BoasVindas.MenuBotao",
+    hint: "OP2.BoasVindas.MenuAjuda",
+    icon: "fa-solid fa-circle-info",
+    type: BoasVindasApp,
+    restricted: false,
+  });
+}

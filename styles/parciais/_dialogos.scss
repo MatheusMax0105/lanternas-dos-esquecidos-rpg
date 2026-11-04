@@ -1,0 +1,314 @@
+@layer system {
+// O diálogo abria com o mesmo fundo escuro de tudo e sumia por cima da janela de
+// ações — não dava pra ver que tinha aberto (achado em uso real). Vermelho escuro
+// e borda vermelha separam o "pare e decida" do resto da tela.
+.op2-dialog {
+  // Vermelho bem escuro, quase marrom: o suficiente pra separar do resto da tela
+  // sem saturar. O primeiro tom era forte demais e brigava com o conteúdo
+  // (achado em uso real).
+  // Misturado com o fundo do tema, não com preto: no claro vira um rosa pálido em
+  // vez de um vinho com texto escuro em cima (achado em uso real, tema claro).
+  --op2-dialog-vinho: color-mix(in srgb, var(--op2-vermelho-escuro) 42%, var(--op2-fundo));
+  --op2-dialog-borda: color-mix(in srgb, var(--op2-vermelho) 55%, var(--op2-fundo));
+
+  .window-content {
+    background: linear-gradient(180deg, var(--op2-dialog-vinho) 0%, var(--op2-fundo) 60%);
+    border: 1px solid var(--op2-dialog-borda);
+  }
+
+  // O chrome da janela acompanha, senão a barra de título fica destoando.
+  .window-header {
+    background: var(--op2-dialog-vinho);
+    border-bottom: 1px solid var(--op2-dialog-borda);
+  }
+}
+
+// Escolha de perícia: a mesma leitura da ficha — nome à esquerda, dado à direita.
+.op2-pericia-escolha {
+  display: flex;
+  flex-direction: column;
+  gap: var(--op2-e2);
+  padding: var(--op2-e3);
+  // Uma rolagem só, da janela. Com `max-height` em cada lista apareciam duas
+  // barras e os dois grupos ficavam com respiro diferente (achado em uso real).
+  max-height: 32rem;
+  overflow-y: auto;
+
+  // Uma coluna, com respiro: em duas colunas apertadas as Aptidões quebravam em
+  // três linhas e a tela virava um paredão (achado em uso real).
+  &__lista {
+    display: flex;
+    flex-direction: column;
+    // Linha separada de linha: encostadas, os ícones de dado de linhas vizinhas
+    // pareciam encavalados mesmo com a linha alta (achado em uso real).
+    gap: 0.2rem;
+  }
+
+  &__linha {
+    // Mesma grade da linha de perícia da ficha: nome · dado · + · atributo.
+    display: grid;
+    align-items: center;
+    gap: var(--op2-e2);
+    grid-template-columns: minmax(0, 1fr) 1.7rem auto 1.7rem auto;
+    width: 100%;
+    // `min-height` sozinho não segura: o core zera a altura mínima de `button`
+    // dentro de `.window-content` e o computado voltava a 0 — o ícone do dado
+    // (1.4rem + line-height) transbordava a caixa e a borda do hover passava por
+    // cima dele (achado em uso real, medido no navegador). `block-size` fixa a
+    // altura da linha antes de qualquer regra do core entrar.
+    block-size: 2.4rem;
+    padding: 0.3rem 0.6rem;
+    border: 1px solid transparent;
+    border-radius: var(--op2-raio);
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    text-align: left;
+
+    &:hover {
+      border-color: var(--op2-vermelho);
+      background: color-mix(in srgb, var(--op2-vermelho) 18%, transparent);
+    }
+  }
+
+  &__nome {
+    font-family: var(--op2-fonte-mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__mais { color: var(--op2-texto-fraco); }
+
+  &__atributo {
+    font-family: var(--op2-fonte-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--op2-texto-fraco);
+  }
+
+  // Menor que a linha, com folga: em 1.6rem o dado ocupava a altura inteira e
+  // qualquer arredondamento o punha em cima da borda.
+  &__dado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+
+    .op2-dado { width: 1.4rem; height: 1.4rem; }
+  }
+}
+
+.op2-teste {
+  display: flex;
+  flex-direction: column;
+  gap: var(--op2-e3);
+
+  // Ajuda do aliado (spec §4.7): o passo já vem aplicado, então a origem dele
+  // precisa estar escrita — senão vira bônus fantasma.
+  &__ajuda {
+    margin: 0;
+    padding: var(--op2-e2);
+    border-left: 2px solid var(--op2-sucesso);
+    background: color-mix(in srgb, var(--op2-sucesso) 12%, transparent);
+    font-size: 0.8rem;
+  }
+
+  &__componentes {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    gap: var(--op2-e1);
+    list-style: none;
+  }
+
+  &__componente {
+    display: grid;
+    align-items: center;
+    padding: 0.35rem 0.5rem;
+    border: 1px solid var(--op2-linha);
+    border-radius: var(--op2-raio);
+    gap: var(--op2-e2);
+    grid-template-columns: minmax(0, 1fr) auto auto;
+  }
+
+  &__rotulo {
+    font-family: var(--op2-fonte-mono);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+  }
+
+  &__dado { display: flex; }
+
+  &__dificuldade {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--op2-e3);
+  }
+}
+
+// O botão de confirmar dos diálogos do core (o "Rolar" do teste) vem com a borda
+// quente do Foundry, que destoa da janela inteira — mais ainda quando ela veste a cor
+// de um perfil (achado na revisão visual).
+.op2-dialog .dialog-buttons button,
+.op2-dialog button[type="submit"] {
+  border-color: color-mix(in srgb, var(--op2-vermelho) 60%, transparent);
+
+  &:hover:not([disabled]) {
+    border-color: var(--op2-vermelho);
+    color: var(--op2-vermelho-claro);
+  }
+}
+
+.op2-passo {
+  display: flex;
+  gap: 2px;
+
+  button {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    border: 1px solid var(--op2-linha-forte);
+    border-radius: var(--op2-raio);
+    background: transparent;
+    color: var(--op2-texto);
+    cursor: pointer;
+    line-height: 1;
+
+    &:hover { border-color: var(--op2-vermelho); color: var(--op2-vermelho-claro); }
+  }
+}
+
+.op2-extras {
+  display: flex;
+  flex-direction: column;
+  padding: var(--op2-e2);
+  border: 1px solid var(--op2-linha);
+  border-radius: var(--op2-raio);
+  gap: var(--op2-e1);
+
+  legend {
+    padding: 0 0.4rem;
+    color: var(--op2-texto-fraco);
+    font-family: var(--op2-fonte-display);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+}
+
+.op2-extra {
+  display: grid;
+  align-items: center;
+  padding: 0.3rem;
+  border: 1px solid var(--op2-linha);
+  border-radius: var(--op2-raio);
+  background: transparent;
+  cursor: pointer;
+  gap: var(--op2-e2);
+  // Quatro colunas: ícone, nome, efeito e custo. Com três, o custo caía numa linha
+  // nova e vazava para fora do diálogo (achado em uso real).
+  grid-template-columns: 1.5rem minmax(0, 1fr) auto auto;
+  text-align: left;
+
+  // Lista de alvo/aliado: mesmo corte pelo topo das outras listas de retrato.
+  img {
+    width: 1.5rem; height: 1.5rem; border: 0;
+    object-fit: cover; object-position: center top;
+  }
+
+  &__nome { font-family: var(--op2-fonte-corpo); font-size: 0.82rem; }
+
+  &__efeito {
+    color: var(--op2-vermelho-claro);
+    font-family: var(--op2-fonte-mono);
+    font-size: 0.72rem;
+    white-space: nowrap;
+  }
+
+  &__custo {
+    color: var(--op2-texto-fraco);
+    font-family: var(--op2-fonte-mono);
+    font-size: 0.72rem;
+    white-space: nowrap;
+  }
+
+  &--sem-pd { opacity: 0.5; cursor: not-allowed; }
+
+  &.ativo {
+    border-color: var(--op2-vermelho);
+    background: color-mix(in srgb, var(--op2-vermelho) 15%, transparent);
+  }
+}
+
+.op2-selecao {
+  display: flex;
+  flex-direction: column;
+  gap: var(--op2-e3);
+
+  &__intro { margin: 0; font-size: 0.85rem; }
+
+  &__dados {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--op2-e2);
+  }
+
+  &__dado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.4rem 0.5rem;
+    border: 1px solid var(--op2-linha);
+    border-radius: var(--op2-raio);
+    background: transparent;
+    cursor: pointer;
+    gap: 0.2rem;
+
+    .op2-dado { width: 2.4rem; height: 2.4rem; }
+
+    &.escolhido {
+      border-color: var(--op2-vermelho);
+      background: color-mix(in srgb, var(--op2-vermelho) 15%, transparent);
+      .op2-dado { opacity: 1; .op2-dado__forma { fill: var(--op2-vermelho); } }
+    }
+  }
+
+  &__origem {
+    color: var(--op2-texto-fraco);
+    font-family: var(--op2-fonte-mono);
+    font-size: 0.62rem;
+    text-transform: uppercase;
+  }
+
+  &__previa {
+    display: flex;
+    justify-content: center;
+    padding: var(--op2-e2);
+    border: 1px solid var(--op2-linha);
+    border-radius: var(--op2-raio);
+    margin: 0;
+    gap: var(--op2-e4);
+
+    div { display: flex; flex-direction: column; align-items: center; }
+
+    dt {
+      color: var(--op2-texto-fraco);
+      font-family: var(--op2-fonte-display);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    dd { margin: 0; color: var(--op2-texto); font-family: var(--op2-fonte-mono); font-size: 1.05rem; }
+  }
+}
+
+.op2-destaque { color: var(--op2-vermelho-claro); font-weight: 700; }
+
+}

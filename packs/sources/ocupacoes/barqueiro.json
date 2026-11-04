@@ -1,0 +1,17 @@
+{
+  "_id": "b100000000000014",
+  "_key": "!items!b100000000000014",
+  "name": "Barqueiro",
+  "type": "ocupacao",
+  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "system": {
+    "descricao": "<p>Você conduz viajantes e cargas por rios, canais e travessias perigosas. Conhece histórias de passageiros que embarcam sem deixar lembrança em quem os transportou.</p>",
+    "habilidade": "Travessia sem Margem",
+    "habilidadeUuid": "Compendium.ordem-paranormal-2e.habilidades.Item.a100000000000014"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

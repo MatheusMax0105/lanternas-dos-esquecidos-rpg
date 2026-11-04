@@ -1,0 +1,28 @@
+{
+  "_id": "a100000000000022",
+  "_key": "!items!a100000000000022",
+  "name": "Memória da Formação",
+  "type": "habilidade",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/para-bellum.svg",
+  "system": {
+    "origem": "ocupacao",
+    "perfil": "",
+    "custo": "",
+    "custoPD": 0,
+    "descricao": "<p>Você reconhece sinais de comando e posições de tropas em mapas, relatos ou no terreno. Ao discutir uma formação, pode explicar à mesa o que ela sugere sobre a intenção de quem a organizou; um teste de <strong>Estratégia Militar</strong> ajuda a avaliar um plano incompleto.</p>",
+    "efeito": {
+      "tipo": "nenhum",
+      "passos": 1,
+      "dado": "d4",
+      "chaves": [],
+      "permitirD20": false,
+      "pdAoDescobrir": 0
+    },
+    "usoEmInvestigacao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

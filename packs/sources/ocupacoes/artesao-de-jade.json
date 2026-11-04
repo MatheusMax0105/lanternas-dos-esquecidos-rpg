@@ -1,0 +1,17 @@
+{
+  "_id": "b100000000000018",
+  "_key": "!items!b100000000000018",
+  "name": "Artesão de Jade",
+  "type": "ocupacao",
+  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "system": {
+    "descricao": "<p>Você lapida jade e identifica procedência, técnica e sinais de reparo em objetos valiosos. Uma peça herdada pode preservar o nome de uma família ou esconder uma lembrança incômoda.</p>",
+    "habilidade": "Veios da Linhagem",
+    "habilidadeUuid": "Compendium.ordem-paranormal-2e.habilidades.Item.a100000000000018"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

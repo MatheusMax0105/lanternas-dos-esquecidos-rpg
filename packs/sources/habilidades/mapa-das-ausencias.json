@@ -1,0 +1,28 @@
+{
+  "_id": "a100000000000004",
+  "_key": "!items!a100000000000004",
+  "name": "Mapa das Ausências",
+  "type": "habilidade",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/avaliacao.svg",
+  "system": {
+    "origem": "ocupacao",
+    "perfil": "",
+    "custo": "",
+    "custoPD": 0,
+    "descricao": "<p>Você compara a posição dos astros com anotações e calendários antigos, percebendo quando um registro não combina com o céu observado. A mesa pode usar essa diferença para localizar uma data ou orientar uma pergunta; um teste de <strong>Astrologia e Cálculos</strong> pode ajudar a conferir o cálculo.</p>",
+    "efeito": {
+      "tipo": "nenhum",
+      "passos": 1,
+      "dado": "d4",
+      "chaves": [],
+      "permitirD20": false,
+      "pdAoDescobrir": 0
+    },
+    "usoEmInvestigacao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

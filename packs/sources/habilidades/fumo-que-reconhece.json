@@ -1,0 +1,28 @@
+{
+  "_id": "a100000000000007",
+  "_key": "!items!a100000000000007",
+  "name": "Fumo que Reconhece",
+  "type": "habilidade",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/foco-emocional.svg",
+  "system": {
+    "origem": "ocupacao",
+    "perfil": "",
+    "custo": "",
+    "custoPD": 0,
+    "descricao": "<p>Você reconhece ingredientes e formas de queimar incenso ligados a cerimônias conhecidas. Diante de fumaça ou restos de uma oferenda, a mesa pode recorrer a essa prática para distinguir um costume local de uma alteração deliberada; um teste de <strong>Cultos Ancestrais</strong> pode apoiar a interpretação.</p>",
+    "efeito": {
+      "tipo": "nenhum",
+      "passos": 1,
+      "dado": "d4",
+      "chaves": [],
+      "permitirD20": false,
+      "pdAoDescobrir": 0
+    },
+    "usoEmInvestigacao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

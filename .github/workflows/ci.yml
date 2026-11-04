@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+      - run: npm ci
+      - name: Lint
+        run: npm run lint
+      # O CSS vem antes dos testes: `styles/op2.css` é gerado pelo sass e não vai para
+      # o repositório, e um dos testes confere que todo caminho do manifesto existe.
+      - name: Build do CSS
+        run: npm run build:css
+      - name: Testes
+        run: npm test
+      - name: Build dos compêndios
+        run: npm run pack:build

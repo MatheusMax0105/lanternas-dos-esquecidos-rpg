@@ -1,0 +1,311 @@
+@layer system {
+.op2 {
+  color: var(--op2-texto);
+  font-family: var(--op2-fonte-corpo);
+
+  // `:not([class*="fa-"])` importa: o Foundry declara a camada @layer do FontAwesome
+  // ANTES da nossa (`system`), então em CSS Layers a ordem declarada decide — não a
+  // especificidade. Qualquer regra nossa que alcance um elemento com classe de ícone
+  // (ex.: os botões de janela do core, que carregam "fa-solid" direto no <button>)
+  // ganha da fonte do FontAwesome e o glifo vira uma caixa vazia.
+  input,
+  select,
+  textarea,
+  button:not([class*="fa-"]) {
+    font-family: inherit;
+    color: inherit;
+  }
+
+  // O core define `button { height: var(--button-size); min-height: var(--button-size) }`
+  // com `--button-size: 2em` por padrão, sem camada — um "piso" que qualquer altura
+  // pequena que a gente declare não derruba, porque `min-height` é uma propriedade
+  // separada de `height` e não entra na mesma disputa de cascata. Toda vez que um
+  // botão nosso levava uma altura pequena (um pip, um traço de recurso), ele saía do
+  // tamanho pedido mesmo com `height` correto (achado em uso real: os traços de PV/PD
+  // saíam com 28px de altura em vez dos 6-7px pedidos). Zerar aqui, uma vez, cobre
+  // todo botão do sistema.
+  button:not([class*="fa-"]) {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="search"],
+  select,
+  textarea {
+    min-width: 0;
+    border: 1px solid var(--op2-linha);
+    border-radius: var(--op2-raio);
+    background: color-mix(in srgb, var(--op2-fundo) 70%, transparent);
+    box-shadow: none;
+  }
+
+  // Todo `<select>` visível segue o mesmo tratamento — altura e respiro iguais aos
+  // campos de texto, cursor de ponteiro e destaque vermelho ao passar/focar, em vez
+  // do combo cinza padrão do navegador. A caixa nativa escondida do seletor de dado
+  // (`__nativo`) fica de fora de propósito: ela nunca aparece na tela.
+  select:not(.op2-controle-dado__nativo) {
+    height: 1.9rem;
+    padding: 0 0.4rem;
+    cursor: pointer;
+
+    &:hover:not([disabled]) { border-color: var(--op2-vermelho-claro); }
+  }
+
+
+  :focus-visible {
+    outline: 2px solid var(--op2-vermelho-claro);
+    outline-offset: 2px;
+  }
+
+  [disabled] {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+// Selo da licença em dois tons: o branco vai no tema escuro, o preto no claro. Os dois
+// vão no HTML e o tema mostra um — sem JS, e troca de tema ao vivo funciona.
+.op2-selo--claro { display: none; }
+:root[data-theme="light"] .op2-selo--claro,
+.theme-light .op2-selo--claro { display: inline-block; }
+:root[data-theme="light"] .op2-selo--escuro,
+.theme-light .op2-selo--escuro { display: none; }
+
+// Tag vermelha rasgada — a forma que o livro usa para rotular tudo.
+// Os ângulos são irregulares de propósito: retângulo arredondado não é a linguagem daqui.
+.op2-tag {
+  display: inline-block;
+  padding: 0.2em 0.7em 0.25em;
+  background: var(--op2-vermelho);
+  color: #fff !important; // sobre vermelho é sempre branco; o tema claro do core pinta button/select de escuro
+  font-family: var(--op2-fonte-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  clip-path: polygon(0 6%, 100% 0, 99% 88%, 1% 100%);
+
+  &--pequena {
+    padding: 0.15em 0.55em 0.2em;
+    font-size: 0.72rem;
+  }
+
+  &--secao {
+    align-self: start;
+    clip-path: polygon(0 8%, 100% 0, 98% 90%, 2% 100%);
+  }
+
+  &--perfil {
+    padding: 0;
+    select {
+      height: auto;
+      padding: 0.2em 0.6em;
+      border: 0;
+      background: transparent;
+      color: #fff !important;
+      font-family: var(--op2-fonte-display);
+      font-weight: 700;
+      text-transform: uppercase;
+
+      // Sem sobrepor a borda vermelha do hover geral — a tag inteira já é vermelha.
+      &:hover:not([disabled]) { border-color: transparent; }
+    }
+  }
+}
+
+// Moldura de canto: as duas linhas finas que emolduram a ficha oficial.
+.op2-moldura {
+  position: relative;
+  border: 1px solid var(--op2-linha);
+  border-radius: var(--op2-raio);
+  background: var(--op2-superficie);
+
+  &::before {
+    position: absolute;
+    inset: 4px;
+    border: 1px solid color-mix(in srgb, var(--op2-vermelho) 45%, transparent);
+    border-radius: 2px;
+    content: "";
+    pointer-events: none;
+    // Só os cantos, como na diagramação do livro.
+    mask-image:
+      linear-gradient(to right, #000 0 22px, transparent 22px calc(100% - 22px), #000 calc(100% - 22px)),
+      linear-gradient(to bottom, #000 0 22px, transparent 22px calc(100% - 22px), #000 calc(100% - 22px));
+    mask-composite: intersect;
+  }
+}
+
+.op2-botao {
+  padding: 0.35em 0.8em;
+  border: 1px solid var(--op2-linha-forte);
+  border-radius: var(--op2-raio);
+  background: var(--op2-superficie-alta);
+  color: var(--op2-texto);
+  font-family: var(--op2-fonte-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover:not([disabled]) {
+    border-color: var(--op2-vermelho);
+    color: var(--op2-vermelho-claro);
+  }
+
+  // Sem isto, um botão desabilitado (trava de cena, desafio quebrado) fica
+  // idêntico a um clicável — só o clique não funciona, mas nada avisa o olho
+  // (achado em uso real, verificando a seção de Desafios do painel).
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+  }
+
+  &--fantasma {
+    background: transparent;
+  }
+
+  &--pequeno {
+    padding: 0.25em 0.6em;
+    font-size: 0.75rem;
+  }
+
+  &--perigo {
+    border-color: var(--op2-perigo);
+    background: color-mix(in srgb, var(--op2-perigo) 22%, transparent);
+  }
+}
+
+.op2-botao-icone {
+  // `inline-flex` porque a mesma classe também veste um `<label>` (checkbox
+  // escondido + ícone) pra virar um toggle — `width`/`height` não pegam em
+  // elemento inline puro (achado em uso real: o ícone de ocultar informação
+  // ficava com o tamanho do próprio glifo, sem a caixa clicável ao redor).
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  padding: 0;
+  border: 0;
+  border-radius: var(--op2-raio);
+  background: transparent;
+  color: var(--op2-texto-fraco);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--op2-vermelho-claro);
+  }
+}
+
+// Fica sempre visível (não só em hover): é o único jeito de abrir o diálogo de teste
+// em toque, onde Shift+clique não existe.
+.op2-abrir-dialogo {
+  flex: 0 0 auto;
+  font-size: 0.75rem;
+  opacity: 0.65;
+
+  &:hover { opacity: 1; }
+}
+
+.op2-ajuda,
+.op2-dica {
+  margin: 0.25rem 0 0;
+  color: var(--op2-texto-fraco);
+  font-size: 0.75rem;
+  line-height: 1.4;
+
+  &--sucesso { color: var(--op2-sucesso); }
+}
+
+.op2-vazio {
+  margin: 0;
+  padding: var(--op2-e4);
+  color: var(--op2-texto-fraco);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.op2-aviso {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: var(--op2-e2) 0 0;
+  padding: 0.4rem 0.6rem;
+  border-left: 3px solid var(--op2-vermelho);
+  background: color-mix(in srgb, var(--op2-vermelho) 12%, transparent);
+  font-size: 0.78rem;
+}
+
+.op2-campo {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: var(--op2-e1);
+
+  > span {
+    color: var(--op2-texto-fraco);
+    font-family: var(--op2-fonte-display);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  &--inline {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--op2-e2);
+  }
+}
+
+.op2-grade-campos {
+  display: grid;
+  gap: var(--op2-e2);
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+
+// ---------------------------------------------------------------- janelas --
+// O core deixa o frame translúcido (`rgba(11,10,19,.9)`), o cabeçalho em 50% e
+// ainda aplica `backdrop-filter: blur(4px)` no conteúdo: com duas janelas
+// empilhadas dava pra ler as duas ao mesmo tempo, e nenhuma direito (achado em
+// uso real). Toda janela do sistema fica opaca, com uma borda vermelha escura
+// que dá o contorno pra achar a janela na tela.
+// Toda janela do sistema leva `op2` na raiz; `[class*="op2-"]` é a rede de segurança
+// para uma janela nova que esqueça — três fichas ficaram anos fora desta regra e por
+// isso não rolavam (achado em uso real, mais de uma vez).
+.application.op2,
+.application[class*="op2-"] {
+  --op2-borda-janela: #{"color-mix(in srgb, var(--op2-vermelho-escuro) 85%, transparent)"};
+
+  background: var(--op2-fundo);
+  backdrop-filter: none;
+  border: 3px solid var(--op2-borda-janela);
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.8);
+
+  > .window-header {
+    background: var(--op2-superficie-alta);
+    backdrop-filter: none;
+    border-bottom: 1px solid var(--op2-borda-janela);
+    // O core pinta o título de branco supondo o header escuro dele; o nosso segue
+    // a superfície do tema — no claro, ficava branco sobre creme (achado em uso real).
+    color: var(--op2-texto);
+    .window-title, .header-control, button { color: var(--op2-texto); }
+  }
+
+  // Janela de altura automática cresce com o conteúdo — e passava da tela: a ficha
+  // do ponto com dez linhas de quadro sumia por baixo, sem barra de rolagem (achado
+  // em uso real). Toda janela do sistema para na tela e o conteúdo rola por dentro;
+  // janela de altura fixa já vinha com o conteúdo cortado sem rolar, pelo mesmo motivo.
+  max-height: calc(100vh - 2rem);
+
+  .window-content {
+    backdrop-filter: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 0;
+  }
+}
+
+}

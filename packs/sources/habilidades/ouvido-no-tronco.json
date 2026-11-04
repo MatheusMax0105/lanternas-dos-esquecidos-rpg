@@ -1,0 +1,28 @@
+{
+  "_id": "a100000000000012",
+  "_key": "!items!a100000000000012",
+  "name": "Ouvido no Tronco",
+  "type": "habilidade",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/olhar-infalivel.svg",
+  "system": {
+    "origem": "ocupacao",
+    "perfil": "",
+    "custo": "",
+    "custoPD": 0,
+    "descricao": "<p>Você separa o estalo de um galho do ruído de passos, ferramentas ou vozes abafadas na mata. Quando a cena permite escutar com atenção, a mesa pode esclarecer de onde vem um som ou o que o encobre; um teste de <strong>Observação</strong> pode ajudar a distinguir sinais sutis.</p>",
+    "efeito": {
+      "tipo": "nenhum",
+      "passos": 1,
+      "dado": "d4",
+      "chaves": [],
+      "permitirD20": false,
+      "pdAoDescobrir": 0
+    },
+    "usoEmInvestigacao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

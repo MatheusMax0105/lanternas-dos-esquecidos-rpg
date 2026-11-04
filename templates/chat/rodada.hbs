@@ -1,0 +1,40 @@
+<div class="op2 op2-card op2-card--investigacao">
+  <header class="op2-card__topo">
+    {{#if soEvento}}
+      <span class="op2-tag op2-tag--pequena">{{localize "OP2.Evento.Gatilho"}}</span>
+    {{else}}
+      <span class="op2-tag op2-tag--pequena">{{localize "OP2.Rodada.Titulo" rodada=nova}}</span>
+    {{/if}}
+  </header>
+
+  {{!-- Roteiro dos eventos disparados: a narração é para ler em voz alta, o efeito é
+        do mestre. Cada evento conta as próprias rodadas a partir do gatilho. --}}
+  {{#each eventos}}
+    <div class="op2-card__evento">
+      <span class="op2-card__evento-nome">{{nome}} · {{localize "OP2.Evento.RodadaDoEventoCurta" rodada=rodadaDoEvento}}</span>
+      {{#if narracao}}
+        <div class="op2-card__narracao">{{{narracao}}}</div>
+      {{/if}}
+      {{#if efeito}}
+        <div class="op2-ajuda op2-card__evento-efeito" data-op2-gm>
+          <strong>{{localize "OP2.Rodada.EventoEfeito"}}</strong> {{{efeito}}}
+        </div>
+      {{/if}}
+    </div>
+  {{/each}}
+
+  {{#if temDano}}
+    <p class="op2-card__texto">{{localize "OP2.Rodada.SobrecargaTexto" encerrada=encerrada dano=dano}}</p>
+    <div class="op2-card__acoes">
+      {{#each personagens}}
+        <button type="button" class="op2-botao op2-botao--pequeno" data-op2-acao="rolar-sobrecarga"
+          data-ator-id="{{id}}" data-expressao="{{../dano}}">
+          <i class="fa-solid {{#if ../danoRola}}fa-dice{{else}}fa-heart-crack{{/if}}" aria-hidden="true"></i>
+          {{nome}} · {{../danoRotulo}}
+        </button>
+      {{/each}}
+    </div>
+  {{else}}
+    {{#if encerrada}}<p class="op2-ajuda">{{localize "OP2.Rodada.SemDano" encerrada=encerrada}}</p>{{/if}}
+  {{/if}}
+</div>

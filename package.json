@@ -1,0 +1,40 @@
+{
+  "name": "ordem-paranormal-2e-fvtt",
+  "license": "GPL-3.0-only",
+  "version": "0.9.6",
+  "private": true,
+  "description": "As Lanternas dos Esquecidos RPG — adaptação temática para Foundry VTT baseada em Ordem Paranormal RPG 2 - Playtest",
+  "type": "module",
+  "scripts": {
+    "setup": "bash scripts/setup-dev.sh",
+    "build:css": "sass styles/op2.scss styles/op2.css --style=compressed --no-source-map",
+    "watch:css": "sass styles/op2.scss styles/op2.css --watch",
+    "lint": "eslint module --ext .mjs",
+    "lint:fix": "eslint module --ext .mjs --fix",
+    "test": "node --test module/tests/*.test.mjs",
+    "pack:build": "node scripts/build-packs.mjs && node scripts/aventura/gerar-fontes.mjs",
+    "posicoes": "node scripts/aventura/capturar-posicoes.mjs",
+    "check": "npm run lint && npm run build:css && npm test",
+    "preview": "npm run build:css && node scripts/preview.mjs",
+    "e2e": "node scripts/e2e/verificar.mjs",
+    "ato-i:cena": "node scripts/ato-i/importar-cena.mjs",
+    "ato-ii:cena": "node scripts/ato-i/importar-cena.mjs --ato ato-ii",
+    "ato-i:gerar-cena": "node scripts/ato-i/gerar-cena.mjs",
+    "ato-i:gerar-aventura": "node scripts/ato-i/gerar-aventura.mjs",
+    "ato-i:extrair": "python3 scripts/ato-i/extrair-aventura.py",
+    "reparar-pastas": "node scripts/reparar-pastas-compendio.mjs",
+    "ato-ii:extrair": "python3 scripts/ato-ii/extrair-aventura.py",
+    "ato-ii:gerar-cena": "node scripts/ato-ii/gerar-cena.mjs",
+    "ato-ii:gerar-aventura": "node scripts/ato-ii/gerar-aventura.mjs"
+  },
+  "devDependencies": {
+    "@foundryvtt/foundryvtt-cli": "^2.0.0",
+    "eslint": "^8.57.0",
+    "handlebars": "^4.7.9",
+    "sass": "^1.70.0",
+    "playwright": "^1.62.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

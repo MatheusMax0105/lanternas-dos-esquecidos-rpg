@@ -1,0 +1,17 @@
+{
+  "_id": "b100000000000010",
+  "_key": "!items!b100000000000010",
+  "name": "Coveiro Ritualista",
+  "type": "ocupacao",
+  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "system": {
+    "descricao": "<p>Você abre sepulturas e conduz os preparativos funerários conforme os costumes locais. Em tempos de pavor, cada túmulo violado ameaça expor histórias que deveriam permanecer enterradas.</p>",
+    "habilidade": "Terra sob as Unhas",
+    "habilidadeUuid": "Compendium.ordem-paranormal-2e.habilidades.Item.a100000000000010"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

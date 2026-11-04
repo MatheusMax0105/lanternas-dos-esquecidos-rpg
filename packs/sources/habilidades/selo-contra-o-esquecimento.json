@@ -1,0 +1,28 @@
+{
+  "_id": "a100000000000029",
+  "_key": "!items!a100000000000029",
+  "name": "Selo contra o Esquecimento",
+  "type": "habilidade",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/conhecimento-tecnico.svg",
+  "system": {
+    "origem": "ocupacao",
+    "perfil": "",
+    "custo": "",
+    "custoPD": 0,
+    "descricao": "<p>Você prepara cópias claras de nomes, datas e depoimentos, preservando rasuras e diferenças entre versões. Ao comparar registros, a mesa pode recorrer a esse cuidado para apontar o que mudou ou foi omitido; um teste de <strong>Caligrafia e Artes</strong> ajuda a decifrar uma escrita difícil.</p>",
+    "efeito": {
+      "tipo": "nenhum",
+      "passos": 1,
+      "dado": "d4",
+      "chaves": [],
+      "permitirD20": false,
+      "pdAoDescobrir": 0
+    },
+    "usoEmInvestigacao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

@@ -1,0 +1,215 @@
+{
+  "id": "ordem-paranormal-2e",
+  "title": "As Lanternas dos Esquecidos RPG",
+  "description": "As Lanternas dos Esquecidos RPG é uma adaptação temática para Foundry VTT de uma campanha própria ambientada na China da Dinastia Tang, em 878 d.C. Usa como base o sistema Ordem Paranormal RPG 2 - Playtest (Não Oficial), desenvolvido por Sérgio Sousa; a adaptação e expansão de conteúdo são de Matheus Max Duarte de Lima. Preserva a estrutura fundamental do sistema original. Projeto não oficial sob a Licença da Comunidade, sem afiliação com os detentores dos direitos. Não inclui texto nem arte do livro. Código escrito com auxílio de IA; textos próprios da campanha por Matheus Max Duarte de Lima.",
+  "version": "0.9.6",
+  "socket": true,
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14"
+  },
+  "esmodules": [
+    "module/op2.mjs"
+  ],
+  "styles": [
+    "styles/op2.css"
+  ],
+  "languages": [
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    },
+    {
+      "lang": "pt",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "personagem": {},
+      "npc": {},
+      "investigacao": {}
+    },
+    "Item": {
+      "habilidade": {},
+      "equipamento": {},
+      "ferramenta": {},
+      "ponto-interesse": {},
+      "desafio-acesso": {},
+      "ocupacao": {},
+      "evento": {}
+    }
+  },
+  "relationships": {
+    "recommends": [
+      {
+        "id": "pt-BR",
+        "type": "module",
+        "reason": "Traduz a interface do próprio Foundry para português. O sistema já vem em pt-BR; o core, não."
+      }
+    ]
+  },
+  "authors": [
+    {
+      "name": "Sérgio Sousa",
+      "url": "https://meioorc.com"
+    },
+    {
+      "name": "Matheus Max Duarte de Lima (adaptação temática)",
+      "url": "https://github.com/MatheusMax0105"
+    }
+  ],
+  "url": "https://github.com/MatheusMax0105/lanternas-dos-esquecidos-rpg",
+  "readme": "https://github.com/MatheusMax0105/lanternas-dos-esquecidos-rpg#readme",
+  "bugs": "https://github.com/MatheusMax0105/lanternas-dos-esquecidos-rpg/issues",
+  "changelog": "https://github.com/MatheusMax0105/lanternas-dos-esquecidos-rpg/blob/main/CHANGELOG.md",
+  "media": [
+    {
+      "type": "setup",
+      "url": "systems/ordem-paranormal-2e/assets/marca/setup.png",
+      "caption": "Card do sistema na tela de setup"
+    },
+    {
+      "type": "cover",
+      "url": "https://raw.githubusercontent.com/MatheusMax0105/lanternas-dos-esquecidos-rpg/main/assets/marca/setup.png",
+      "caption": "As Lanternas dos Esquecidos RPG — adaptação temática"
+    },
+    {
+      "type": "icon",
+      "url": "https://raw.githubusercontent.com/MatheusMax0105/lanternas-dos-esquecidos-rpg/main/assets/licenca/selo-branco.png",
+      "caption": "Selo da Licença da Comunidade"
+    },
+    {
+      "type": "screenshot",
+      "url": "https://raw.githubusercontent.com/MatheusMax0105/lanternas-dos-esquecidos-rpg/main/docs/img/ficha-personagem.png",
+      "caption": "Ficha de personagem: escada d4→d12, perícias pareadas com atributo e a cor do perfil."
+    },
+    {
+      "type": "screenshot",
+      "url": "https://raw.githubusercontent.com/MatheusMax0105/lanternas-dos-esquecidos-rpg/main/docs/img/painel-investigacao.png",
+      "caption": "Painel do mestre: rodadas, pontos de interesse com o quadro Perícia · DT · Informação e desafios."
+    },
+    {
+      "type": "screenshot",
+      "url": "https://raw.githubusercontent.com/MatheusMax0105/lanternas-dos-esquecidos-rpg/main/docs/img/aventuras-do-playtest.png",
+      "caption": "Aventuras do playtest: o sistema lê o seu PDF e monta os dois atos no compêndio do mundo."
+    },
+    {
+      "type": "screenshot",
+      "url": "https://raw.githubusercontent.com/MatheusMax0105/lanternas-dos-esquecidos-rpg/main/docs/img/card-examinar.png",
+      "caption": "Examinar no chat: RA/RB, o que foi descoberto e o custo em PD."
+    },
+    {
+      "type": "screenshot",
+      "url": "https://raw.githubusercontent.com/MatheusMax0105/lanternas-dos-esquecidos-rpg/main/docs/img/dialogo-teste.png",
+      "caption": "Diálogo de teste: dados da perícia e do atributo, DT e teste oposto."
+    }
+  ],
+  "license": "LICENSE",
+  "grid": {
+    "distance": 1.5,
+    "units": "m"
+  },
+  "primaryTokenAttribute": "recursos.pv",
+  "secondaryTokenAttribute": "recursos.pd",
+  "packs": [
+    {
+      "name": "ato-i-aventura",
+      "label": "Ato I — A Aventura",
+      "path": "packs/ato-i-aventura",
+      "type": "Adventure",
+      "system": "ordem-paranormal-2e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "ato-ii-aventura",
+      "label": "Ato II — A Aventura",
+      "path": "packs/ato-ii-aventura",
+      "type": "Adventure",
+      "system": "ordem-paranormal-2e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "habilidades",
+      "label": "Habilidades",
+      "path": "packs/habilidades",
+      "type": "Item",
+      "system": "ordem-paranormal-2e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "ferramentas",
+      "label": "Ferramentas da Ordo Realitas",
+      "path": "packs/ferramentas",
+      "type": "Item",
+      "system": "ordem-paranormal-2e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "ocupacoes",
+      "label": "Ocupações",
+      "path": "packs/ocupacoes",
+      "type": "Item",
+      "system": "ordem-paranormal-2e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "As Lanternas dos Esquecidos",
+      "sorting": "m",
+      "color": "#c8321e",
+      "packs": [],
+      "folders": [
+        {
+          "name": "Sistema original — Regras",
+          "sorting": "m",
+          "color": "#8f2315",
+          "packs": [
+            "habilidades",
+            "ocupacoes",
+            "ferramentas"
+          ]
+        },
+        {
+          "name": "Playtest original — Ato I",
+          "sorting": "m",
+          "color": "#8f2315",
+          "packs": [
+            "ato-i-aventura"
+          ]
+        },
+        {
+          "name": "Playtest original — Ato II",
+          "sorting": "m",
+          "color": "#8f2315",
+          "packs": [
+            "ato-ii-aventura"
+          ]
+        }
+      ]
+    }
+  ]
+}

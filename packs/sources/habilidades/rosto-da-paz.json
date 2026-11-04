@@ -1,0 +1,28 @@
+{
+  "_id": "a100000000000026",
+  "_key": "!items!a100000000000026",
+  "name": "Rosto da Paz",
+  "type": "habilidade",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/foco-emocional.svg",
+  "system": {
+    "origem": "ocupacao",
+    "perfil": "",
+    "custo": "",
+    "custoPD": 0,
+    "descricao": "<p>Você percebe gestos e formas de tratamento que ajudam a evitar uma ofensa entre pessoas de costumes diferentes. Ao conversar, pode propor uma apresentação respeitosa; a mesa decide como isso afeta a disposição dos presentes, sem garantir sua concordância. Um teste de <strong>Diplomacia</strong> pode acompanhar a conversa.</p>",
+    "efeito": {
+      "tipo": "nenhum",
+      "passos": 1,
+      "dado": "d6",
+      "chaves": [],
+      "permitirD20": false,
+      "pdAoDescobrir": 0
+    },
+    "usoEmInvestigacao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

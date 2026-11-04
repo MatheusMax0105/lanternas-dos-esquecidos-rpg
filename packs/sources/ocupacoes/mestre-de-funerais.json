@@ -1,0 +1,17 @@
+{
+  "_id": "b100000000000030",
+  "_key": "!items!b100000000000030",
+  "name": "Mestre de Funerais",
+  "type": "ocupacao",
+  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "system": {
+    "descricao": "<p>Você conduz despedidas, acolhe famílias e preserva os costumes que dão sentido ao luto. Escutando os enlutados, percebe o peso de histórias que os mortos não puderam contar.</p>",
+    "habilidade": "Última Testemunha",
+    "habilidadeUuid": "Compendium.ordem-paranormal-2e.habilidades.Item.a100000000000030"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

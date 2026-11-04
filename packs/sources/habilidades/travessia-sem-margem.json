@@ -1,0 +1,29 @@
+{
+  "_id": "a100000000000014",
+  "_key": "!items!a100000000000014",
+  "name": "Travessia sem Margem",
+  "type": "habilidade",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/esforco-e-suor.svg",
+  "system": {
+    "origem": "ocupacao",
+    "perfil": "",
+    "custo": "",
+    "custoPD": 0,
+    "custo": "1 PV",
+    "descricao": "<p>Você sabe distribuir peso e manter o equilíbrio numa embarcação que cruza água agitada. Durante uma travessia arriscada, pode gastar <strong>1 PV</strong> e acrescentar manualmente um dado extra <strong>d4</strong> a um teste de <strong>Atletismo</strong>; a mesa aplica o dado e registra o custo em PV.</p>",
+    "efeito": {
+      "tipo": "nenhum",
+      "passos": 1,
+      "dado": "d4",
+      "chaves": [],
+      "permitirD20": false,
+      "pdAoDescobrir": 0
+    },
+    "usoEmInvestigacao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

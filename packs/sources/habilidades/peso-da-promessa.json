@@ -1,0 +1,28 @@
+{
+  "_id": "a100000000000016",
+  "_key": "!items!a100000000000016",
+  "name": "Peso da Promessa",
+  "type": "habilidade",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/mentoria.svg",
+  "system": {
+    "origem": "ocupacao",
+    "perfil": "",
+    "custo": "",
+    "custoPD": 0,
+    "descricao": "<p>Você percebe quais termos de uma troca são importantes para cada parte e consegue propor uma negociação que preserve a confiança. A mesa pode usar essa leitura para abrir uma abordagem conciliadora; num teste de <strong>Diplomacia</strong> sobre a barganha, aumente manualmente o dado em <strong>um passo</strong>.</p>",
+    "efeito": {
+      "tipo": "nenhum",
+      "passos": 1,
+      "dado": "d4",
+      "chaves": [],
+      "permitirD20": false,
+      "pdAoDescobrir": 0
+    },
+    "usoEmInvestigacao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

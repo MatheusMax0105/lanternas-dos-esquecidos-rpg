@@ -1,0 +1,875 @@
+@layer system {
+.op2-ficha {
+  .window-content {
+    padding: var(--op2-e3);
+    background: var(--op2-fundo);
+    gap: var(--op2-e3);
+  }
+}
+
+// A ficha INTEIRA veste a cor do perfil, como na diagramação do livro: na ficha da
+// Eloísa (Analista) o azul está na moldura, no nome, nas tags de seção, nos dados,
+// nas trilhas de PV/PD — em tudo que na do Executor é vermelho. Por isso a troca é no
+// token, não em regras avulsas: todo componente da ficha já lê `--op2-vermelho`.
+.op2[data-perfil="analista"] {
+  --op2-vermelho: var(--op2-perfil-analista);
+  --op2-vermelho-claro: var(--op2-perfil-analista-claro);
+  --op2-vermelho-escuro: #24589e;
+}
+
+.op2[data-perfil="vigilante"] {
+  --op2-vermelho: var(--op2-perfil-vigilante);
+  --op2-vermelho-claro: var(--op2-perfil-vigilante-claro);
+  --op2-vermelho-escuro: #345818;
+}
+
+// O Executor é o vermelho do sistema — o mesmo do livro, que já era o tema.
+
+.op2-ficha--personagem {
+  // O contorno do retrato entra na cor do perfil, como a moldura da página.
+  .op2-cabecalho__retrato { border-color: color-mix(in srgb, var(--op2-vermelho-claro) 55%, transparent); }
+
+  .op2-tag--perfil select { color: #fff; }
+}
+
+// Duas colunas: a ficha à esquerda, as perícias sempre visíveis à direita —
+// como na diagramação oficial, onde a coluna de perícias nunca sai da vista.
+.op2-ficha--personagem .window-content {
+  display: grid;
+  align-content: start;
+  grid-template-areas:
+    "cabecalho pericias"
+    "abas      pericias"
+    "painel    pericias";
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 300px);
+  // Piso na faixa de conteúdo: com `minmax(0, 1fr)` ela cedia todo o espaço para o
+  // cabeçalho e sobravam duas linhas para Habilidades, Inventário e Notas — a ficha
+  // ficava impossível de usar em quem tem PV/PD altos, que quebram os traços em mais
+  // linhas (achado em uso real). Abaixo disso, quem rola é a coluna inteira.
+  grid-template-rows: auto auto minmax(15rem, 1fr);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+// Nome em cima, ocupando a largura toda; retrato à esquerda; identidade e atributos
+// em duas colunas empilhadas à direita; PV/PD por último, largura toda. O layout
+// antigo espremia FÍSICO, MENTE e EMOÇÃO lado a lado numa faixa — "EMOÇÃO" cortava
+// contra o número do dado em qualquer janela que não fosse bem larga (achado em uso
+// real). Cada atributo com a própria linha nunca fica sem espaço para o nome.
+.op2-cabecalho {
+  display: grid;
+  padding: var(--op2-e3);
+  grid-area: cabecalho;
+  align-items: start;
+  gap: var(--op2-e2) var(--op2-e3);
+  grid-template-columns: 104px minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas:
+    "nome       nome        nome"
+    "retrato    identidade  atributos"
+    "recursos   recursos    recursos"
+    "estado     estado      estado";
+
+  &__nome { grid-area: nome; }
+
+  &__retrato {
+    position: relative;
+    overflow: hidden;
+    // `stretch` fazia o retrato acompanhar a altura de identidade + atributos: numa
+    // ficha de nível 2 ele passava de 300px e empurrava tudo para baixo, deixando
+    // Habilidades/Inventário/Notas sem espaço (achado em uso real).
+    align-self: start;
+    max-height: 150px;
+    border: 1px solid var(--op2-linha-forte);
+    border-radius: var(--op2-raio);
+    background: color-mix(in srgb, var(--op2-fundo) 60%, transparent);
+    grid-area: retrato;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      // Baixo o bastante para acompanhar a coluna de atributos quando ela encolhe —
+      // um chão alto aqui brigava com o pedido de deixar o retrato mais quadrado.
+      min-height: 5rem;
+      cursor: pointer;
+      object-fit: cover;
+    }
+
+    &--pequeno { height: 96px; }
+  }
+
+  &__identidade {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: var(--op2-e2);
+    grid-area: identidade;
+  }
+
+  &__recursos { grid-area: recursos; }
+  &__estado { grid-area: estado; }
+}
+
+// Perfil sozinho na própria linha, largura natural — não precisa mais dividir espaço
+// com Ocupação e Nível na mesma faixa horizontal.
+.op2-tag--bloco {
+  align-self: flex-start;
+}
+
+.op2-identidade__linha {
+  display: flex;
+  gap: var(--op2-e3);
+}
+
+.op2-nome {
+  width: 100%;
+  min-width: 0;
+  height: 2.4rem;
+  border: 0;
+  border-bottom: 2px solid var(--op2-vermelho);
+  border-radius: 0;
+  background: transparent;
+  font-family: var(--op2-fonte-display);
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+// Cabeçalho das fichas de item: o ícone é um thumbnail, nunca a imagem inteira —
+// o ícone padrão do core (o saco) cresce sem limite se não for contido.
+// A ficha de item (habilidade, equipamento, POI) usava só o header estilizado — o
+// resto (fieldset, labels, espaçamento entre blocos) ficava no visual cru do
+// navegador: caixa preta sem padding, texto colado na linha de cima, sem o mesmo
+// peso tipográfico da ficha de personagem (achado em uso real).
+.op2-item-ficha {
+  display: flex;
+  flex-direction: column;
+  gap: var(--op2-e4);
+  font-size: 0.92rem;
+}
+
+.op2-item-ficha__topo {
+  display: flex;
+  align-items: center;
+  gap: var(--op2-e3);
+  padding-bottom: var(--op2-e3);
+  border-bottom: 1px solid var(--op2-linha);
+
+  img {
+    width: 3.5rem;
+    height: 3.5rem;
+    flex: 0 0 auto;
+    margin: 0;
+    border: 1px solid var(--op2-vermelho);
+    border-radius: var(--op2-raio);
+    // Vale para o retrato do NPC também: foto em pé cortada pelo meio vira torso.
+    object-fit: cover;
+    object-position: center top;
+    cursor: pointer;
+  }
+
+  .op2-nome {
+    height: 2.2rem;
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: 1.4rem;
+    // Nome longo numa coluna estreita (a lateral da investigação) cortava no meio
+    // da palavra (achado na auditoria visual): reticências fora de foco.
+    text-overflow: ellipsis;
+  }
+}
+
+// A lateral da investigação é estreita: o nome cabe com o display um pouco menor.
+.op2-painel-lateral .op2-item-ficha__topo .op2-nome { font-size: 1.15rem; }
+
+.op2-identidade {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--op2-e2);
+
+  &__ponto { color: var(--op2-vermelho); }
+}
+
+// `flex: 0 0 auto` importa de verdade aqui: a coluna de identidade agora é vertical
+// (antes era uma linha horizontal), e um `flex-grow` nesse eixo faz o campo esticar a
+// altura toda da coluna em vez de ficar do tamanho de uma linha de texto (achado em
+// uso real — a Ocupação virava uma caixa preta gigante).
+.op2-ocupacao {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 1.9rem;
+  padding: 0 0.5rem;
+  font-family: var(--op2-fonte-mono);
+  font-size: 0.85rem;
+}
+
+.op2-nivel {
+  display: flex;
+  align-items: center;
+  gap: var(--op2-e1);
+  color: var(--op2-texto-fraco);
+  font-family: var(--op2-fonte-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  input {
+    width: 3rem;
+    height: 1.9rem;
+    text-align: center;
+  }
+}
+
+.op2-recursos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--op2-e2);
+}
+
+// Rótulo, valor, máximo e barra na mesma linha — a leitura da ficha do livro, mas com
+// barra em vez de pips: uma trilha de 20+ quadradinhos deixa de ser legível bem antes
+// de um PD alto (achado em uso real). O número ao lado é a mesma fonte de dados — os
+// dois sempre concordam porque vêm do mesmo `value` a cada render.
+.op2-recurso {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--op2-e1);
+
+  &__valor,
+  &__max {
+    width: 2.6rem;
+    height: 1.5rem;
+    padding: 0 0.2rem;
+    font-family: var(--op2-fonte-mono);
+    text-align: center;
+  }
+
+  &__barra-sep { color: var(--op2-vermelho); }
+}
+
+// Traços inclinados: é assim que o livro desenha PV e PD, um tally de segmentos
+// tortos, não uma barra contínua nem quadradinhos retos.
+.op2-tracos {
+  display: flex;
+  flex-wrap: wrap;
+  // Sempre na própria linha, nunca ao lado do valor — com `flex-wrap` sozinho, PV com
+  // poucos traços cabia inline e PD com muitos quebrava, e a ficha de personagens do
+  // Ato II tem PV e PD na casa dos 30+: as duas linhas ficavam desalinhadas entre si.
+  // Forçando as duas a sempre quebrar, PV e PD sempre têm a mesma forma.
+  flex-basis: 100%;
+  width: 100%;
+  // `gap` do flex pai (.op2-recurso) é pensado para os campos numéricos lado a lado;
+  // os traços, na linha de baixo, ficavam colados no número acima.
+  margin-top: 0.3rem;
+  gap: 3px;
+}
+
+.op2-traco {
+  // `skewX` em vez de `clip-path`: um clip corta a borda junto com o resto, e as
+  // duas laterais inclinadas ficam sem traço. Inclinando a caixa inteira, a borda
+  // acompanha e sai fechada nos quatro lados.
+  width: 0.5rem;
+  height: 0.75rem;
+  padding: 0;
+  border: 1px solid var(--op2-linha-forte);
+  // O traço é um <button>, e o core arredonda todo botão: sem zerar aqui, uma
+  // caixa de 8×12px com o raio do core vira um oval — exatamente o que o livro
+  // não faz (docs/ESTILO-VISUAL.md: "se você se pegar arredondando cantos,
+  // parou de seguir o livro"). Achado em uso real.
+  border-radius: 0;
+  background: transparent;
+  cursor: pointer;
+  transform: skewX(-18deg);
+
+  &--cheio {
+    border-color: var(--op2-texto);
+    background: var(--op2-texto);
+  }
+
+  &:hover { border-color: var(--op2-vermelho-claro); }
+}
+
+// Barra de ímpeto: mesma gramática do traço — retângulos inclinados, sem canto
+// arredondado —, mas maiores e em fileira própria, como na ficha do Ato I.
+// Regra da habilidade, na própria ficha: texto de corpo, menor que o nome, com o
+// espaçamento apertado — a lista precisa continuar escaneável.
+.op2-item__descricao {
+  margin-top: var(--op2-e1);
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: var(--op2-texto);
+
+  p { margin: 0 0 0.35rem; }
+  p:last-child { margin-bottom: 0; }
+  ul { margin: 0.2rem 0 0.35rem; padding-left: 1.1rem; }
+}
+
+.op2-impeto {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--op2-e2);
+  margin-top: var(--op2-e1);
+
+  // Barra cheia: o botão entrava na mesma linha e espremia os espaços contra a tag.
+  &__gastar { white-space: nowrap; }
+
+  &__barra {
+    display: flex;
+    gap: 3px;
+  }
+
+  &__espaco {
+    width: 1.6rem;
+    height: 0.85rem;
+    padding: 0;
+    border: 1px solid var(--op2-linha-forte);
+    border-radius: 0;
+    background: transparent;
+    cursor: pointer;
+    transform: skewX(-18deg);
+
+    &--cheio {
+      border-color: var(--op2-vermelho);
+      background: var(--op2-vermelho);
+    }
+
+    &:hover { border-color: var(--op2-vermelho-claro); }
+  }
+}
+
+// Abaixo de 30% do máximo, os traços preenchidos pulsam em vermelho — o mesmo aviso
+// que uma barra de vida baixa dá em qualquer jogo, aplicado ao traço do livro.
+.op2-tracos--critico .op2-traco--cheio {
+  animation: op2-pulso-critico 1.1s ease-in-out infinite;
+}
+
+@keyframes op2-pulso-critico {
+  0%, 100% {
+    border-color: var(--op2-texto);
+    background: var(--op2-texto);
+    box-shadow: 0 0 0 var(--op2-vermelho-claro);
+  }
+  50% {
+    border-color: var(--op2-vermelho-claro);
+    background: var(--op2-vermelho-claro);
+    box-shadow: 0 0 4px 1px var(--op2-vermelho-claro);
+  }
+}
+
+// Pulso rápido pode incomodar quem pediu menos movimento na interface — some a
+// animação e deixa só a cor de aviso, fixa.
+@media (prefers-reduced-motion: reduce) {
+  .op2-tracos--critico .op2-traco--cheio {
+    animation: none;
+    border-color: var(--op2-vermelho-claro);
+    background: var(--op2-vermelho-claro);
+  }
+}
+
+// Barra de progresso dos desafios de acesso (Arrombar): pontuação atual sobre a
+// Pontuação Alvo. É preenchimento contínuo, não tally — não há "passos" aqui,
+// só uma soma de RA subindo até estourar o alvo.
+.op2-progresso {
+  width: 100%;
+  height: 0.6rem;
+  border: 1px solid var(--op2-linha-forte);
+  background: transparent;
+  overflow: hidden;
+
+  &__preenchido {
+    height: 100%;
+    background: var(--op2-texto);
+    transition: width 0.2s ease-out;
+  }
+}
+
+// Os três atributos dividem a linha, como na ficha do livro.
+// Empilhados — cada atributo com a própria linha, largura toda. É o que dá espaço
+// de sobra para "EMOÇÃO" (o nome mais longo dos três) sem cortar contra o dado.
+.op2-atributos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--op2-e1);
+  grid-area: atributos;
+
+  // A ficha de NPC não faz parte do grid do cabeçalho de personagem; ali os três
+  // ainda cabem lado a lado com folga, sem o dado extra do diálogo/redução.
+  &--npc {
+    display: grid;
+    gap: var(--op2-e2);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.op2-atributo {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--op2-e1);
+  padding: 0.15rem 0.45rem;
+  border: 1px solid var(--op2-linha);
+  border-radius: var(--op2-raio);
+
+  &__nome {
+    // `min-width: 0` é o que deixa o text-overflow agir dentro do flex.
+    min-width: 0;
+    flex: 1 1 auto;
+    justify-content: flex-start;
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--op2-texto);
+    cursor: pointer;
+    font-family: var(--op2-fonte-display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-align: left;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    &:hover { color: var(--op2-vermelho-claro); }
+  }
+
+  &--reduzido { border-color: var(--op2-vermelho-escuro); }
+
+  &__base { display: flex; }
+}
+
+// Faixa de estado: só existe quando alguma redução temporária está ativa.
+.op2-estado {
+  display: flex;
+  align-items: center;
+  padding: 0.35rem 0.6rem;
+  border-left: 3px solid var(--op2-vermelho);
+  background: color-mix(in srgb, var(--op2-vermelho) 12%, transparent);
+  color: var(--op2-vermelho-claro);
+  gap: var(--op2-e2);
+
+  &__texto {
+    flex: 1 1 auto;
+    color: var(--op2-texto);
+    font-size: 0.78rem;
+  }
+}
+
+.op2-abas {
+  display: flex;
+  border-bottom: 1px solid var(--op2-linha);
+  grid-area: abas;
+}
+
+// O core desenha um contorno próprio na aba ativa, num laranja que não é do sistema —
+// numa ficha azul ou verde ele aparecia sozinho (achado na revisão visual).
+.op2 .op2-abas .op2-aba.active { outline-color: var(--op2-vermelho-claro); }
+
+.op2-aba {
+  flex: 1 1 0;
+  padding: 0.5rem 0.6rem 0.6rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--op2-texto-fraco);
+  cursor: pointer;
+  font-family: var(--op2-fonte-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  &.active {
+    color: var(--op2-texto);
+    box-shadow: inset 0 -2px var(--op2-vermelho);
+  }
+}
+
+.op2-painel {
+  display: none;
+  min-height: 0;
+  padding: var(--op2-e3);
+  overflow-y: auto;
+  grid-area: painel;
+  // A faixa tem piso próprio; sem isto o painel ainda encolhia dentro dela quando o
+  // conteúdo era curto, e a lista de habilidades ficava colada nas abas.
+  align-self: stretch;
+
+  &.active { display: block; }
+
+  &__topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--op2-e2);
+    gap: var(--op2-e2);
+  }
+}
+
+.op2-lista-itens {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  gap: var(--op2-e1);
+  list-style: none;
+}
+
+.op2-item {
+  display: grid;
+  align-items: center;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--op2-linha);
+  border-radius: var(--op2-raio);
+  gap: var(--op2-e2);
+  // ícone · nome/meta · apagar. Base para qualquer lista de item (Habilidades
+  // inclusive); o inventário tem duas colunas a mais e se estende logo abaixo.
+  grid-template-columns: 2rem minmax(0, 1fr) 1.6rem;
+
+  &:hover { border-color: var(--op2-linha-forte); background: var(--op2-superficie-alta); }
+
+  // Equipado é um estado que vale ver de relance na lista — sem abrir a ficha do
+  // item — por isso o indicador não é só um texto na linha de meta, é um botão com
+  // estado visual próprio, e um leve destaque na borda do item inteiro.
+  &--equipado { border-color: color-mix(in srgb, var(--op2-vermelho) 45%, var(--op2-linha)); }
+
+  &__icone { width: 2rem; height: 2rem; border: 0; object-fit: cover; }
+
+  &__texto { display: flex; min-width: 0; flex-direction: column; }
+
+  &__nome {
+    justify-content: flex-start;
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--op2-texto);
+    cursor: pointer;
+    font-family: var(--op2-fonte-display);
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:hover { color: var(--op2-vermelho-claro); }
+  }
+
+  &__meta {
+    color: var(--op2-vermelho-claro);
+    font-family: var(--op2-fonte-mono);
+    font-size: 0.7rem;
+  }
+
+  &__equipado {
+    display: grid;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    border: 1px solid var(--op2-linha);
+    border-radius: var(--op2-raio);
+    background: transparent;
+    color: var(--op2-texto-fraco);
+    cursor: pointer;
+    place-items: center;
+
+    &:hover:not([disabled]) { border-color: var(--op2-vermelho-claro); color: var(--op2-vermelho-claro); }
+
+    &--ativo {
+      border-color: var(--op2-vermelho);
+      background: color-mix(in srgb, var(--op2-vermelho) 22%, transparent);
+      color: var(--op2-vermelho-claro);
+    }
+  }
+
+  &__cargas {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+
+    &-valor {
+      min-width: 2.6rem;
+      color: var(--op2-texto-fraco);
+      font-family: var(--op2-fonte-mono);
+      font-size: 0.72rem;
+      text-align: center;
+    }
+  }
+}
+
+// Só o inventário tem indicador de equipado e cargas — Habilidades usa a mesma
+// `.op2-item` com só ícone/nome/apagar (achado em uso real: o grid de 5 colunas
+// aqui espremia o nome da habilidade na coluna estreita do "equipado").
+.op2-lista-itens--inventario .op2-item {
+  // ícone · equipado · nome/meta · cargas (só quando existem) · apagar
+  grid-template-columns: 2rem 1.5rem minmax(0, 1fr) auto 1.6rem;
+}
+
+// Ferramenta não tem estado de "equipado" — só ícone · nome/meta · cargas
+// (opcional) · apagar. Reaproveitar o grid de 5 colunas do inventário deixaria a
+// coluna 2 (1.5rem, pensada para o botão de equipado) vazia e o nome espremido
+// nela de novo, o mesmo bug já corrigido para Habilidades.
+.op2-lista-itens--ferramentas .op2-item {
+  grid-template-columns: 2rem minmax(0, 1fr) auto 1.6rem;
+}
+
+// A ficha de NPC não usa o grid de abas da ficha de personagem — é uma coluna simples
+// que precisa rolar sozinha, com espaço de verdade entre as seções.
+.op2-ficha--npc .window-content,
+.op2-ficha--investigacao .window-content {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+// Seção sempre visível — ao contrário de `.op2-painel`, que só aparece com `.active`
+// (a classe das abas da ficha de personagem). Usar `.op2-painel` aqui deixava
+// Atributos, Perícias e Notas completamente invisíveis (achado em uso real).
+.op2-npc-secao {
+  display: flex;
+  flex-direction: column;
+  padding: var(--op2-e3);
+  gap: var(--op2-e2);
+
+  &--notas {
+    flex: 1 1 auto;
+    min-height: 8rem;
+  }
+}
+
+// Linha de perícia do NPC: sem par de atributo (a ficha reduzida não tem essa
+// distinção, spec §10.1), mas com o mesmo cuidado de coluna de largura fixa da
+// lista principal — nome à direita, dado sempre na mesma posição.
+.op2-pericia-npc {
+  display: grid;
+  align-items: center;
+  min-height: 1.9rem;
+  padding: 0.1rem 0.25rem;
+  border-radius: var(--op2-raio);
+  column-gap: 0.4rem;
+  grid-template-columns: minmax(0, 1fr) 1.6rem 1.6rem;
+
+  &:hover { background: var(--op2-superficie-alta); }
+
+  &__nome {
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--op2-texto);
+    cursor: pointer;
+    font-family: var(--op2-fonte-mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    text-align: right;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    &:hover { color: var(--op2-vermelho-claro); }
+  }
+}
+
+.op2-lista-pericias--npc {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+// Todo fieldset de ficha de item — Efeito da habilidade, Cargas do equipamento e
+// da ferramenta, Progresso do desafio de acesso. Sem isso é a caixa cinza crua do
+// navegador: borda inset de 2px, sem cor do tema, texto colado na legenda (achado
+// em uso real — só `.op2-efeito` tinha ganhado esse tratamento, os outros dois
+// fieldsets ficaram esquecidos e destoavam do resto da ficha).
+// A ficha do desafio cresce conforme as abordagens ligadas — precisa rolar
+// dentro da janela em vez de esticar além da tela (achado em uso real).
+.op2-ficha--desafio .window-content {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.op2-efeito,
+.op2-cargas,
+.op2-desafio-progresso,
+.op2-desafio-hack {
+  display: flex;
+  flex-direction: column;
+  padding: var(--op2-e3);
+  border: 1px solid var(--op2-linha);
+  border-radius: var(--op2-raio);
+  gap: var(--op2-e2);
+
+  legend {
+    padding: 0 0.4rem;
+    color: var(--op2-vermelho-claro);
+    font-family: var(--op2-fonte-display);
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+}
+
+// Hackear (spec §7.3): técnico e social lado a lado, cada um com estado próprio —
+// mesmo espírito visual de duas abordagens independentes já usado no resto da ficha.
+.op2-desafio-hack {
+  gap: var(--op2-e3);
+
+  &__modo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--op2-e1);
+    padding-top: var(--op2-e2);
+    border-top: 1px dashed var(--op2-linha);
+
+    &:first-child { padding-top: 0; border-top: none; }
+
+    h4 {
+      margin: 0;
+      font-family: var(--op2-fonte-display);
+      font-size: 0.85rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+  }
+
+  &__timer {
+    display: flex;
+    align-items: center;
+    gap: var(--op2-e2);
+  }
+
+  &__timer-valor {
+    min-width: 1.5rem;
+    font-family: var(--op2-fonte-mono);
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  &__perguntas {
+    display: flex;
+    flex-direction: column;
+    gap: var(--op2-e1);
+  }
+
+  &__pergunta {
+    display: flex;
+    align-items: center;
+    gap: var(--op2-e1);
+
+    input { flex: 1; min-width: 0; }
+  }
+}
+
+// `.op2-campo` já existe na base, mas dentro de uma ficha de item os rótulos
+// ("ORIGEM", "CUSTO"...) ficavam colados no controle logo abaixo por falta de
+// respiro — a base só tem `gap` entre o `<span>` e o campo, não entre campos.
+.op2-item-ficha .op2-campo,
+.op2-item-ficha .op2-grade-campos {
+  margin-top: var(--op2-e1);
+}
+
+.op2-item-ficha .op2-campo > span {
+  margin-bottom: 0.1rem;
+  font-size: 0.78rem;
+}
+
+// O editor de texto rico (ProseMirror) vem sem fundo nem borda próprios e se mistura
+// com o preto da janela: a caixa vira espaço morto em vez de se ler como um campo de
+// texto (achado em uso real). Vale para as Notas da ficha de personagem também: sem a
+// caixa, a aba parecia vazia (achado na auditoria visual, tema claro).
+.op2-item-ficha prose-mirror,
+.op2-painel--notas prose-mirror {
+  min-height: 6rem;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--op2-linha);
+  border-radius: var(--op2-raio);
+  background: color-mix(in srgb, var(--op2-fundo) 70%, transparent);
+}
+
+// O ProseMirror é um flex column cujo miolo (`.editor-content` na leitura,
+// `.editor-container` na edição) rola sozinho. Filho de flex com rolagem própria tem
+// altura mínima zero, então a caixa inteira encolhia até o `min-height` do container
+// e escondia o resto: em leitura, 116px de texto numa caixa de 78, com a barra de
+// rolagem invisível; em edição, sobrava a barra de ferramentas e 15px de área de
+// digitar — não dava para ver o que se estava escrevendo (medido nas duas fichas).
+.op2 prose-mirror {
+  height: auto;
+
+  // Leitura: o texto todo à mostra. Quem rola é a ficha. O core põe o miolo em
+  // `position: absolute; inset: 0`, então ele não conta na altura e a caixa fica do
+  // tamanho do `min-height` — o resto do texto some (medido: 108px de texto numa
+  // caixa de 78, rolando por dentro, sem barra visível).
+  &.inactive .editor-content {
+    position: static;
+    overflow: visible;
+    flex: 0 0 auto;
+  }
+
+  // Edição: barra de ferramentas mais uma área de digitar de verdade.
+  &.active {
+    min-height: 14rem;
+
+    .editor-container {
+      overflow: auto;
+      min-height: 9rem;
+      max-height: 24rem;
+    }
+  }
+}
+
+}
+
+
+// O NPC reaproveita `.op2-cabecalho`, mas só tem retrato e identidade: com a grade de
+// três colunas do personagem, a identidade caía na coluna do meio e o campo de nome
+// ficava com um terço da largura (achado em uso real).
+.op2-ficha-npc .op2-cabecalho {
+  grid-template-columns: 96px minmax(0, 1fr);
+  grid-template-areas: "retrato identidade";
+
+}
+
+@layer system {
+// Na ficha do ponto: a barra "na investigação" (oculto/visível por investigação) e a
+// linha "quem revelou" — os mesmos controles do card do painel, para quem chega pelo
+// marcador no mapa.
+.op2-poi__investigacoes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--op2-e1);
+  margin: 0 0 var(--op2-e3);
+  padding: 0;
+  list-style: none;
+}
+
+.op2-poi__investigacao {
+  display: flex;
+  align-items: center;
+  gap: var(--op2-e2);
+  padding: var(--op2-e1) var(--op2-e2);
+  border: 1px solid var(--op2-linha);
+  border-left: 3px solid var(--op2-vermelho);
+  border-radius: var(--op2-raio);
+  background: var(--op2-superficie);
+  font-size: 0.9rem;
+
+  &--oculto { border-left-style: dashed; border-left-color: var(--op2-texto-fraco); }
+  &-nome { font-weight: 700; }
+  &-estado { flex: 1 1 auto; color: var(--op2-texto-fraco); font-family: var(--op2-fonte-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .op2-botao { white-space: nowrap; }
+}
+
+.op2-poi__info-revelado {
+  display: flex;
+  align-items: center;
+  gap: var(--op2-e2);
+  margin-top: var(--op2-e1);
+  font-size: 0.8rem;
+  color: var(--op2-texto-fraco);
+}
+}

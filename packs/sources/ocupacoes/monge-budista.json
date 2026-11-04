@@ -1,0 +1,17 @@
+{
+  "_id": "b100000000000002",
+  "_key": "!items!b100000000000002",
+  "name": "Monge Budista",
+  "type": "ocupacao",
+  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "system": {
+    "descricao": "<p>Você preserva ensinamentos e cerimônias transmitidos por gerações. Em tempos de medo, procura compreender como as lembranças dos mortos afetam os vivos.</p>",
+    "habilidade": "Sino da Recordação",
+    "habilidadeUuid": "Compendium.ordem-paranormal-2e.habilidades.Item.a100000000000002"
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

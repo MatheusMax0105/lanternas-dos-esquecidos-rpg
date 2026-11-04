@@ -1,0 +1,28 @@
+{
+  "_id": "a100000000000021",
+  "_key": "!items!a100000000000021",
+  "name": "Vigília do Limiar",
+  "type": "habilidade",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/prontidao.svg",
+  "system": {
+    "origem": "ocupacao",
+    "perfil": "",
+    "custo": "",
+    "custoPD": 0,
+    "descricao": "<p>Você nota mudanças na rotina de um posto: uma sentinela ausente, uma porta usada fora de hora ou um ruído vindo do lado errado da muralha. A mesa pode destacar essas discrepâncias quando você observa o local; um teste de <strong>Observação</strong> ajuda a examinar um sinal duvidoso.</p>",
+    "efeito": {
+      "tipo": "nenhum",
+      "passos": 1,
+      "dado": "d4",
+      "chaves": [],
+      "permitirD20": false,
+      "pdAoDescobrir": 0
+    },
+    "usoEmInvestigacao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}

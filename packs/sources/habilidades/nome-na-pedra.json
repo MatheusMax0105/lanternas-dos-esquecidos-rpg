@@ -1,0 +1,28 @@
+{
+  "_id": "a100000000000009",
+  "_key": "!items!a100000000000009",
+  "name": "Nome na Pedra",
+  "type": "habilidade",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/foco-mental.svg",
+  "system": {
+    "origem": "ocupacao",
+    "perfil": "",
+    "custo": "",
+    "custoPD": 0,
+    "descricao": "<p>Você reconhece inscrições funerárias, oferendas e sinais usados para marcar um túmulo. Se uma sepultura foi violada ou recebeu um rito diferente, a mesa pode apresentar o contraste como pista; um teste de <strong>Cultos Ancestrais</strong> ajuda a interpretar marcas desconhecidas.</p>",
+    "efeito": {
+      "tipo": "nenhum",
+      "passos": 1,
+      "dado": "d4",
+      "chaves": [],
+      "permitirD20": false,
+      "pdAoDescobrir": 0
+    },
+    "usoEmInvestigacao": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {"default": 0},
+  "flags": {}
+}
