@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000016",
+  "_key": "!items!d300000000000016",
+  "name": "Chá de Crisântemo",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/cha-crisantemo.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Chá de Crisântemo</h3><p><strong>Categoria:</strong> Consumível — Recuperação de PD.</p><p><strong>Descrição:</strong> Flores secas dão cor dourada à infusão, servida sem pressa diante de uma janela aberta para a noite.</p><p><strong>Uso Histórico:</strong> Flores secas em bebidas são uma apresentação plausível; a composição e o costume local podem variar, e o efeito de jogo é uma regra caseira.</p><p><strong>Consumo:</strong> Beba uma porção e consuma manualmente uma unidade.</p><p><strong>Efeito Mecânico:</strong> Regra caseira: restaure manualmente exatamente 1 PD. Não ultrapasse o valor máximo da barra de PD.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Chá de Crisântemo<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Infusão dourada de flores secas para um intervalo silencioso.<br><strong>Efeito:</strong> Registre manualmente a recuperação de 1 PD, respeitando o máximo da barra; sem automação.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

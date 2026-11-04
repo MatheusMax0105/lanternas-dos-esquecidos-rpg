@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000012",
+  "_key": "!items!d300000000000012",
+  "name": "Chá de Jujuba",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/cha-jujuba.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Chá de Jujuba</h3><p><strong>Categoria:</strong> Consumível — Recuperação de PD.</p><p><strong>Descrição:</strong> Frutos secos infundidos em água quente dão à bebida um dulçor discreto; o preparo é levado em uma pequena garrafa de cerâmica.</p><p><strong>Uso Histórico:</strong> Frutos conservados e bebidas quentes são plausíveis para o período; a combinação é descrita como detalhe ficcional da campanha.</p><p><strong>Consumo:</strong> Beba a porção e consuma manualmente uma unidade.</p><p><strong>Efeito Mecânico:</strong> Regra caseira: restaure manualmente exatamente 1 PD. Não ultrapasse o valor máximo da barra de PD.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Chá de Jujuba<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Infusão suave de frutos secos, transportada em recipiente de cerâmica.<br><strong>Efeito:</strong> Registre manualmente a recuperação de 1 PD, respeitando o máximo da barra; sem automação.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000007",
+  "_key": "!items!d300000000000007",
+  "name": "Cataplasma de Raiz Aromática",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/cataplasma-raiz-aromatica.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Cataplasma de Raiz Aromática</h3><p><strong>Categoria:</strong> Consumível — Cura Física.</p><p><strong>Descrição:</strong> Raiz triturada até formar uma pasta úmida, envolvida em fibras vegetais e preparada para uma única aplicação.</p><p><strong>Uso Histórico:</strong> Raízes e materiais vegetais poderiam integrar preparos artesanais; esta mistura sem espécie definida é uma criação plausível para a ficção da campanha.</p><p><strong>Consumo:</strong> Aplique uma vez e consuma manualmente uma unidade do cataplasma.</p><p><strong>Efeito Mecânico:</strong> Regra caseira: restaure manualmente exatamente 2 PV. Não ultrapasse o valor máximo da barra de PV.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Cataplasma de Raiz Aromática<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Pasta de raiz em invólucro vegetal para cuidado corporal.<br><strong>Efeito:</strong> Registre manualmente a recuperação de 2 PV, respeitando o máximo da barra; sem automação.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

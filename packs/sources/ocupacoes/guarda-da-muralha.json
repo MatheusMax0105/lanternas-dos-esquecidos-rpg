@@ -3,7 +3,7 @@
   "_key": "!items!b100000000000021",
   "name": "Guarda da Muralha",
   "type": "ocupacao",
-  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ocupacoes/guarda-da-muralha.webp",
   "system": {
     "descricao": "<p>Você vigia portões e parapeitos, atento a movimentos na estrada e a mudanças estranhas dentro da cidade. Uma muralha protege corpos, mas nem sempre impede que o medo atravesse.</p>",
     "habilidade": "Vigília do Limiar",
@@ -12,6 +12,8 @@
   "effects": [],
   "folder": null,
   "sort": 0,
-  "ownership": {"default": 0},
+  "ownership": {
+    "default": 0
+  },
   "flags": {}
 }

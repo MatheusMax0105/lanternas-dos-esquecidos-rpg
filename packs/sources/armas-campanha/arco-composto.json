@@ -1,0 +1,25 @@
+{
+  "_id": "d200000000000005",
+  "_key": "!items!d200000000000005",
+  "name": "Arco Composto",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/armas/arco-composto.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Arco Composto</h3><p><strong>Categoria:</strong> Arma à distância — arco.</p><p><strong>Descrição:</strong> Arco construído com materiais e camadas cuidadosamente unidos, protegido por revestimento contra umidade e desgaste.</p><p><strong>Uso Histórico:</strong> Arcos compostos eram usados na guerra e na caça; sua construção variava conforme oficina e região.</p><p><strong>Dano:</strong> RA + 2 (registro textual; acréscimo manual).</p><p><strong>Alcance:</strong> À distância, médio a longo em termos narrativos; sem faixa automatizada.</p><p><strong>Propriedades:</strong> Requer flechas e espaço para armar e disparar. Não concede bônus ou ações especiais.</p><p><strong>Raridade:</strong> Incomum.</p><p><strong>Uso Narrativo:</strong> Colas, fibras, reparos e estilo de fabricação podem ajudar a identificar quem o produziu.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Arco Composto<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Arco laminado, usado na guerra e na caça.<br><strong>Efeito:</strong> Dano indicado RA + 2; o acréscimo não é automatizado. O item não cria regra de munição ou alcance.</p>",
+    "arma": true,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

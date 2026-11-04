@@ -2,7 +2,7 @@
   "_id": "6a8df4108132510a",
   "name": "Foco Mental",
   "type": "habilidade",
-  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/foco-mental.svg",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/foco-mental.webp",
   "system": {
     "origem": "ocupacao",
     "perfil": "",

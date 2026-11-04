@@ -1,0 +1,25 @@
+{
+  "_id": "d200000000000026",
+  "_key": "!items!d200000000000026",
+  "name": "Conjunto de Placas Ancestrais",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ferramentas/placas-ancestrais.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Conjunto de Placas Ancestrais</h3><p><strong>Categoria:</strong> Objetos memoriais e de culto doméstico.</p><p><strong>Descrição:</strong> Pequenas placas de madeira ou material semelhante, gravadas ou escritas com nomes e vínculos familiares.</p><p><strong>Uso Histórico:</strong> Placas memoriais e tabuletas ancestrais eram usadas em práticas de veneração familiar, com variações de forma e costume.</p><p><strong>Perícia Relacionada:</strong> Cultos Ancestrais; Filosofia e Tradições; Investigação.</p><p><strong>Quantidade de Cargas:</strong> Não se aplica; conjunto reutilizável, preservado com cuidado.</p><p><strong>Efeito Mecânico:</strong> Não invoca nem protege; não concede bônus ou resposta sobrenatural.</p><p><strong>Uso Investigativo:</strong> Nomes, ordem, caligrafia e estado das placas podem ser comparados com registros e histórias locais.</p><p><strong>Uso Narrativo:</strong> Uma placa sem nome entre as demais abre espaço para uma pergunta que a família talvez não saiba responder.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Conjunto de Placas Ancestrais<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Placas memoriais inscritas com nomes familiares.<br><strong>Efeito:</strong> Apoio a cerimônias e investigação; sem invocação ou efeito automático.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

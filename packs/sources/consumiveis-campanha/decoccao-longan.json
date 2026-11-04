@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000017",
+  "_key": "!items!d300000000000017",
+  "name": "Decocção de Longan",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/decoccao-longan.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Decocção de Longan</h3><p><strong>Categoria:</strong> Consumível — Recuperação de PD.</p><p><strong>Descrição:</strong> Frutos de longan secos são cozidos em água até a bebida adquirir aroma adocicado; a tigela é oferecida antes de uma vigília.</p><p><strong>Uso Histórico:</strong> Frutos secos e preparos cozidos são plausíveis no contexto regional; este rito de uso e seu efeito mecânico são ficcionais.</p><p><strong>Consumo:</strong> Beba a porção e consuma manualmente uma unidade.</p><p><strong>Efeito Mecânico:</strong> Regra caseira: restaure manualmente exatamente 1 PD. Não ultrapasse o valor máximo da barra de PD.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Decocção de Longan<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Bebida quente de frutos secos preparada para uma vigília.<br><strong>Efeito:</strong> Registre manualmente a recuperação de 1 PD, respeitando o máximo da barra; sem automação.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

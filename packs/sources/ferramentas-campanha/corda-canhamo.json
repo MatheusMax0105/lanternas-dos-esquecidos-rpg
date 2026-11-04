@@ -1,0 +1,25 @@
+{
+  "_id": "d200000000000022",
+  "_key": "!items!d200000000000022",
+  "name": "Corda de Escalada de Cânhamo",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ferramentas/corda-canhamo.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Corda de Escalada de Cânhamo</h3><p><strong>Categoria:</strong> Equipamento de exploração e segurança.</p><p><strong>Descrição:</strong> Corda trançada de cânhamo, áspera ao toque, com nós e extremidades reforçadas.</p><p><strong>Uso Histórico:</strong> Cordas de fibras vegetais eram usadas em embarcações, construções e transporte de cargas.</p><p><strong>Perícia Relacionada:</strong> Atletismo; Sobrevivência; Ofícios Tradicionais.</p><p><strong>Quantidade de Cargas:</strong> Não se aplica; uma corda reutilizável, sujeita a desgaste narrativo.</p><p><strong>Efeito Mecânico:</strong> Não concede sucesso automático em escaladas ou travessias; o teste e a consequência seguem as regras existentes.</p><p><strong>Uso Investigativo:</strong> Nós, fibras rompidas e sujeira podem ser examinados para entender como e onde foi usada.</p><p><strong>Uso Narrativo:</strong> Uma corda deixada para trás pode ser o único vestígio de quem desceu antes.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Corda de Escalada de Cânhamo<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Corda trançada de cânhamo para transporte e exploração.<br><strong>Efeito:</strong> Recurso físico de cena; sem bônus ou resolução automática de desafios.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

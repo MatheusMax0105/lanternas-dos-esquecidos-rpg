@@ -1,0 +1,25 @@
+{
+  "_id": "d200000000000011",
+  "_key": "!items!d200000000000011",
+  "name": "Lança Ritual Taoísta",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/armas/lanca-ritual-taoista.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Lança Ritual Taoísta</h3><p><strong>Categoria:</strong> Lança de cerimônia e defesa.</p><p><strong>Descrição:</strong> Lança comum, limpa e bem conservada, por vezes adornada com fitas ou inscrições feitas por seu portador.</p><p><strong>Uso Histórico:</strong> Sacerdotes taoístas podiam empregar objetos rituais e símbolos tradicionais; a lança aqui é uma arma mundana, sem efeito mágico próprio.</p><p><strong>Dano:</strong> RA + 2 (registro textual; acréscimo manual).</p><p><strong>Alcance:</strong> Corpo a corpo, longo; sem distância automatizada.</p><p><strong>Propriedades:</strong> Haste e ponta metálica; eventuais fitas ou inscrições são decorativas e não concedem poderes.</p><p><strong>Raridade:</strong> Incomum.</p><p><strong>Uso Narrativo:</strong> A disposição das inscrições pode ser comparada com registros e tradições conhecidas.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Lança Ritual Taoísta<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Lança de porte sóbrio, por vezes adornada para cerimônias.<br><strong>Efeito:</strong> Dano indicado RA + 2; símbolos não concedem efeitos mecânicos ou sobrenaturais.</p>",
+    "arma": true,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

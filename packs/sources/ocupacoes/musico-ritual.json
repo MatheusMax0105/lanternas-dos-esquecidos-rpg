@@ -3,7 +3,7 @@
   "_key": "!items!b100000000000028",
   "name": "Músico Ritual",
   "type": "ocupacao",
-  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ocupacoes/musico-ritual.webp",
   "system": {
     "descricao": "<p>Você acompanha cerimônias com melodias e ritmos tradicionais. Aprendeu a reconhecer quando a sequência de um rito foi alterada e a inquietação que uma nota errada pode causar.</p>",
     "habilidade": "Ritmo dos Desaparecidos",
@@ -12,6 +12,8 @@
   "effects": [],
   "folder": null,
   "sort": 0,
-  "ownership": {"default": 0},
+  "ownership": {
+    "default": 0
+  },
   "flags": {}
 }

@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000015",
+  "_key": "!items!d300000000000015",
+  "name": "Incenso de Madeira Aromática",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/incenso-madeira-aromatica.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Incenso de Madeira Aromática</h3><p><strong>Categoria:</strong> Consumível — Recuperação de PD.</p><p><strong>Descrição:</strong> Pedaços de madeira perfumada são queimados num braseiro pequeno, deixando um aroma seco e uma cinza fina.</p><p><strong>Uso Histórico:</strong> Queimar materiais aromáticos é plausível em diferentes contextos cerimoniais; esta peça não especifica uma espécie rara nem pretende reconstruir um costume único.</p><p><strong>Consumo:</strong> Use uma porção no braseiro e consuma manualmente uma unidade.</p><p><strong>Efeito Mecânico:</strong> Regra caseira: restaure manualmente exatamente 1 PD. Não ultrapasse o valor máximo da barra de PD.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Incenso de Madeira Aromática<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Porção de madeira perfumada para queima cerimonial.<br><strong>Efeito:</strong> Registre manualmente a recuperação de 1 PD, respeitando o máximo da barra; sem automação.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -1,0 +1,25 @@
+{
+  "_id": "d20000000000000c",
+  "_key": "!items!d20000000000000c",
+  "name": "Foice Agrícola",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/armas/foice-agricola.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Foice Agrícola</h3><p><strong>Categoria:</strong> Ferramenta agrícola que pode servir como arma.</p><p><strong>Descrição:</strong> Lâmina curva presa a um cabo curto, feita para colher caules e limpar a vegetação.</p><p><strong>Uso Histórico:</strong> Ferramenta comum em lavouras, levada ao campo durante a colheita e o trabalho sazonal.</p><p><strong>Dano:</strong> RA + 2 (registro textual; acréscimo manual).</p><p><strong>Alcance:</strong> Corpo a corpo, curto; sem distância automatizada.</p><p><strong>Propriedades:</strong> Lâmina curva, cabo de madeira, normalmente transportada como ferramenta de trabalho. Sem regra especial.</p><p><strong>Raridade:</strong> Comum em comunidades agrícolas.</p><p><strong>Uso Narrativo:</strong> Terra presa à lâmina pode indicar se a ferramenta veio do campo, de um jardim ou de um túmulo revolvido.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Foice Agrícola<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Ferramenta de colheita com lâmina curva.<br><strong>Efeito:</strong> Dano indicado RA + 2; o acréscimo não é automatizado.</p>",
+    "arma": true,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000004",
+  "_key": "!items!d300000000000004",
+  "name": "Infusão de Casca de Salgueiro",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/infusao-casca-salgueiro.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Infusão de Casca de Salgueiro</h3><p><strong>Categoria:</strong> Consumível — Cura Física.</p><p><strong>Descrição:</strong> Infusão amarga, coada e servida morna em uma tigela pequena; o aroma vegetal permanece no vapor por alguns instantes.</p><p><strong>Uso Histórico:</strong> Infusões de plantas são plausíveis como preparos caseiros, mas esta composição e seu uso mecânico pertencem à adaptação da campanha, sem alegação de precisão histórica.</p><p><strong>Consumo:</strong> Beba uma porção e consuma manualmente uma unidade.</p><p><strong>Efeito Mecânico:</strong> Regra caseira: restaure manualmente exatamente 1 PV. Não ultrapasse o valor máximo da barra de PV.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Infusão de Casca de Salgueiro<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Pequena porção morna de infusão amarga de casca vegetal.<br><strong>Efeito:</strong> Registre manualmente a recuperação de 1 PV, respeitando o máximo da barra; sem automação.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

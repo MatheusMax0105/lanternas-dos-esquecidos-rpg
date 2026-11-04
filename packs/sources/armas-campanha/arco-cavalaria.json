@@ -1,0 +1,25 @@
+{
+  "_id": "d200000000000006",
+  "_key": "!items!d200000000000006",
+  "name": "Arco de Cavalaria",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/armas/arco-cavalaria.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Arco de Cavalaria</h3><p><strong>Categoria:</strong> Arma à distância — arco curto.</p><p><strong>Descrição:</strong> Arco compacto, de membros recurvados, adequado a ser carregado junto à sela.</p><p><strong>Uso Histórico:</strong> Arcos compactos eram úteis a cavaleiros e mensageiros que precisavam carregar equipamento sem uma haste longa.</p><p><strong>Dano:</strong> RA + 2 (registro textual; acréscimo manual).</p><p><strong>Alcance:</strong> À distância, médio em termos narrativos; sem faixa automatizada.</p><p><strong>Propriedades:</strong> Compacto para transporte montado; requer flechas e espaço para disparo. Sem regra especial.</p><p><strong>Raridade:</strong> Incomum.</p><p><strong>Uso Narrativo:</strong> Sua forma e o estado da corda podem indicar uso militar, viagem ou armazenamento prolongado.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Arco de Cavalaria<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Arco compacto apropriado para transporte a cavalo.<br><strong>Efeito:</strong> Dano indicado RA + 2; o acréscimo não é automatizado. O item não cria regra de munição ou alcance.</p>",
+    "arma": true,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

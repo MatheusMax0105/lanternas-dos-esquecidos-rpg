@@ -3,13 +3,12 @@
   "_key": "!items!a100000000000013",
   "name": "Corrente de Retorno",
   "type": "habilidade",
-  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/esforco-e-suor.svg",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/corrente-de-retorno.webp",
   "system": {
     "origem": "ocupacao",
     "perfil": "",
-    "custo": "",
-    "custoPD": 0,
     "custo": "1 PV",
+    "custoPD": 0,
     "descricao": "<p>Ao seguir uma pista pela água, você compara correnteza, margem e marcas de embarcação para estimar por onde algo passou. Se insistir numa leitura difícil, pode gastar <strong>1 PV</strong> e acrescentar manualmente um dado extra <strong>d6</strong> a um teste de <strong>Sobrevivência</strong>; a mesa registra o custo em PV, sem automação.</p>",
     "efeito": {
       "tipo": "nenhum",
@@ -24,6 +23,8 @@
   "effects": [],
   "folder": null,
   "sort": 0,
-  "ownership": {"default": 0},
+  "ownership": {
+    "default": 0
+  },
   "flags": {}
 }

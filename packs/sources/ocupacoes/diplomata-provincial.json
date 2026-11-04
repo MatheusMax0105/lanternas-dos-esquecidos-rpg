@@ -3,7 +3,7 @@
   "_key": "!items!b100000000000026",
   "name": "Diplomata Provincial",
   "type": "ocupacao",
-  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ocupacoes/diplomata-provincial.webp",
   "system": {
     "descricao": "<p>Você representa interesses provinciais diante de autoridades, famílias e comunidades. Negociações delicadas exigem paciência quando cada parte teme perder sua história e posição.</p>",
     "habilidade": "Rosto da Paz",
@@ -12,6 +12,8 @@
   "effects": [],
   "folder": null,
   "sort": 0,
-  "ownership": {"default": 0},
+  "ownership": {
+    "default": 0
+  },
   "flags": {}
 }

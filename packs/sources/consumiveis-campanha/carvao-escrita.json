@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000022",
+  "_key": "!items!d300000000000022",
+  "name": "Carvão de Escrita",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/carvao-escrita.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Carvão de Escrita</h3><p><strong>Categoria:</strong> Consumível — Utilidade/Ritual.</p><p><strong>Descrição:</strong> Fragmento fino de carvão envolto em papel, útil para deixar marcas escuras em madeira, tecido ou uma superfície áspera.</p><p><strong>Uso Histórico:</strong> Carvão e suportes de escrita simples são materiais plausíveis; o uso concreto depende do que está disponível na cena.</p><p><strong>Consumo:</strong> Use o fragmento até que se quebre ou se desgaste; consuma manualmente uma unidade.</p><p><strong>Efeito Mecânico:</strong> Recurso documental ou narrativo para marcar, anotar ou deixar um sinal. Não recupera PV ou PD nem concede bônus; qualquer teste usa regras e perícias existentes, conforme decisão do mestre.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Carvão de Escrita<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Fragmento de carvão embrulhado para anotações ou marcas.<br><strong>Efeito:</strong> Apoio documental narrativo; sem automação, recursos ou bônus.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

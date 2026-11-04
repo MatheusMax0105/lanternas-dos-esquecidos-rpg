@@ -3,7 +3,7 @@
   "_key": "!items!b100000000000019",
   "name": "Carpinteiro",
   "type": "ocupacao",
-  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ocupacoes/carpinteiro.webp",
   "system": {
     "descricao": "<p>Você constrói e repara estruturas de madeira, reconhecendo a história de uma casa pelos remendos e encaixes. Às vezes, uma parede guarda vestígios de quem foi apagado de uma família.</p>",
     "habilidade": "Encaixe do Passado",
@@ -12,6 +12,8 @@
   "effects": [],
   "folder": null,
   "sort": 0,
-  "ownership": {"default": 0},
+  "ownership": {
+    "default": 0
+  },
   "flags": {}
 }

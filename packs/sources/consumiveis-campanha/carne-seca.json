@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000027",
+  "_key": "!items!d300000000000027",
+  "name": "Carne Seca",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/carne-seca.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Carne Seca</h3><p><strong>Categoria:</strong> Consumível — Utilidade/Ritual.</p><p><strong>Descrição:</strong> Tiras finas de carne conservada pelo sal e pela secagem, atadas num pano para a viagem.</p><p><strong>Uso Histórico:</strong> Carne salgada ou seca é uma forma plausível de provisão; o acesso e os métodos de conservação variavam conforme a região e a condição de quem viajava.</p><p><strong>Consumo:</strong> Coma a porção e consuma manualmente uma unidade.</p><p><strong>Efeito Mecânico:</strong> Provisão de viagem, sem efeito automático. Não recupera PV ou PD nem concede bônus; qualquer teste usa regras e perícias existentes, a critério do mestre.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Carne Seca<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Tiras de carne conservada e embrulhada para viagem.<br><strong>Efeito:</strong> Provisão narrativa; sem automação, recuperação de recursos ou bônus.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

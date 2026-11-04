@@ -1,0 +1,25 @@
+{
+  "_id": "d200000000000025",
+  "_key": "!items!d200000000000025",
+  "name": "Caixa de Selos Espirituais",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ferramentas/caixa-selos-espirituais.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Caixa de Selos Espirituais</h3><p><strong>Categoria:</strong> Estojo de papéis votivos e caligrafia ritual.</p><p><strong>Descrição:</strong> Caixa estreita com papéis, pincel pequeno, tinta e selos inscritos segundo uma tradição local.</p><p><strong>Uso Histórico:</strong> Papéis talismânicos e inscrições faziam parte de práticas religiosas e populares; formas e significados dependiam do contexto.</p><p><strong>Perícia Relacionada:</strong> Cultos Ancestrais; Caligrafia e Artes; Filosofia e Tradições.</p><p><strong>Quantidade de Cargas:</strong> Conteúdo variável; sem contagem automática.</p><p><strong>Efeito Mecânico:</strong> Não sela, afasta ou detecta espíritos de modo automático, nem concede bônus.</p><p><strong>Uso Investigativo:</strong> Ajuda a comparar traços, símbolos e materiais com outros documentos; somente o mestre determina correspondências.</p><p><strong>Uso Narrativo:</strong> Um selo preservado em uma caixa vazia pode indicar uma cerimônia interrompida ou uma intenção não cumprida.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Caixa de Selos Espirituais<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Estojo com papéis e materiais para inscrições rituais.<br><strong>Efeito:</strong> Apoio cultural e documental; sem proteção ou efeito sobrenatural automático.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

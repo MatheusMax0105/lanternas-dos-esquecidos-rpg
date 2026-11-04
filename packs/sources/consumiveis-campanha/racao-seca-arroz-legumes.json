@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000025",
+  "_key": "!items!d300000000000025",
+  "name": "Ração Seca de Arroz e Legumes",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/racao-seca-arroz-legumes.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Ração Seca de Arroz e Legumes</h3><p><strong>Categoria:</strong> Consumível — Utilidade/Ritual.</p><p><strong>Descrição:</strong> Porção compacta de arroz cozido e seco com pequenos pedaços de legumes, embrulhada para uma refeição de viagem.</p><p><strong>Uso Histórico:</strong> Arroz, legumes e alimentos conservados são plausíveis em provisões de viagem; a apresentação específica é uma escolha ficcional da campanha.</p><p><strong>Consumo:</strong> Consuma uma porção e uma unidade do item manualmente.</p><p><strong>Efeito Mecânico:</strong> Serve como alimento em contexto narrativo e de sobrevivência. Não recupera PV ou PD nem concede bônus; qualquer teste usa regras e perícias existentes, a critério do mestre.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Ração Seca de Arroz e Legumes<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Porção de viagem de arroz seco e legumes.<br><strong>Efeito:</strong> Provisão narrativa; sem automação, recuperação de recursos ou bônus.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

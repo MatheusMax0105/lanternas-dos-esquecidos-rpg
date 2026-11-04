@@ -1,0 +1,25 @@
+{
+  "_id": "d200000000000012",
+  "_key": "!items!d200000000000012",
+  "name": "Bastão de Patrulha",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/armas/bastao-patrulha.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Bastão de Patrulha</h3><p><strong>Categoria:</strong> Instrumento de patrulha e defesa.</p><p><strong>Descrição:</strong> Bastão de madeira escura, de tamanho manejável, às vezes com uma extremidade reforçada.</p><p><strong>Uso Histórico:</strong> Guardas e patrulheiros podiam levar bastões como equipamento de serviço para ronda e controle de multidões.</p><p><strong>Dano:</strong> RA + 2 (registro textual; acréscimo manual).</p><p><strong>Alcance:</strong> Corpo a corpo, curto; sem distância automatizada.</p><p><strong>Propriedades:</strong> Peça utilitária, sem lâmina. Sem regra especial.</p><p><strong>Raridade:</strong> Comum entre patrulheiros.</p><p><strong>Uso Narrativo:</strong> Padrões de desgaste e marcações de turno podem ligar o objeto a uma ronda específica.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Bastão de Patrulha<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Bastão de serviço usado em rondas.<br><strong>Efeito:</strong> Dano indicado RA + 2; o acréscimo não é automatizado.</p>",
+    "arma": true,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

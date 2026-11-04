@@ -3,7 +3,7 @@
   "_key": "!items!a100000000000004",
   "name": "Mapa das Ausências",
   "type": "habilidade",
-  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/avaliacao.svg",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/mapa-das-ausencias.webp",
   "system": {
     "origem": "ocupacao",
     "perfil": "",
@@ -23,6 +23,8 @@
   "effects": [],
   "folder": null,
   "sort": 0,
-  "ownership": {"default": 0},
+  "ownership": {
+    "default": 0
+  },
   "flags": {}
 }

@@ -1,0 +1,25 @@
+{
+  "_id": "d200000000000021",
+  "_key": "!items!d200000000000021",
+  "name": "Kit de Rastreamento",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ferramentas/kit-rastreamento.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Kit de Rastreamento</h3><p><strong>Categoria:</strong> Kit de exploração e observação de vestígios.</p><p><strong>Descrição:</strong> Pequeno estojo com cordel, estacas leves, tiras de papel, carvão e uma lente simples para examinar marcas.</p><p><strong>Uso Histórico:</strong> Os componentes são ferramentas artesanais de campo, transportadas por caçadores, mensageiros e viajantes.</p><p><strong>Perícia Relacionada:</strong> Sobrevivência; Observação; Investigação.</p><p><strong>Quantidade de Cargas:</strong> Reutilizável; materiais de marcação são suprimentos narrativos.</p><p><strong>Efeito Mecânico:</strong> Não revela criaturas ou rastros automaticamente e não modifica testes.</p><p><strong>Uso Investigativo:</strong> Marca posições e registra pegadas, fibras ou direção aparente para comparação; interpretação cabe ao personagem e ao mestre.</p><p><strong>Uso Narrativo:</strong> Uma sequência de marcas que termina diante de um caminho vazio pode contar uma história incompleta.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Kit de Rastreamento<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Estojo de materiais simples para registrar vestígios em campo.<br><strong>Efeito:</strong> Apoio à observação e documentação; sem detecção ou bônus automático.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

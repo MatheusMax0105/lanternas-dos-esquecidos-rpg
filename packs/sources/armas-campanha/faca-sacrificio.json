@@ -1,0 +1,25 @@
+{
+  "_id": "d200000000000013",
+  "_key": "!items!d200000000000013",
+  "name": "Faca de Sacrifício",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/armas/faca-sacrificio.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Faca de Sacrifício</h3><p><strong>Categoria:</strong> Instrumento cerimonial de lâmina curta.</p><p><strong>Descrição:</strong> Faca estreita, guardada em estojo próprio e mantida limpa como parte de uma tradição ritual.</p><p><strong>Uso Histórico:</strong> Facas podiam integrar cerimônias e práticas de oferenda; o item é histórico e mundano, sem função sobrenatural.</p><p><strong>Dano:</strong> RA + 1 (registro textual; acréscimo manual).</p><p><strong>Alcance:</strong> Corpo a corpo, muito curto; sem distância automatizada.</p><p><strong>Propriedades:</strong> Lâmina curta e estojo cerimonial. Não indica nem exige uso em violência.</p><p><strong>Raridade:</strong> Incomum.</p><p><strong>Uso Narrativo:</strong> O estojo e os materiais de limpeza podem apontar para uma casa ritual ou tradição familiar.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Faca de Sacrifício<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Faca cerimonial guardada em estojo.<br><strong>Efeito:</strong> Dano indicado RA + 1; o acréscimo não é automatizado.</p>",
+    "arma": true,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

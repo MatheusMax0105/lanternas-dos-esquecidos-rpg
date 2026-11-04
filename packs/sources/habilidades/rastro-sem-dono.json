@@ -3,13 +3,12 @@
   "_key": "!items!a100000000000011",
   "name": "Rastro sem Dono",
   "type": "habilidade",
-  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/esforco-e-suor.svg",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/rastro-sem-dono.webp",
   "system": {
     "origem": "ocupacao",
     "perfil": "",
-    "custo": "",
-    "custoPD": 0,
     "custo": "1 PV",
+    "custoPD": 0,
     "descricao": "<p>Você compara pegadas, galhos partidos e o terreno para distinguir passagem recente de marcas antigas. Ao se esforçar para seguir uma trilha quase apagada, pode gastar <strong>1 PV</strong> e acrescentar manualmente um dado extra <strong>d4</strong> a um teste de <strong>Sobrevivência</strong>; a mesa registra o custo em PV.</p>",
     "efeito": {
       "tipo": "nenhum",
@@ -24,6 +23,8 @@
   "effects": [],
   "folder": null,
   "sort": 0,
-  "ownership": {"default": 0},
+  "ownership": {
+    "default": 0
+  },
   "flags": {}
 }

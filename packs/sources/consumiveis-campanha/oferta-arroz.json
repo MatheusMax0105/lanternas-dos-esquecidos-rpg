@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000028",
+  "_key": "!items!d300000000000028",
+  "name": "Oferenda de Arroz",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/oferta-arroz.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Oferenda de Arroz</h3><p><strong>Categoria:</strong> Consumível — Utilidade/Ritual.</p><p><strong>Descrição:</strong> Pequena porção de arroz cozido, disposta em tigela junto a uma lembrança familiar ou a uma tabuleta ancestral.</p><p><strong>Uso Histórico:</strong> Arroz e oferendas alimentares são plausíveis em práticas domésticas e memoriais da região; ritos e costumes não eram uniformes.</p><p><strong>Consumo:</strong> Deposite a porção como oferenda; depois, consuma manualmente uma unidade do item.</p><p><strong>Efeito Mecânico:</strong> Gesto ritual e narrativo, sem efeito sobrenatural garantido. Não recupera PV ou PD nem concede bônus; qualquer teste segue regras e perícias existentes, a critério do mestre.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Oferenda de Arroz<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Porção de arroz para gesto memorial ou ritual doméstico.<br><strong>Efeito:</strong> Uso narrativo; sem automação, recuperação de recursos ou bônus.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -1,0 +1,25 @@
+{
+  "_id": "d20000000000001c",
+  "_key": "!items!d20000000000001c",
+  "name": "Máscara Funerária Cerimonial",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ferramentas/mascara-funeraria.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Máscara Funerária Cerimonial</h3><p><strong>Categoria:</strong> Objeto funerário e ritual.</p><p><strong>Descrição:</strong> Máscara leve de madeira, tecido endurecido ou papel preparado, feita para uso em uma cerimônia específica.</p><p><strong>Uso Histórico:</strong> Práticas funerárias variavam por região, época e condição social; máscaras cerimoniais são tratadas aqui como peça particular, não universal.</p><p><strong>Perícia Relacionada:</strong> Cultos Ancestrais; Filosofia e Tradições; Observação.</p><p><strong>Quantidade de Cargas:</strong> Ilimitada; objeto reutilizável com cuidado.</p><p><strong>Efeito Mecânico:</strong> Não altera identidade, não protege e não produz efeito sobrenatural.</p><p><strong>Uso Investigativo:</strong> Permite observar materiais, pigmentos, reparos e sinais de uso; conclusões dependem da perícia e do mestre.</p><p><strong>Uso Narrativo:</strong> O rosto imóvel pode preservar a expressão que a família escolheu para lembrar — ou a que ninguém conseguiu esquecer.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Máscara Funerária Cerimonial<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Máscara artesanal preparada para cerimônia funerária.<br><strong>Efeito:</strong> Apoio a leitura cultural e material; sem poder ou bônus automático.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

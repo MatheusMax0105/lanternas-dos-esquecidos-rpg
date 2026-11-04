@@ -3,7 +3,7 @@
   "_key": "!items!b100000000000013",
   "name": "Pescador de Rio",
   "type": "ocupacao",
-  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ocupacoes/pescador-de-rio.webp",
   "system": {
     "descricao": "<p>Você vive das águas interiores, reconhecendo correntezas e sinais nas margens. Redes vazias e objetos que voltam rio acima são motivos para desconfiar do que o curso esconde.</p>",
     "habilidade": "Corrente de Retorno",
@@ -12,6 +12,8 @@
   "effects": [],
   "folder": null,
   "sort": 0,
-  "ownership": {"default": 0},
+  "ownership": {
+    "default": 0
+  },
   "flags": {}
 }

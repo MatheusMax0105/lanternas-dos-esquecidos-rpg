@@ -3,7 +3,7 @@
   "_key": "!items!b100000000000009",
   "name": "Guardião de Tumbas",
   "type": "ocupacao",
-  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ocupacoes/guardiao-de-tumbas.webp",
   "system": {
     "descricao": "<p>Você protege sepulturas e locais de repouso, preservando inscrições e costumes funerários. Sabe que uma violação pode perturbar muito mais que a paz dos mortos.</p>",
     "habilidade": "Nome na Pedra",
@@ -12,6 +12,8 @@
   "effects": [],
   "folder": null,
   "sort": 0,
-  "ownership": {"default": 0},
+  "ownership": {
+    "default": 0
+  },
   "flags": {}
 }

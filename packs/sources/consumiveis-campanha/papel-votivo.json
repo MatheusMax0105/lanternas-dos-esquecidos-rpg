@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000023",
+  "_key": "!items!d300000000000023",
+  "name": "Papel Votivo",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/papel-votivo.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Papel Votivo</h3><p><strong>Categoria:</strong> Consumível — Utilidade/Ritual.</p><p><strong>Descrição:</strong> Folhas leves dobradas para receber uma súplica, um nome ou um breve registro antes de serem depositadas junto a uma oferenda.</p><p><strong>Uso Histórico:</strong> Papel e gestos votivos são plausíveis no contexto da época, embora formas de uso variassem entre lugares, comunidades e cerimônias.</p><p><strong>Consumo:</strong> Escreva, dobre ou ofereça a folha; consuma manualmente uma unidade.</p><p><strong>Efeito Mecânico:</strong> Uso ritual e documental, sem efeito automático. Não recupera PV ou PD nem concede bônus; qualquer teste continua usando regras e perícias existentes, a critério do mestre.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Papel Votivo<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Folha para registrar um nome, voto ou lembrança.<br><strong>Efeito:</strong> Função narrativa e documental; sem automação, recuperação de recursos ou bônus.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

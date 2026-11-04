@@ -3,7 +3,7 @@
   "_key": "!items!a100000000000021",
   "name": "Vigília do Limiar",
   "type": "habilidade",
-  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/prontidao.svg",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/vigilia-do-limiar.webp",
   "system": {
     "origem": "ocupacao",
     "perfil": "",
@@ -23,6 +23,8 @@
   "effects": [],
   "folder": null,
   "sort": 0,
-  "ownership": {"default": 0},
+  "ownership": {
+    "default": 0
+  },
   "flags": {}
 }

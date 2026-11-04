@@ -1,0 +1,25 @@
+{
+  "_id": "d20000000000001b",
+  "_key": "!items!d20000000000001b",
+  "name": "Astrolábio Celestial",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ferramentas/astrolabio-celestial.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Astrolábio Celestial</h3><p><strong>Categoria:</strong> Instrumento astronômico.</p><p><strong>Descrição:</strong> Instrumento circular de metal gravado, com peças móveis para representar o céu e auxiliar observações e cálculos.</p><p><strong>Uso Histórico:</strong> Astrolábios eram conhecidos no mundo medieval e podiam chegar à China por redes de estudiosos e viajantes; peça rara, não equipamento cotidiano.</p><p><strong>Perícia Relacionada:</strong> Astrologia e Cálculos; Observação; Crônicas do Império.</p><p><strong>Quantidade de Cargas:</strong> Ilimitada; instrumento reutilizável.</p><p><strong>Efeito Mecânico:</strong> Não prevê o futuro nem produz bônus ou fenômenos sobrenaturais.</p><p><strong>Uso Investigativo:</strong> Permite registrar uma observação celeste e comparar posições, horários e anotações; não calcula uma pista sem dados e interpretação.</p><p><strong>Uso Narrativo:</strong> A peça rara pode denunciar a passagem de um astrônomo ou a tentativa de preservar uma noite que ninguém mais recorda.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Astrolábio Celestial<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Instrumento astronômico raro para observação e cálculo.<br><strong>Efeito:</strong> Apoio a registros celestes; sem previsão ou bônus automático.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

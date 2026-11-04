@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000029",
+  "_key": "!items!d300000000000029",
+  "name": "Fita Ritual de Seda",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/fita-ritual-seda.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Fita Ritual de Seda</h3><p><strong>Categoria:</strong> Consumível — Utilidade/Ritual.</p><p><strong>Descrição:</strong> Tira estreita de seda tingida, marcada à mão com um nome ou sinal e amarrada a uma oferenda, porta ou galho.</p><p><strong>Uso Histórico:</strong> Seda e fitas são materiais plausíveis para a época; o uso cerimonial descrito é uma possibilidade ficcional, não um costume atribuído a toda comunidade.</p><p><strong>Consumo:</strong> Amarre a fita ao objeto ou local escolhido; consuma manualmente uma unidade.</p><p><strong>Efeito Mecânico:</strong> Sinal narrativo de lembrança, promessa ou limite ritual. Não recupera PV ou PD nem concede bônus; qualquer teste usa regras e perícias existentes, conforme decisão do mestre.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Fita Ritual de Seda<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Tira de seda tingida para marcar um gesto memorial.<br><strong>Efeito:</strong> Uso narrativo e ritual; sem automação, recuperação de recursos ou bônus.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -1,0 +1,25 @@
+{
+  "_id": "d200000000000019",
+  "_key": "!items!d200000000000019",
+  "name": "Livro das Linhagens",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ferramentas/livro-linhagens.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Livro das Linhagens</h3><p><strong>Categoria:</strong> Registro genealógico e ferramenta de pesquisa.</p><p><strong>Descrição:</strong> Volume encadernado com tabelas de descendência, nomes, casamentos, lutos e anotações feitas por diferentes mãos.</p><p><strong>Uso Histórico:</strong> Registros de linhagem preservavam relações familiares e reivindicações, com formatos e acesso variáveis conforme a família.</p><p><strong>Perícia Relacionada:</strong> Investigação; Crônicas do Império; Filosofia e Tradições.</p><p><strong>Quantidade de Cargas:</strong> Ilimitada; consulta reutilizável.</p><p><strong>Efeito Mecânico:</strong> Não concede conhecimento automático nem altera testes.</p><p><strong>Uso Investigativo:</strong> Ajuda a comparar nomes, datas e relações entre entradas disponíveis; lacunas não são preenchidas pelo próprio item.</p><p><strong>Uso Narrativo:</strong> Uma página arrancada ou um ramo sem descendentes pode transformar uma pesquisa familiar em uma pergunta incômoda.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Livro das Linhagens<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Registro genealógico para consulta e comparação.<br><strong>Efeito:</strong> Apoio documental; sem bônus ou revelação automática de informação.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

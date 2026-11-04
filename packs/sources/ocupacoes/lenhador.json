@@ -3,7 +3,7 @@
   "_key": "!items!b100000000000012",
   "name": "Lenhador",
   "type": "ocupacao",
-  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ocupacoes/lenhador.webp",
   "system": {
     "descricao": "<p>Você trabalha em matas antigas e conhece o som de árvores, ferramentas e animais. Quando o bosque fica quieto demais, percebe que o silêncio também pode ser um aviso.</p>",
     "habilidade": "Ouvido no Tronco",
@@ -12,6 +12,8 @@
   "effects": [],
   "folder": null,
   "sort": 0,
-  "ownership": {"default": 0},
+  "ownership": {
+    "default": 0
+  },
   "flags": {}
 }

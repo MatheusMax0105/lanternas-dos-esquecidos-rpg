@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000006",
+  "_key": "!items!d300000000000006",
+  "name": "Compressa de Chá",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/compressa-cha.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Compressa de Chá</h3><p><strong>Categoria:</strong> Consumível — Cura Física.</p><p><strong>Descrição:</strong> Pano macio umedecido em chá morno e dobrado em torno de si; a tintura discreta deixa marcas nas fibras.</p><p><strong>Uso Histórico:</strong> Panos e bebidas de folhas são materiais plausíveis em uma casa do período; o uso específico como item de jogo é ficcional.</p><p><strong>Consumo:</strong> Aplique a compressa uma vez e consuma manualmente uma unidade.</p><p><strong>Efeito Mecânico:</strong> Regra caseira: restaure manualmente exatamente 1 PV. Não ultrapasse o valor máximo da barra de PV.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Compressa de Chá<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Pano umedecido em chá morno para cuidado simples.<br><strong>Efeito:</strong> Registre manualmente a recuperação de 1 PV, respeitando o máximo da barra; sem automação.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

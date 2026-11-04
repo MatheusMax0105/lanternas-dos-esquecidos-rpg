@@ -3,7 +3,7 @@
   "_key": "!items!a100000000000002",
   "name": "Sino da Recordação",
   "type": "habilidade",
-  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/foco-emocional.svg",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/sino-da-recordacao.webp",
   "system": {
     "origem": "ocupacao",
     "perfil": "",
@@ -23,6 +23,8 @@
   "effects": [],
   "folder": null,
   "sort": 0,
-  "ownership": {"default": 0},
+  "ownership": {
+    "default": 0
+  },
   "flags": {}
 }

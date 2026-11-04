@@ -1,0 +1,25 @@
+{
+  "_id": "d20000000000000a",
+  "_key": "!items!d20000000000000a",
+  "name": "Machado de Lenhador",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/armas/machado-lenhador.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Machado de Lenhador</h3><p><strong>Categoria:</strong> Ferramenta de trabalho que pode servir como arma.</p><p><strong>Descrição:</strong> Cabeça de ferro presa a um cabo de madeira marcado por cortes de uso.</p><p><strong>Uso Histórico:</strong> Ferramenta cotidiana para cortar madeira, preparar lenha e abrir caminho em áreas rurais.</p><p><strong>Dano:</strong> RA + 3 (registro textual; acréscimo manual).</p><p><strong>Alcance:</strong> Corpo a corpo, curto; sem distância automatizada.</p><p><strong>Propriedades:</strong> Ferramenta pesada, útil para trabalho; seu estado de conservação depende do uso. Sem regra especial.</p><p><strong>Raridade:</strong> Comum em comunidades rurais.</p><p><strong>Uso Narrativo:</strong> Resina, lascas e marcas no fio podem indicar o tipo de madeira ou trabalho recente.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Machado de Lenhador<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Machado de trabalho com cabeça de ferro e cabo de madeira.<br><strong>Efeito:</strong> Dano indicado RA + 3; o acréscimo não é automatizado.</p>",
+    "arma": true,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

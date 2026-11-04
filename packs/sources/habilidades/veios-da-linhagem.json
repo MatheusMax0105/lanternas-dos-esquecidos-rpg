@@ -3,7 +3,7 @@
   "_key": "!items!a100000000000018",
   "name": "Veios da Linhagem",
   "type": "habilidade",
-  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/conhecimento-tecnico.svg",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/veios-da-linhagem.webp",
   "system": {
     "origem": "ocupacao",
     "perfil": "",
@@ -23,6 +23,8 @@
   "effects": [],
   "folder": null,
   "sort": 0,
-  "ownership": {"default": 0},
+  "ownership": {
+    "default": 0
+  },
   "flags": {}
 }

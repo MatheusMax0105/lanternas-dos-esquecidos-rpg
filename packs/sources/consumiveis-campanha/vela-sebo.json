@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000021",
+  "_key": "!items!d300000000000021",
+  "name": "Vela de Sebo",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/vela-sebo.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Vela de Sebo</h3><p><strong>Categoria:</strong> Consumível — Utilidade/Ritual.</p><p><strong>Descrição:</strong> Vela simples, moldada em sebo em torno de um pavio de fibra; a chama oscila com qualquer corrente de ar.</p><p><strong>Uso Histórico:</strong> Velas e lamparinas são fontes de luz plausíveis para o período; materiais e formatos dependem dos recursos disponíveis.</p><p><strong>Consumo:</strong> Acenda a vela; ela se desgasta com o uso e é consumida ao terminar de queimar.</p><p><strong>Efeito Mecânico:</strong> Uso narrativo para iluminar um espaço próximo ou marcar uma vigília. Não recupera PV ou PD nem concede bônus; qualquer teste continua usando regras e perícias existentes, a critério do mestre.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Vela de Sebo<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Vela artesanal de sebo com pavio de fibra.<br><strong>Efeito:</strong> Iluminação narrativa; sem automação, recuperação de recursos ou bônus.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

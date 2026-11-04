@@ -3,7 +3,7 @@
   "_key": "!items!b100000000000022",
   "name": "Ex-Soldado da Fronteira",
   "type": "ocupacao",
-  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ocupacoes/ex-soldado-da-fronteira.webp",
   "system": {
     "descricao": "<p>Você deixou o serviço militar, mas ainda carrega lembranças de patrulhas e campanhas distantes. Conhece o custo de uma ordem mal interpretada e teme que alguns nomes tenham sido apagados de propósito.</p>",
     "habilidade": "Memória da Formação",
@@ -12,6 +12,8 @@
   "effects": [],
   "folder": null,
   "sort": 0,
-  "ownership": {"default": 0},
+  "ownership": {
+    "default": 0
+  },
   "flags": {}
 }

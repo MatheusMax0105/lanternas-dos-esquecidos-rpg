@@ -11,6 +11,16 @@ Adaptação temática para **Foundry VTT** da campanha própria *As Lanternas do
 ambientada na China da Dinastia Tang, em 878 d.C. Usa como base o sistema de
 *Ordem Paranormal RPG 2 — Playtest (Não Oficial)*, preservando sua estrutura fundamental.
 
+Os compêndios da campanha separam **Ocupações**, **Habilidades**, **Armas**,
+**Ferramentas** e **Consumíveis**. Armas e ferramentas usam o Item existente
+`equipamento`; os efeitos dos consumíveis são descritos para aplicação manual, sem novas
+automações.
+
+Os ícones originais da campanha ficam em `assets/icons/{ocupacoes,habilidades,armas,ferramentas,consumiveis}/`
+em WEBP transparente de 256×256. Os prompts e justificativas visuais estão em
+[docs/ICONES-CAMPANHA.md](docs/ICONES-CAMPANHA.md); para regerar os arquivos e atualizar
+os respectivos Itens nos compêndios, execute `npm run icons:campaign`.
+
 > Projeto não-oficial, feito por fã. Sem afiliação, patrocínio ou endosso dos detentores
 > de direitos de Ordem Paranormal RPG. Não distribui textos, artes nem conteúdo protegido
 > do jogo — só a camada mecânica e a interface.

@@ -3,7 +3,7 @@
   "_key": "!items!b100000000000015",
   "name": "Mensageiro Imperial",
   "type": "ocupacao",
-  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ocupacoes/mensageiro-imperial.webp",
   "system": {
     "descricao": "<p>Você leva ordens, cartas e notícias entre autoridades e povoados distantes. O conteúdo de uma mensagem pode alterar destinos, sobretudo quando nomes desaparecem dos relatos oficiais.</p>",
     "habilidade": "Palavra ao Destino",
@@ -12,6 +12,8 @@
   "effects": [],
   "folder": null,
   "sort": 0,
-  "ownership": {"default": 0},
+  "ownership": {
+    "default": 0
+  },
   "flags": {}
 }

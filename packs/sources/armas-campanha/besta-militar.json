@@ -1,0 +1,25 @@
+{
+  "_id": "d200000000000007",
+  "_key": "!items!d200000000000007",
+  "name": "Besta Militar",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/armas/besta-militar.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Besta Militar</h3><p><strong>Categoria:</strong> Arma à distância — besta.</p><p><strong>Descrição:</strong> Arma de arco montado sobre uma coronha, com mecanismo de disparo e corda tensionada.</p><p><strong>Uso Histórico:</strong> Bestas eram conhecidas e empregadas na China imperial, sobretudo em contextos militares e defensivos.</p><p><strong>Dano:</strong> RA + 4 (registro textual; acréscimo manual).</p><p><strong>Alcance:</strong> À distância, médio a longo em termos narrativos; sem faixa automatizada.</p><p><strong>Propriedades:</strong> Requer virotes e preparação física do mecanismo. Sem regra especial para recarga ou munição.</p><p><strong>Raridade:</strong> Rara fora de arsenais.</p><p><strong>Uso Narrativo:</strong> O mecanismo, as marcas de oficina e a corrosão podem ligar a arma a uma guarnição.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Besta Militar<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Besta de coronha com mecanismo de disparo.<br><strong>Efeito:</strong> Dano indicado RA + 4; o acréscimo não é automatizado. O item não cria regra de munição ou alcance.</p>",
+    "arma": true,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

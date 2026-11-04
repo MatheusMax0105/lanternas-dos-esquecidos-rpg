@@ -72,6 +72,11 @@ Não publicada. Inclui quando zerar `testesFerimento` e `testesTrauma`.
 **Decisão:** os contadores são editáveis na ficha e não zeram sozinhos. Sem automação
 até a regra sair.
 
+**Regra caseira de As Lanternas dos Esquecidos:** os consumíveis do compêndio da campanha
+informam valores fixos de recuperação de PV ou PD. A aplicação é manual, limitada ao
+máximo do recurso na ficha; o sistema não automatiza consumo, recuperação ou testes.
+Esses valores são conteúdo opcional da campanha, não uma regra publicada do playtest.
+
 ### PV e PD (spec §11)
 
 Sem fórmula publicada — vêm prontos nas fichas dos personagens do playtest.

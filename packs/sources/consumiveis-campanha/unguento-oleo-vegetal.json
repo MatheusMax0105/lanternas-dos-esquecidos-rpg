@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000008",
+  "_key": "!items!d300000000000008",
+  "name": "Unguento de Óleo Vegetal",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/unguento-oleo-vegetal.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Unguento de Óleo Vegetal</h3><p><strong>Categoria:</strong> Consumível — Cura Física.</p><p><strong>Descrição:</strong> Óleo vegetal espessado com folhas secas e guardado em pequeno recipiente; o cheiro verde e terroso permanece nos dedos.</p><p><strong>Uso Histórico:</strong> Óleos vegetais e ervas são elementos plausíveis de um preparo doméstico, aqui apresentados sem pretensão de reconstrução histórica exata.</p><p><strong>Consumo:</strong> Use uma aplicação e consuma manualmente uma unidade.</p><p><strong>Efeito Mecânico:</strong> Regra caseira: restaure manualmente exatamente 1 PV. Não ultrapasse o valor máximo da barra de PV.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Unguento de Óleo Vegetal<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Pequeno pote de óleo vegetal com folhas secas.<br><strong>Efeito:</strong> Registre manualmente a recuperação de 1 PV, respeitando o máximo da barra; sem automação.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

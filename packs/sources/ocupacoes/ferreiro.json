@@ -3,7 +3,7 @@
   "_key": "!items!b100000000000017",
   "name": "Ferreiro",
   "type": "ocupacao",
-  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ocupacoes/ferreiro.webp",
   "system": {
     "descricao": "<p>Você transforma metal em ferramentas e armas, reconhecendo o trabalho de outras mãos pelas marcas na peça. Alguns pedidos feitos em segredo carregam histórias que não deveriam ser repetidas.</p>",
     "habilidade": "Ferro e Fôlego",
@@ -12,6 +12,8 @@
   "effects": [],
   "folder": null,
   "sort": 0,
-  "ownership": {"default": 0},
+  "ownership": {
+    "default": 0
+  },
   "flags": {}
 }

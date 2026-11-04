@@ -1,0 +1,25 @@
+{
+  "_id": "d20000000000001d",
+  "_key": "!items!d20000000000001d",
+  "name": "Caixa de Oferendas",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ferramentas/caixa-oferendas.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Caixa de Oferendas</h3><p><strong>Categoria:</strong> Recipiente para cerimônias e objetos votivos.</p><p><strong>Descrição:</strong> Caixa lacada de madeira, compartimentada para pequenos objetos, alimentos secos, papel votivo ou lembranças familiares.</p><p><strong>Uso Histórico:</strong> Caixas e recipientes eram usados para guardar presentes, oferendas e objetos de culto doméstico.</p><p><strong>Perícia Relacionada:</strong> Cultos Ancestrais; Filosofia e Tradições; Investigação.</p><p><strong>Quantidade de Cargas:</strong> Não se aplica; conteúdo depende da cena.</p><p><strong>Efeito Mecânico:</strong> Guarda objetos; não cria oferendas nem concede proteção ou bônus.</p><p><strong>Uso Investigativo:</strong> Organiza o conteúdo para inventário e comparação; marcas, resíduos e arranjo podem ser examinados pelo mestre.</p><p><strong>Uso Narrativo:</strong> O espaço reservado para algo ausente pode ser mais significativo que os objetos preservados.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Caixa de Oferendas<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Caixa de madeira lacada para objetos votivos e lembranças.<br><strong>Efeito:</strong> Armazenamento e organização; sem efeito mecânico automático.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

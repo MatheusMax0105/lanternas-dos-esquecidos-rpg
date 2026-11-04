@@ -3,7 +3,7 @@
   "_key": "!items!b100000000000008",
   "name": "Criador de Lanternas",
   "type": "ocupacao",
-  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ocupacoes/criador-de-lanternas.webp",
   "system": {
     "descricao": "<p>Você fabrica lanternas para casas, templos e procissões. Sabe que uma luz confiável pode guiar os vivos — e que certas sombras parecem recordar quem passou por elas.</p>",
     "habilidade": "Luz com Memória",
@@ -12,6 +12,8 @@
   "effects": [],
   "folder": null,
   "sort": 0,
-  "ownership": {"default": 0},
+  "ownership": {
+    "default": 0
+  },
   "flags": {}
 }

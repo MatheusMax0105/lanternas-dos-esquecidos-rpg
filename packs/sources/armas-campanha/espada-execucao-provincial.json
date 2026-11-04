@@ -1,0 +1,25 @@
+{
+  "_id": "d200000000000010",
+  "_key": "!items!d200000000000010",
+  "name": "Espada de Execução Provincial",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/armas/espada-execucao-provincial.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Espada de Execução Provincial</h3><p><strong>Categoria:</strong> Arma de execução oficial.</p><p><strong>Descrição:</strong> Lâmina pesada e larga, de acabamento funcional. A bainha, quando existe, costuma ser reforçada para o transporte.</p><p><strong>Uso Histórico:</strong> Autoridades locais podiam manter armas e instrumentos destinados à execução de sentenças, sob custódia oficial.</p><p><strong>Dano:</strong> RA + 4 (registro textual; acréscimo manual).</p><p><strong>Alcance:</strong> Corpo a corpo, curto; sem distância automatizada.</p><p><strong>Propriedades:</strong> Peça pesada, pouco prática para uso cotidiano; sem regra especial.</p><p><strong>Raridade:</strong> Rara, geralmente mantida por uma autoridade.</p><p><strong>Uso Narrativo:</strong> Marcas de inventário e registros de custódia podem revelar a última sentença associada à arma.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Espada de Execução Provincial<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Espada pesada mantida sob custódia de autoridade provincial.<br><strong>Efeito:</strong> Dano indicado RA + 4; o acréscimo não é automatizado.</p>",
+    "arma": true,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

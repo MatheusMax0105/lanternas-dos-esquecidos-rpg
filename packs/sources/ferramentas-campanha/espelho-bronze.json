@@ -1,0 +1,25 @@
+{
+  "_id": "d200000000000017",
+  "_key": "!items!d200000000000017",
+  "name": "Espelho Ritual de Bronze",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ferramentas/espelho-bronze.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Espelho Ritual de Bronze</h3><p><strong>Categoria:</strong> Instrumento de observação e cerimônia.</p><p><strong>Descrição:</strong> Disco de bronze polido, com verso gravado por motivos geométricos ou auspiciosos. A superfície oferece um reflexo fosco.</p><p><strong>Uso Histórico:</strong> Espelhos de bronze eram objetos pessoais e podiam receber decoração simbólica ou uso cerimonial.</p><p><strong>Perícia Relacionada:</strong> Observação; Filosofia e Tradições.</p><p><strong>Quantidade de Cargas:</strong> Ilimitada; objeto reutilizável.</p><p><strong>Efeito Mecânico:</strong> Não revela invisibilidade, não afasta espíritos e não concede bônus.</p><p><strong>Uso Investigativo:</strong> Ajuda a inspecionar ângulos difíceis, reflexos, fuligem e marcas na própria superfície; conclusões dependem do mestre.</p><p><strong>Uso Narrativo:</strong> O reflexo imperfeito pode enquadrar um rosto junto ao nome gravado no verso, sem confirmar qualquer fenômeno.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Espelho Ritual de Bronze<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Espelho de bronze decorado para uso pessoal ou cerimonial.<br><strong>Efeito:</strong> Ferramenta de observação; sem detecção ou proteção sobrenatural automática.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

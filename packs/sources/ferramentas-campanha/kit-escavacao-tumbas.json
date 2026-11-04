@@ -1,0 +1,25 @@
+{
+  "_id": "d200000000000023",
+  "_key": "!items!d200000000000023",
+  "name": "Kit de Escavação de Tumbas",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ferramentas/kit-escavacao-tumbas.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Kit de Escavação de Tumbas</h3><p><strong>Categoria:</strong> Kit de arqueologia e exame funerário.</p><p><strong>Descrição:</strong> Conjunto de espátulas pequenas, pincéis, pá estreita, saquinhos e etiquetas para documentação de achados.</p><p><strong>Uso Histórico:</strong> Ferramentas manuais de escavação são plausíveis para trabalhos cuidadosos; este conjunto é uma composição de campo, não um instrumento de precisão moderno.</p><p><strong>Perícia Relacionada:</strong> Investigação; Observação; Filosofia e Tradições.</p><p><strong>Quantidade de Cargas:</strong> Reutilizável; etiquetas e recipientes são suprimentos narrativos.</p><p><strong>Efeito Mecânico:</strong> Não abre tumbas automaticamente, não evita consequências e não concede bônus.</p><p><strong>Uso Investigativo:</strong> Permite remover terra com cuidado, separar objetos e registrar a posição em que foram encontrados; o mestre determina o que pode ser preservado.</p><p><strong>Uso Narrativo:</strong> O cuidado com cada camada contrasta com a pressa de quem queria que o conteúdo fosse esquecido.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Kit de Escavação de Tumbas<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Ferramentas manuais e materiais para escavação cuidadosa.<br><strong>Efeito:</strong> Apoio à exploração e documentação; sem bônus ou abertura automática.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

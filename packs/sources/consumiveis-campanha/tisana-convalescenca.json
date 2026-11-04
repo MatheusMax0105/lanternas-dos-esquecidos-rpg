@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000009",
+  "_key": "!items!d300000000000009",
+  "name": "Tisana de Convalescença",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/tisana-convalescenca.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Tisana de Convalescença</h3><p><strong>Categoria:</strong> Consumível — Cura Física.</p><p><strong>Descrição:</strong> Bebida suave de folhas e frutos secos, preparada para ser tomada aos poucos enquanto o doente repousa.</p><p><strong>Uso Histórico:</strong> Bebidas de plantas e frutos são plausíveis em cuidados domésticos, embora esta combinação e seu efeito sejam criações da campanha.</p><p><strong>Consumo:</strong> Beba a porção completa e consuma manualmente uma unidade.</p><p><strong>Efeito Mecânico:</strong> Regra caseira: restaure manualmente exatamente 2 PV. Não ultrapasse o valor máximo da barra de PV.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Tisana de Convalescença<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Bebida suave de folhas e frutos secos para repouso.<br><strong>Efeito:</strong> Registre manualmente a recuperação de 2 PV, respeitando o máximo da barra; sem automação.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -2,7 +2,7 @@
   "_id": "39703b173cc91325",
   "name": "Avaliação",
   "type": "habilidade",
-  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/avaliacao.svg",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/avaliacao.webp",
   "system": {
     "origem": "perfil",
     "perfil": "analista",

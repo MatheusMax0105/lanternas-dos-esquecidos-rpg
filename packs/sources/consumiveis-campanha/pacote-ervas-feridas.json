@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000010",
+  "_key": "!items!d300000000000010",
+  "name": "Pacote de Ervas para Feridas",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/pacote-ervas-feridas.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Pacote de Ervas para Feridas</h3><p><strong>Categoria:</strong> Consumível — Cura Física.</p><p><strong>Descrição:</strong> Folhas secas e fibras limpas atadas em papel encerado, separadas para uma aplicação cuidadosa em um ferimento superficial.</p><p><strong>Uso Histórico:</strong> Invólucros de papel e preparos vegetais são plausíveis para um conjunto de viagem; a mistura é ficcional, sem reivindicar precisão histórica absoluta.</p><p><strong>Consumo:</strong> Abra e use o pacote uma vez; consuma manualmente uma unidade.</p><p><strong>Efeito Mecânico:</strong> Regra caseira: restaure manualmente exatamente 1 PV. Não ultrapasse o valor máximo da barra de PV.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Pacote de Ervas para Feridas<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Porção única de folhas e fibras para cuidado simples.<br><strong>Efeito:</strong> Registre manualmente a recuperação de 1 PV, respeitando o máximo da barra; sem automação.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

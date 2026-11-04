@@ -3,7 +3,7 @@
   "_key": "!items!b100000000000016",
   "name": "Mercador Itinerante",
   "type": "ocupacao",
-  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ocupacoes/mercador-itinerante.webp",
   "system": {
     "descricao": "<p>Você cruza estradas oferecendo mercadorias e negociando abrigo, transporte e favores. Aprendeu que promessas e dívidas sobrevivem por mais tempo que muitos viajantes.</p>",
     "habilidade": "Peso da Promessa",
@@ -12,6 +12,8 @@
   "effects": [],
   "folder": null,
   "sort": 0,
-  "ownership": {"default": 0},
+  "ownership": {
+    "default": 0
+  },
   "flags": {}
 }

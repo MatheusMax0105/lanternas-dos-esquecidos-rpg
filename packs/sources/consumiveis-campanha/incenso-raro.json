@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000030",
+  "_key": "!items!d300000000000030",
+  "name": "Incenso de Composição Rara",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/incenso-raro.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Incenso de Composição Rara</h3><p><strong>Categoria:</strong> Consumível — Utilidade/Ritual.</p><p><strong>Descrição:</strong> Pequena porção de resinas e madeiras aromáticas de procedência incerta, embrulhada em papel espesso; ao queimar, solta fumaça densa e persistente.</p><p><strong>Uso Histórico:</strong> Materiais aromáticos importados ou de acesso restrito são plausíveis em redes de troca, mas esta composição e sua raridade são elementos ficcionais, não uma afirmação de inventário histórico específico.</p><p><strong>Consumo:</strong> Queime uma porção em recipiente apropriado; consuma manualmente uma unidade.</p><p><strong>Efeito Mecânico:</strong> Uso ritual e sensorial, sem efeito sobrenatural ou vantagem assegurada. Não recupera PV ou PD nem concede bônus; qualquer teste continua usando regras e perícias existentes, a critério do mestre.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Incenso de Composição Rara<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Porção escassa de resinas e madeiras para queima cerimonial.<br><strong>Efeito:</strong> Recurso narrativo; sem automação, recuperação de recursos ou bônus.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

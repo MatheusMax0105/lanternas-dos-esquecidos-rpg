@@ -1,0 +1,25 @@
+{
+  "_id": "d20000000000000f",
+  "_key": "!items!d20000000000000f",
+  "name": "Sabre da Guarda Imperial",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/armas/sabre-guarda-imperial.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Sabre da Guarda Imperial</h3><p><strong>Categoria:</strong> Arma branca — sabre de serviço.</p><p><strong>Descrição:</strong> Sabre de um gume, bem balanceado, com guarda e bainha sóbrias que podem trazer sinais de posto ou unidade.</p><p><strong>Uso Histórico:</strong> Guardas e soldados imperiais portavam armas de lâmina conforme função, época e unidade; o acabamento distingue peça oficial de cópia civil.</p><p><strong>Dano:</strong> RA + 3 (registro textual; acréscimo manual).</p><p><strong>Alcance:</strong> Corpo a corpo, curto; sem distância automatizada.</p><p><strong>Propriedades:</strong> Marca de fabricação ou insígnia pode indicar vínculo institucional. Sem regra especial.</p><p><strong>Raridade:</strong> Rara entre civis.</p><p><strong>Uso Narrativo:</strong> A insígnia apagada pode ser mais importante que a lâmina: ela pertenceu a alguém que ninguém reconhece.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Sabre da Guarda Imperial<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Sabre de serviço associado à guarda imperial.<br><strong>Efeito:</strong> Dano indicado RA + 3; o acréscimo não é automatizado.</p>",
+    "arma": true,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000014",
+  "_key": "!items!d300000000000014",
+  "name": "Incenso de Sândalo",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/incenso-sandalo.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Incenso de Sândalo</h3><p><strong>Categoria:</strong> Consumível — Recuperação de PD.</p><p><strong>Descrição:</strong> Varetas de madeira aromática queimam lentamente; a fumaça perfumada se enrosca nos contornos das lamparinas durante a contemplação.</p><p><strong>Uso Histórico:</strong> Incensos e madeiras aromáticas são plausíveis em práticas religiosas e domésticas da região; a variedade e o uso exato dependem de contexto e disponibilidade.</p><p><strong>Consumo:</strong> Acenda uma vareta e consuma manualmente uma unidade do item.</p><p><strong>Efeito Mecânico:</strong> Regra caseira: restaure manualmente exatamente 2 PD. Não ultrapasse o valor máximo da barra de PD.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Incenso de Sândalo<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Vareta aromática para uma pausa de contemplação.<br><strong>Efeito:</strong> Registre manualmente a recuperação de 2 PD, respeitando o máximo da barra; sem automação.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

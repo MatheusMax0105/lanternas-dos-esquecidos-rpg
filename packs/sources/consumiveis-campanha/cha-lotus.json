@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000011",
+  "_key": "!items!d300000000000011",
+  "name": "Chá de Lótus",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/cha-lotus.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Chá de Lótus</h3><p><strong>Categoria:</strong> Consumível — Recuperação de PD.</p><p><strong>Descrição:</strong> Infusão delicada, servida em taça pequena; o perfume floral acompanha uma pausa silenciosa antes de retomar a vigília.</p><p><strong>Uso Histórico:</strong> Preparos de chá e referências ao lótus são plausíveis no repertório material e simbólico da região, sem implicar esta receita específica como registro histórico.</p><p><strong>Consumo:</strong> Beba uma porção e consuma manualmente uma unidade do item.</p><p><strong>Efeito Mecânico:</strong> Regra caseira: restaure manualmente exatamente 1 PD. Não ultrapasse o valor máximo da barra de PD.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Chá de Lótus<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Porção de infusão floral para uma pausa contemplativa.<br><strong>Efeito:</strong> Registre manualmente a recuperação de 1 PD, respeitando o máximo da barra; sem automação.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

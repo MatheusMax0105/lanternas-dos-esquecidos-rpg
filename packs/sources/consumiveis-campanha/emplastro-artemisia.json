@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000002",
+  "_key": "!items!d300000000000002",
+  "name": "Emplastro de Artemísia",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/emplastro-artemisia.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Emplastro de Artemísia</h3><p><strong>Categoria:</strong> Consumível — Cura Física.</p><p><strong>Descrição:</strong> Folhas de artemísia maceradas e envolvidas em tecido limpo, prontas para serem aplicadas sobre uma contusão leve.</p><p><strong>Uso Histórico:</strong> Preparos com ervas e panos são plausíveis para práticas domésticas de cuidado; esta composição é uma criação para a campanha, não uma afirmação de receita histórica específica.</p><p><strong>Consumo:</strong> Aplique o emplastro uma vez e consuma manualmente uma unidade.</p><p><strong>Efeito Mecânico:</strong> Regra caseira: restaure manualmente exatamente 1 PV. Não ultrapasse o valor máximo da barra de PV.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Emplastro de Artemísia<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Folhas maceradas em tecido para cuidado de uma contusão.<br><strong>Efeito:</strong> Registre manualmente a recuperação de 1 PV, respeitando o máximo da barra; sem automação.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

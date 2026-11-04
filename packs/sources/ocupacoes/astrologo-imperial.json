@@ -3,7 +3,7 @@
   "_key": "!items!b100000000000004",
   "name": "Astrólogo Imperial",
   "type": "ocupacao",
-  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ocupacoes/astrologo-imperial.webp",
   "system": {
     "descricao": "<p>Você interpreta calendários, observações do céu e cálculos usados pela corte. Um registro ausente ou um alinhamento impossível pode ser aviso de algo que não deveria ter sido esquecido.</p>",
     "habilidade": "Mapa das Ausências",
@@ -12,6 +12,8 @@
   "effects": [],
   "folder": null,
   "sort": 0,
-  "ownership": {"default": 0},
+  "ownership": {
+    "default": 0
+  },
   "flags": {}
 }

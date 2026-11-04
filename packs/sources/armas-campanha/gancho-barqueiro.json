@@ -1,0 +1,25 @@
+{
+  "_id": "d200000000000014",
+  "_key": "!items!d200000000000014",
+  "name": "Gancho de Barqueiro",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/armas/gancho-barqueiro.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Gancho de Barqueiro</h3><p><strong>Categoria:</strong> Ferramenta náutica que pode servir como arma.</p><p><strong>Descrição:</strong> Gancho de ferro preso a uma haste curta, usado para alcançar cordas, margens e embarcações.</p><p><strong>Uso Histórico:</strong> Barqueiros e trabalhadores fluviais utilizavam ganchos para atracar, puxar cargas e manobrar embarcações.</p><p><strong>Dano:</strong> RA + 2 (registro textual; acréscimo manual).</p><p><strong>Alcance:</strong> Corpo a corpo, curto; sem distância automatizada.</p><p><strong>Propriedades:</strong> Ponta curva e haste utilitária; não concede ação especial para puxar ou prender.</p><p><strong>Raridade:</strong> Comum em regiões fluviais.</p><p><strong>Uso Narrativo:</strong> Lodo, fibras e marcas de atrito podem indicar o último cais ou carga movimentada.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Gancho de Barqueiro<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Ferramenta de atracação com haste e gancho de ferro.<br><strong>Efeito:</strong> Dano indicado RA + 2; o acréscimo não é automatizado e não cria ações especiais.</p>",
+    "arma": true,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

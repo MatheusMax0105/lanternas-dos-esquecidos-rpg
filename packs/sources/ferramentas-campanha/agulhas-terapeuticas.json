@@ -1,0 +1,25 @@
+{
+  "_id": "d20000000000001f",
+  "_key": "!items!d20000000000001f",
+  "name": "Agulhas Terapêuticas",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ferramentas/agulhas-terapeuticas.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Agulhas Terapêuticas</h3><p><strong>Categoria:</strong> Instrumento de medicina tradicional.</p><p><strong>Descrição:</strong> Conjunto de agulhas finas guardadas em estojo rígido, com tamanhos e acabamentos próprios para uso profissional.</p><p><strong>Uso Histórico:</strong> A acupuntura possui longa tradição na China; sua prática exige conhecimento e instrumentos limpos, não improvisação.</p><p><strong>Perícia Relacionada:</strong> Medicina Tradicional; Observação.</p><p><strong>Quantidade de Cargas:</strong> Conjunto reutilizável; sem cargas mecânicas.</p><p><strong>Efeito Mecânico:</strong> Não cura nem causa dano automático; qualquer cuidado ou consequência permanece sob as regras existentes e decisão do mestre.</p><p><strong>Uso Investigativo:</strong> O estojo e a disposição das agulhas podem indicar prática, procedência ou uso recente.</p><p><strong>Uso Narrativo:</strong> O estojo pode pertencer a alguém que cuidava de outros, embora ninguém saiba mais dizer seu nome.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Agulhas Terapêuticas<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Estojo de agulhas para prática profissional de medicina tradicional.<br><strong>Efeito:</strong> Apoio à prática; não cria cura, dano ou teste adicional.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

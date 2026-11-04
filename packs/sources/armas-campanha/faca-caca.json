@@ -1,0 +1,25 @@
+{
+  "_id": "d20000000000000b",
+  "_key": "!items!d20000000000000b",
+  "name": "Faca de Caça",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/armas/faca-caca.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Faca de Caça</h3><p><strong>Categoria:</strong> Ferramenta de caça e arma branca.</p><p><strong>Descrição:</strong> Faca de lâmina curta, com cabo firme e bainha de couro ou tecido encerado.</p><p><strong>Uso Histórico:</strong> Instrumento utilitário para preparar caça, cortar cordas e realizar tarefas de viagem.</p><p><strong>Dano:</strong> RA + 1 (registro textual; acréscimo manual).</p><p><strong>Alcance:</strong> Corpo a corpo, curto; sem distância automatizada.</p><p><strong>Propriedades:</strong> Leve, fácil de guardar e de uso cotidiano. Sem regra especial.</p><p><strong>Raridade:</strong> Comum.</p><p><strong>Uso Narrativo:</strong> Resíduos no cabo ou no fio podem ajudar a reconstituir uma atividade recente.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Faca de Caça<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Faca utilitária de lâmina curta.<br><strong>Efeito:</strong> Dano indicado RA + 1; o acréscimo não é automatizado.</p>",
+    "arma": true,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

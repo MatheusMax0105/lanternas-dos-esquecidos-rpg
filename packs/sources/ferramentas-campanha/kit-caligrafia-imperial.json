@@ -1,0 +1,25 @@
+{
+  "_id": "d200000000000020",
+  "_key": "!items!d200000000000020",
+  "name": "Kit de Caligrafia Imperial",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ferramentas/kit-caligrafia-imperial.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Kit de Caligrafia Imperial</h3><p><strong>Categoria:</strong> Kit de escrita e registro oficial.</p><p><strong>Descrição:</strong> Estojo com pincéis, tinta, pedra para prepará-la, papel e pequenos pesos para manter as folhas no lugar.</p><p><strong>Uso Histórico:</strong> Pincel e tinta eram ferramentas centrais da escrita chinesa; conjuntos refinados podiam indicar educação ou cargo.</p><p><strong>Perícia Relacionada:</strong> Caligrafia e Artes; Administração Imperial; Investigação.</p><p><strong>Quantidade de Cargas:</strong> Reutilizável; tinta e papel são suprimentos narrativos, sem contador automático.</p><p><strong>Efeito Mecânico:</strong> Não traduz, autentica ou decifra textos automaticamente.</p><p><strong>Uso Investigativo:</strong> Permite copiar inscrições, comparar traços e preservar uma transcrição para análise posterior.</p><p><strong>Uso Narrativo:</strong> A pressão do pincel e a tinta escolhida podem sobreviver ao autor por gerações.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Kit de Caligrafia Imperial<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Estojo de escrita com pincéis, tinta, pedra e papel.<br><strong>Efeito:</strong> Permite registrar e comparar escrita; sem tradução ou bônus automático.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -1,0 +1,25 @@
+{
+  "_id": "d200000000000009",
+  "_key": "!items!d200000000000009",
+  "name": "Bastão de Ferro",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/armas/bastao-ferro.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Bastão de Ferro</h3><p><strong>Categoria:</strong> Arma contundente.</p><p><strong>Descrição:</strong> Bastão maciço de ferro, sóbrio e sem adereços. O metal frio retém impressões de mãos e sinais de ferrugem.</p><p><strong>Uso Histórico:</strong> Bastões metálicos eram objetos de defesa e autoridade; o peso e a qualidade dependiam de quem os carregava.</p><p><strong>Dano:</strong> RA + 3 (registro textual; acréscimo manual).</p><p><strong>Alcance:</strong> Corpo a corpo, curto; sem distância automatizada.</p><p><strong>Propriedades:</strong> Inteiramente metálico, mais pesado que um bastão de madeira. Sem regra especial.</p><p><strong>Raridade:</strong> Incomum.</p><p><strong>Uso Narrativo:</strong> Uma gravação pouco visível pode identificar o antigo proprietário ou a oficina que o fez.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Bastão de Ferro<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Bastão maciço de ferro, sem ornamentos.<br><strong>Efeito:</strong> Dano indicado RA + 3; o acréscimo não é automatizado.</p>",
+    "arma": true,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

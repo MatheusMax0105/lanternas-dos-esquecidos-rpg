@@ -1,0 +1,25 @@
+{
+  "_id": "d200000000000016",
+  "_key": "!items!d200000000000016",
+  "name": "Sino dos Ancestrais",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ferramentas/sino-ancestrais.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Sino dos Ancestrais</h3><p><strong>Categoria:</strong> Instrumento ritual e sonoro.</p><p><strong>Descrição:</strong> Pequeno sino de bronze com cabo ou cordão. Seu timbre depende da liga, do formato e do cuidado com que é tocado.</p><p><strong>Uso Histórico:</strong> Sinos eram usados em contextos religiosos, domésticos e cerimoniais para marcar momentos e reunir pessoas.</p><p><strong>Perícia Relacionada:</strong> Cultos Ancestrais; Observação.</p><p><strong>Quantidade de Cargas:</strong> Ilimitada; objeto reutilizável.</p><p><strong>Efeito Mecânico:</strong> Produz som audível, sem efeito automático sobre criaturas ou rolagens.</p><p><strong>Uso Investigativo:</strong> Permite comparar reverberação e acústica entre recintos ou chamar atenção para uma resposta sonora; o mestre interpreta o resultado.</p><p><strong>Uso Narrativo:</strong> Um toque pode acompanhar uma homenagem, interromper um silêncio ou recordar uma cerimônia que já não tem participantes.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Sino dos Ancestrais<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Sino portátil de bronze, usado em cerimônias.<br><strong>Efeito:</strong> Emite som; não concede bônus nem provoca respostas sobrenaturais automáticas.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

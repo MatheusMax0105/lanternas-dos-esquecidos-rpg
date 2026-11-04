@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000003",
+  "_key": "!items!d300000000000003",
+  "name": "Bálsamo de Ervas e Óleo",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/balsamo-ervas-oleo.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Bálsamo de Ervas e Óleo</h3><p><strong>Categoria:</strong> Consumível — Cura Física.</p><p><strong>Descrição:</strong> Pasta untuosa de óleo vegetal e ervas aromáticas, guardada em um pequeno pote de cerâmica para uso em pele irritada ou escoriada.</p><p><strong>Uso Histórico:</strong> Óleos vegetais, recipientes cerâmicos e plantas locais compõem uma apresentação plausível para um unguento preparado artesanalmente; sua fórmula é ficcional.</p><p><strong>Consumo:</strong> Use uma aplicação e consuma manualmente uma unidade do bálsamo.</p><p><strong>Efeito Mecânico:</strong> Regra caseira: restaure manualmente exatamente 1 PV. Não ultrapasse o valor máximo da barra de PV.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Bálsamo de Ervas e Óleo<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Unguento artesanal de óleo vegetal e ervas.<br><strong>Efeito:</strong> Registre manualmente a recuperação de 1 PV, respeitando o máximo da barra; sem automação.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

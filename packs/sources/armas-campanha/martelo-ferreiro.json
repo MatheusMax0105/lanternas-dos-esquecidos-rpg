@@ -1,0 +1,25 @@
+{
+  "_id": "d20000000000000d",
+  "_key": "!items!d20000000000000d",
+  "name": "Martelo de Ferreiro",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/armas/martelo-ferreiro.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Martelo de Ferreiro</h3><p><strong>Categoria:</strong> Ferramenta de ofício que pode servir como arma.</p><p><strong>Descrição:</strong> Martelo de cabeça compacta e cabo de madeira, marcado por fuligem, calor e anos de trabalho.</p><p><strong>Uso Histórico:</strong> Ferramenta essencial em oficinas de metalurgia para moldar peças aquecidas e ajustar ferragens.</p><p><strong>Dano:</strong> RA + 3 (registro textual; acréscimo manual).</p><p><strong>Alcance:</strong> Corpo a corpo, curto; sem distância automatizada.</p><p><strong>Propriedades:</strong> Ferramenta de metalurgia robusta, sem ornamentos ou mecanismo. Sem regra especial.</p><p><strong>Raridade:</strong> Comum em oficinas; incomum fora delas.</p><p><strong>Uso Narrativo:</strong> Formato da cabeça e marcas de forja ajudam a reconhecer o ofício ou a oficina de origem.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Martelo de Ferreiro<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Martelo de oficina, usado para moldar metal.<br><strong>Efeito:</strong> Dano indicado RA + 3; o acréscimo não é automatizado.</p>",
+    "arma": true,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

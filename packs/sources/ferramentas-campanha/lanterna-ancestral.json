@@ -1,0 +1,25 @@
+{
+  "_id": "d200000000000015",
+  "_key": "!items!d200000000000015",
+  "name": "Lanterna Ancestral",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ferramentas/lanterna-ancestral.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Lanterna Ancestral</h3><p><strong>Categoria:</strong> Ferramenta de iluminação e cerimônia.</p><p><strong>Descrição:</strong> Lanterna portátil de armação leve, papel ou seda e pequeno recipiente para óleo. Inscrições familiares podem ser acrescentadas sem alterar sua função.</p><p><strong>Uso Histórico:</strong> Lanternas iluminavam casas, procissões e celebrações, inclusive no período do Zhongyuan Jie.</p><p><strong>Perícia Relacionada:</strong> Cultos Ancestrais; Observação.</p><p><strong>Quantidade de Cargas:</strong> Não controlada; usa óleo comum, reposto conforme a ficção.</p><p><strong>Efeito Mecânico:</strong> Fonte de luz narrativa. Não altera dados, DTs ou recursos.</p><p><strong>Uso Investigativo:</strong> Ilumina inscrições, oferendas e marcas em locais escuros; o mestre decide o que pode ser percebido.</p><p><strong>Uso Narrativo:</strong> A chama vacilante torna visíveis os nomes escritos na lanterna e os rostos reunidos ao redor dela.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Lanterna Ancestral<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Lanterna portátil de papel ou seda, alimentada por óleo.<br><strong>Efeito:</strong> Iluminação e apoio narrativo; sem bônus, rolagem ou informação automática.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

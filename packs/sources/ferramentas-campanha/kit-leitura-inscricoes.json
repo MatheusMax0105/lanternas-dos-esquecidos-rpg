@@ -1,0 +1,25 @@
+{
+  "_id": "d200000000000027",
+  "_key": "!items!d200000000000027",
+  "name": "Kit de Leitura de Inscrições",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ferramentas/kit-leitura-inscricoes.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Kit de Leitura de Inscrições</h3><p><strong>Categoria:</strong> Kit de documentação e exame epigráfico.</p><p><strong>Descrição:</strong> Estojo com pincéis macios, papel fino, carvão e pequenos instrumentos para registrar inscrições sem raspar a superfície.</p><p><strong>Uso Histórico:</strong> Materiais de escrita e ferramentas manuais de cópia são adequados ao estudo de inscrições e objetos antigos.</p><p><strong>Perícia Relacionada:</strong> Investigação; Caligrafia e Artes; Crônicas do Império.</p><p><strong>Quantidade de Cargas:</strong> Reutilizável; papel e carvão são suprimentos narrativos.</p><p><strong>Efeito Mecânico:</strong> Não traduz nem decifra inscrições automaticamente e não modifica testes.</p><p><strong>Uso Investigativo:</strong> Registra formas, espaçamento e desgaste para leitura e comparação posteriores, inclusive por outra pessoa.</p><p><strong>Uso Narrativo:</strong> Copiar um nome quase apagado pode ser o primeiro gesto de lembrança em muitas gerações.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Kit de Leitura de Inscrições<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Instrumentos manuais para registrar inscrições com cuidado.<br><strong>Efeito:</strong> Apoio à documentação; sem tradução ou bônus automático.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

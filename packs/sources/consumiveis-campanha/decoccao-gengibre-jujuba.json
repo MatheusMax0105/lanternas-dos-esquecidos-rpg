@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000001",
+  "_key": "!items!d300000000000001",
+  "name": "Decocção de Gengibre e Jujuba",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/decoccao-gengibre-jujuba.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Decocção de Gengibre e Jujuba</h3><p><strong>Categoria:</strong> Consumível — Cura Física.</p><p><strong>Descrição:</strong> Bebida quente, preparada em pequena quantidade com gengibre e jujubas secas; é levada em recipiente fechado para conservar o calor.</p><p><strong>Uso Histórico:</strong> Ingredientes vegetais e frutos secos são plausíveis em preparos domésticos e de cuidado no período; a receita varia conforme a família e a região.</p><p><strong>Consumo:</strong> Beba uma porção e consuma manualmente uma unidade deste item.</p><p><strong>Efeito Mecânico:</strong> Regra caseira: restaure manualmente exatamente 2 PV. Não ultrapasse o valor máximo da barra de PV.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Decocção de Gengibre e Jujuba<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Porção quente de gengibre e jujuba para convalescença.<br><strong>Efeito:</strong> Registre manualmente a recuperação de 2 PV, respeitando o máximo da barra; sem automação.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

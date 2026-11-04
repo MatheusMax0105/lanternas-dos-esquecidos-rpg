@@ -1,0 +1,25 @@
+{
+  "_id": "d20000000000000e",
+  "_key": "!items!d20000000000000e",
+  "name": "Adaga Cerimonial",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/armas/adaga-cerimonial.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Adaga Cerimonial</h3><p><strong>Categoria:</strong> Arma branca cerimonial.</p><p><strong>Descrição:</strong> Lâmina curta, cuidadosamente polida, com bainha e cabo decorados de modo sóbrio.</p><p><strong>Uso Histórico:</strong> Facas e adagas eram objetos de uso prático e podiam receber acabamento próprio para cerimônias, oferendas ou autoridade familiar.</p><p><strong>Dano:</strong> RA + 1 (registro textual; acréscimo manual).</p><p><strong>Alcance:</strong> Corpo a corpo, muito curto; sem distância automatizada.</p><p><strong>Propriedades:</strong> Peça de porte discreto, acabamento cerimonial; não possui poder sobrenatural.</p><p><strong>Raridade:</strong> Incomum.</p><p><strong>Uso Narrativo:</strong> Inscrições, manchas antigas e a forma como foi guardada podem revelar uma tradição familiar.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Adaga Cerimonial<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Adaga curta de acabamento cerimonial.<br><strong>Efeito:</strong> Dano indicado RA + 1; o acréscimo não é automatizado.</p>",
+    "arma": true,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

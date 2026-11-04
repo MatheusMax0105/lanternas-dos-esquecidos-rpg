@@ -1,0 +1,25 @@
+{
+  "_id": "d20000000000001e",
+  "_key": "!items!d20000000000001e",
+  "name": "Bolsa de Ervas Medicinais",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ferramentas/bolsa-ervas.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Bolsa de Ervas Medicinais</h3><p><strong>Categoria:</strong> Kit de medicina tradicional.</p><p><strong>Descrição:</strong> Bolsa de tecido com pequenos invólucros rotulados para ervas secas, raízes e preparados de uso tradicional.</p><p><strong>Uso Histórico:</strong> Curandeiros e praticantes de medicina tradicional transportavam ingredientes e receitas cujo uso variava conforme região e formação.</p><p><strong>Perícia Relacionada:</strong> Medicina Tradicional; Sobrevivência; Investigação.</p><p><strong>Quantidade de Cargas:</strong> Conteúdo variável; não rastreado como recurso.</p><p><strong>Efeito Mecânico:</strong> Não cura, remove condições ou altera testes automaticamente.</p><p><strong>Uso Investigativo:</strong> Comparar aroma, textura e rótulos pode ajudar a identificar ingredientes conhecidos; a conclusão exige julgamento do mestre.</p><p><strong>Uso Narrativo:</strong> Uma erva identificada pelo cheiro pode trazer de volta o nome de quem a colhia.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Bolsa de Ervas Medicinais<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Bolsa organizada com ervas e preparados tradicionais.<br><strong>Efeito:</strong> Apoio narrativo a práticas de medicina; sem cura ou bônus automáticos.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

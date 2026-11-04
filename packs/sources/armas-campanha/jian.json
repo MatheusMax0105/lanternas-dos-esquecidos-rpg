@@ -1,0 +1,25 @@
+{
+  "_id": "d200000000000001",
+  "_key": "!items!d200000000000001",
+  "name": "Jian",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/armas/jian.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Jian</h3><p><strong>Categoria:</strong> Arma branca — espada reta de dois gumes.</p><p><strong>Descrição:</strong> Lâmina equilibrada, de ponta precisa e guarda discreta. O cuidado com a espada costuma ser tão revelador quanto o modo de empunhá-la.</p><p><strong>Uso Histórico:</strong> Arma de tradição antiga, associada a oficiais, estudiosos armados e praticantes de artes marciais.</p><p><strong>Dano:</strong> RA + 2 (registro textual; acréscimo manual).</p><p><strong>Alcance:</strong> Corpo a corpo, curto; sem distância automatizada.</p><p><strong>Propriedades:</strong> Lâmina reta, dois gumes, porte ajustado à cintura. A descrição não cria manobras ou modificadores.</p><p><strong>Raridade:</strong> Incomum.</p><p><strong>Uso Narrativo:</strong> Pode identificar treinamento, posição social ou uma herança cujo dono já não é lembrado.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Jian<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Espada reta de dois gumes, de tradição antiga.<br><strong>Efeito:</strong> Dano indicado RA + 2. O combate existente não aplica o acréscimo automaticamente; registre-o manualmente, sem alterar a rolagem.</p>",
+    "arma": true,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

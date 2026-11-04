@@ -3,7 +3,7 @@
   "_key": "!items!b100000000000024",
   "name": "Oficial Local",
   "type": "ocupacao",
-  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ocupacoes/oficial-local.webp",
   "system": {
     "descricao": "<p>Você administra registros e demandas de uma comunidade em nome das autoridades. Sabe como uma pessoa pode deixar de existir nos papéis antes de desaparecer das ruas.</p>",
     "habilidade": "Livro dos Vivos",
@@ -12,6 +12,8 @@
   "effects": [],
   "folder": null,
   "sort": 0,
-  "ownership": {"default": 0},
+  "ownership": {
+    "default": 0
+  },
   "flags": {}
 }

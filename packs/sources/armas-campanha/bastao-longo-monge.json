@@ -1,0 +1,25 @@
+{
+  "_id": "d200000000000008",
+  "_key": "!items!d200000000000008",
+  "name": "Bastão Longo de Monge",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/armas/bastao-longo-monge.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Bastão Longo de Monge</h3><p><strong>Categoria:</strong> Arma improvisada ou bastão de defesa.</p><p><strong>Descrição:</strong> Bastão de madeira resistente, liso pelo manuseio e sem ornamentos além de marcas de viagem.</p><p><strong>Uso Histórico:</strong> Bastões eram ferramentas de caminhada e defesa pessoal, também associados a tradições monásticas e marciais.</p><p><strong>Dano:</strong> RA + 2 (registro textual; acréscimo manual).</p><p><strong>Alcance:</strong> Corpo a corpo, longo para um bastão; sem distância automatizada.</p><p><strong>Propriedades:</strong> Peça simples, sem lâmina ou mecanismo. Nenhuma técnica ou bônus é concedido.</p><p><strong>Raridade:</strong> Comum.</p><p><strong>Uso Narrativo:</strong> Entalhes, nós e desgaste contam por onde o viajante passou e onde apoiou o bastão.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Bastão Longo de Monge<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Bastão de madeira resistente usado em viagem e defesa.<br><strong>Efeito:</strong> Dano indicado RA + 2; o acréscimo não é automatizado.</p>",
+    "arma": true,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

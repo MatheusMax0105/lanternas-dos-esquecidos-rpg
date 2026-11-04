@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000024",
+  "_key": "!items!d300000000000024",
+  "name": "Tinta Mineral",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/tinta-mineral.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Tinta Mineral</h3><p><strong>Categoria:</strong> Consumível — Utilidade/Ritual.</p><p><strong>Descrição:</strong> Pequena porção de pigmento mineral moído e misturado para traçar caracteres ou sinais em papel e madeira.</p><p><strong>Uso Histórico:</strong> Pigmentos minerais e escrita com pincel são materiais plausíveis na China imperial; a composição exata desta tinta foi criada para a campanha.</p><p><strong>Consumo:</strong> Use a porção até se esgotar; consuma manualmente uma unidade.</p><p><strong>Efeito Mecânico:</strong> Permite registrar ou marcar algo de modo visível. Não recupera PV ou PD nem concede bônus; qualquer teste segue as regras e perícias existentes, conforme decisão do mestre.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Tinta Mineral<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Porção de pigmento preparado para escrita ou marcação.<br><strong>Efeito:</strong> Apoio narrativo e documental; sem automação, recursos ou bônus.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

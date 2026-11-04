@@ -3,7 +3,7 @@
   "_key": "!items!a100000000000023",
   "name": "Sinais na Neblina",
   "type": "habilidade",
-  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/linha-de-tiro.svg",
+  "img": "systems/ordem-paranormal-2e/assets/icons/habilidades/sinais-na-neblina.webp",
   "system": {
     "origem": "ocupacao",
     "perfil": "",
@@ -23,6 +23,8 @@
   "effects": [],
   "folder": null,
   "sort": 0,
-  "ownership": {"default": 0},
+  "ownership": {
+    "default": 0
+  },
   "flags": {}
 }

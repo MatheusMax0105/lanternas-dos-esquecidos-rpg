@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000018",
+  "_key": "!items!d300000000000018",
+  "name": "Preparado de Sementes",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/preparado-sementes.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Preparado de Sementes</h3><p><strong>Categoria:</strong> Consumível — Recuperação de PD.</p><p><strong>Descrição:</strong> Sementes tostadas e trituradas formam uma bebida simples, coada num pano e repartida em uma única tigela.</p><p><strong>Uso Histórico:</strong> Sementes e utensílios de cozinha são materiais plausíveis para preparos domésticos; a receita é deliberadamente genérica e ficcional.</p><p><strong>Consumo:</strong> Beba a tigela e consuma manualmente uma unidade.</p><p><strong>Efeito Mecânico:</strong> Regra caseira: restaure manualmente exatamente 1 PD. Não ultrapasse o valor máximo da barra de PD.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Preparado de Sementes<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Bebida coada de sementes tostadas e moídas.<br><strong>Efeito:</strong> Registre manualmente a recuperação de 1 PD, respeitando o máximo da barra; sem automação.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

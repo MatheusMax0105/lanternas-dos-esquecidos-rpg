@@ -1,0 +1,25 @@
+{
+  "_id": "d200000000000003",
+  "_key": "!items!d200000000000003",
+  "name": "Lança Tang",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/armas/lanca-tang.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Lança Tang</h3><p><strong>Categoria:</strong> Arma de haste.</p><p><strong>Descrição:</strong> Haste de madeira firme com ponta de ferro, simples de manter e difícil de ocultar.</p><p><strong>Uso Histórico:</strong> Lanças eram armas militares versáteis, utilizadas por infantaria e guardas em diferentes formações.</p><p><strong>Dano:</strong> RA + 3 (registro textual; acréscimo manual).</p><p><strong>Alcance:</strong> Corpo a corpo, longo em comparação com uma lâmina; sem distância automatizada.</p><p><strong>Propriedades:</strong> Haste longa, ponta metálica e transporte incômodo em interiores. Sem regra especial.</p><p><strong>Raridade:</strong> Comum em contexto militar.</p><p><strong>Uso Narrativo:</strong> A madeira, as amarras e a ferrugem podem apontar para um arsenal, patrulha ou viagem.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Lança Tang<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Lança de haste de madeira e ponta de ferro.<br><strong>Efeito:</strong> Dano indicado RA + 3. O combate existente não aplica o acréscimo automaticamente; registre-o manualmente, sem alterar a rolagem.</p>",
+    "arma": true,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000026",
+  "_key": "!items!d300000000000026",
+  "name": "Água Fervida em Cabaça",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/agua-fervida-cabaca.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Água Fervida em Cabaça</h3><p><strong>Categoria:</strong> Consumível — Utilidade/Ritual.</p><p><strong>Descrição:</strong> Água que foi fervida e depois guardada numa cabaça limpa, vedada com uma rolha simples para a jornada.</p><p><strong>Uso Histórico:</strong> Cabaças usadas como recipientes são plausíveis para transporte; a água fervida é descrita como prática de preparo, sem atribuir segurança absoluta a qualquer fonte.</p><p><strong>Consumo:</strong> Beba a água e consuma manualmente uma unidade.</p><p><strong>Efeito Mecânico:</strong> Provisão de água para uso narrativo ou de viagem. Não recupera PV ou PD nem concede bônus; qualquer teste usa regras e perícias existentes, conforme decisão do mestre.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Água Fervida em Cabaça<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Porção de água transportada em recipiente de cabaça.<br><strong>Efeito:</strong> Provisão narrativa; sem automação, recuperação de recursos ou bônus.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

@@ -1,0 +1,25 @@
+{
+  "_id": "d200000000000018",
+  "_key": "!items!d200000000000018",
+  "name": "Incenso de Lótus Branco",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ferramentas/incenso-lotus.webp",
+  "system": {
+    "quantidade": 5,
+    "equipado": false,
+    "descricao": "<h3>Incenso de Lótus Branco</h3><p><strong>Categoria:</strong> Consumível cerimonial.</p><p><strong>Descrição:</strong> Varetas de incenso de aroma floral suave, guardadas em invólucro de papel para protegê-las da umidade.</p><p><strong>Uso Histórico:</strong> Incenso era empregado em cerimônias religiosas, domésticas e memoriais; a composição variava conforme a oficina.</p><p><strong>Perícia Relacionada:</strong> Cultos Ancestrais; Filosofia e Tradições.</p><p><strong>Quantidade de Cargas:</strong> 5 varetas físicas; o sistema não rastreia consumo.</p><p><strong>Efeito Mecânico:</strong> Produz aroma e fumaça. Não concede proteção, bônus ou efeito sobrenatural.</p><p><strong>Uso Investigativo:</strong> A fumaça pode tornar perceptíveis correntes de ar e ventilação; não detecta entidades nem revela pistas por si só.</p><p><strong>Uso Narrativo:</strong> O perfume pode marcar um rito de lembrança, enquanto a fumaça se desfaz em um recinto sem testemunhas.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Incenso de Lótus Branco<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Cinco varetas de incenso floral para cerimônias.<br><strong>Efeito:</strong> Efeito sensorial e cerimonial; sem modificadores ou efeito paranormal automático.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

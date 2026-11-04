@@ -3,7 +3,7 @@
   "_key": "!items!b100000000000020",
   "name": "Oleiro",
   "type": "ocupacao",
-  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ocupacoes/oleiro.webp",
   "system": {
     "descricao": "<p>Você molda recipientes de argila que passam de mão em mão entre gerações. Marcas na superfície podem revelar gestos, costumes e ausências de quem já partiu.</p>",
     "habilidade": "Forma que Guarda",
@@ -12,6 +12,8 @@
   "effects": [],
   "folder": null,
   "sort": 0,
-  "ownership": {"default": 0},
+  "ownership": {
+    "default": 0
+  },
   "flags": {}
 }

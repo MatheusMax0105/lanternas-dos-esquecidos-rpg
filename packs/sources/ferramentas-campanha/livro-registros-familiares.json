@@ -1,0 +1,25 @@
+{
+  "_id": "d200000000000024",
+  "_key": "!items!d200000000000024",
+  "name": "Livro de Registros Familiares",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ferramentas/livro-registros-familiares.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Livro de Registros Familiares</h3><p><strong>Categoria:</strong> Arquivo doméstico e ferramenta de pesquisa.</p><p><strong>Descrição:</strong> Caderno de folhas costuradas com nomes, datas, nascimentos, casamentos, mortes e notas deixadas por parentes.</p><p><strong>Uso Histórico:</strong> Famílias podiam manter genealogias, memoriais e registros domésticos em livros de formatos próprios.</p><p><strong>Perícia Relacionada:</strong> Investigação; Crônicas do Império; Administração Imperial.</p><p><strong>Quantidade de Cargas:</strong> Ilimitada; consulta reutilizável.</p><p><strong>Efeito Mecânico:</strong> Não preenche lacunas, não confirma parentesco e não altera testes por si só.</p><p><strong>Uso Investigativo:</strong> Permite confrontar nomes e datas com outros registros, identificar alterações e organizar hipóteses.</p><p><strong>Uso Narrativo:</strong> A letra muda de página em página; certa mão reaparece, mas seu nome nunca foi escrito.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Livro de Registros Familiares<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Livro doméstico com genealogia e acontecimentos da família.<br><strong>Efeito:</strong> Apoio documental; sem conhecimento ou revelação automática.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

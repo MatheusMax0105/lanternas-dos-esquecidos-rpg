@@ -3,7 +3,7 @@
   "_key": "!items!b100000000000007",
   "name": "Fabricante de Incenso",
   "type": "ocupacao",
-  "img": "systems/ordem-paranormal-2e/assets/icons/tipos/ocupacao.svg",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ocupacoes/fabricante-de-incenso.webp",
   "system": {
     "descricao": "<p>Você prepara misturas aromáticas para cerimônias e conhece as tradições que cercam cada ingrediente. Alguns clientes pedem fórmulas ligadas a ritos que ninguém admite praticar.</p>",
     "habilidade": "Fumo que Reconhece",
@@ -12,6 +12,8 @@
   "effects": [],
   "folder": null,
   "sort": 0,
-  "ownership": {"default": 0},
+  "ownership": {
+    "default": 0
+  },
   "flags": {}
 }

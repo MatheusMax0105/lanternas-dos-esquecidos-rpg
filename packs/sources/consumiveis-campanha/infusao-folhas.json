@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000019",
+  "_key": "!items!d300000000000019",
+  "name": "Infusão de Folhas",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/infusao-folhas.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Infusão de Folhas</h3><p><strong>Categoria:</strong> Consumível — Recuperação de PD.</p><p><strong>Descrição:</strong> Folhas secas de aroma suave são deixadas em água quente; o embrulho de papel guarda a porção até o momento de recolhimento.</p><p><strong>Uso Histórico:</strong> Folhas preparadas em água quente e embalagens simples são plausíveis no período; a origem botânica permanece propositalmente aberta para a ficção.</p><p><strong>Consumo:</strong> Beba a porção e consuma manualmente uma unidade.</p><p><strong>Efeito Mecânico:</strong> Regra caseira: restaure manualmente exatamente 1 PD. Não ultrapasse o valor máximo da barra de PD.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Infusão de Folhas<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Porção de folhas secas para infusão e pausa breve.<br><strong>Efeito:</strong> Registre manualmente a recuperação de 1 PD, respeitando o máximo da barra; sem automação.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

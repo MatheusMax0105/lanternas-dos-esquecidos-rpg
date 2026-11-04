@@ -1,0 +1,25 @@
+{
+  "_id": "d300000000000020",
+  "_key": "!items!d300000000000020",
+  "name": "Bastões de Incenso Contemplativo",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/consumiveis/bastoes-incenso-contemplativo.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Bastões de Incenso Contemplativo</h3><p><strong>Categoria:</strong> Consumível — Recuperação de PD.</p><p><strong>Descrição:</strong> Pequenos bastões de aroma brando ardem juntos numa vigília breve; a fumaça sobe diante de uma tabuleta com nomes familiares.</p><p><strong>Uso Histórico:</strong> Incenso em contextos memoriais é plausível, embora formas e costumes variassem; a cena não determina uma prática universal do Festival dos Fantasmas Famintos.</p><p><strong>Consumo:</strong> Acenda os bastões e consuma manualmente uma unidade do item.</p><p><strong>Efeito Mecânico:</strong> Regra caseira: restaure manualmente exatamente 2 PD. Não ultrapasse o valor máximo da barra de PD.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Bastões de Incenso Contemplativo<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Pequeno conjunto de incenso para uma vigília memorial.<br><strong>Efeito:</strong> Registre manualmente a recuperação de 2 PD, respeitando o máximo da barra; sem automação.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}

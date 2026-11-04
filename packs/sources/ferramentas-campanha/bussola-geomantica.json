@@ -1,0 +1,25 @@
+{
+  "_id": "d20000000000001a",
+  "_key": "!items!d20000000000001a",
+  "name": "Bússola Geomântica",
+  "type": "equipamento",
+  "img": "systems/ordem-paranormal-2e/assets/icons/ferramentas/bussola-geomantica.webp",
+  "system": {
+    "quantidade": 1,
+    "equipado": false,
+    "descricao": "<h3>Bússola Geomântica</h3><p><strong>Categoria:</strong> Instrumento de orientação e leitura tradicional.</p><p><strong>Descrição:</strong> Bússola circular com agulha magnetizada e inscrições direcionais; o instrumento requer leitura treinada de seus anéis e referências.</p><p><strong>Uso Histórico:</strong> Bússolas e instrumentos de orientação magnética eram conhecidos na China; versões geomânticas organizavam direções segundo tradições específicas.</p><p><strong>Perícia Relacionada:</strong> Filosofia e Tradições; Observação; Sobrevivência.</p><p><strong>Quantidade de Cargas:</strong> Ilimitada; instrumento reutilizável.</p><p><strong>Efeito Mecânico:</strong> Não aponta para espíritos, tesouros ou lugares ocultos e não concede bônus.</p><p><strong>Uso Investigativo:</strong> Registra orientação e permite confrontá-la com planta, terreno ou convenções geomânticas; interpretação cabe ao mestre.</p><p><strong>Uso Narrativo:</strong> Uma agulha oscilante pode ser defeito, interferência ou motivo para repetir a medição.</p><h3>Cadastro Foundry</h3><p><strong>Nome:</strong> Bússola Geomântica<br><strong>Tipo:</strong> equipamento<br><strong>Descrição:</strong> Bússola inscrita para orientação e leitura geomântica.<br><strong>Efeito:</strong> Apoia medições e interpretação; sem detecção ou modificador automático.</p>",
+    "arma": false,
+    "cargas": {
+      "usa": false,
+      "value": 0,
+      "max": 0
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {}
+}
